@@ -1,41 +1,595 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import StubPage from './StubPage.jsx';
+import AboutPage from './AboutPage.jsx';
+import PackagesPage from './PackagesPage.jsx';
+import ServicesPage from './ServicesPage.jsx';
+import ContactPage from './ContactPage.jsx';
+import GalleryPage from './GalleryPage.jsx';
 import './App.css';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Features from './components/Features';
-import Team from './components/Team';
-import Growth from './components/Growth';
-import Ideas from './components/Ideas';
-import Packages from './components/Packages';
-import CTA from './components/CTA';
-import Blog from './components/Blog';
-import Testimonials from './components/Testimonials';
-import Newsletter from './components/Newsletter';
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
+import './hero-fix.css'; // must come AFTER App.css so it overrides old .hero rules
 
-function App() {
+// Hero content lives outside the component so it is created once
+const HERO_SLIDES = [
+  '/cakes/cake-02.jpg',
+  '/cakes/cake-09.jpg',
+  '/cakes/cake-06.jpg',
+  '/cakes/cake-08.jpg'
+];
+const HERO_WORDS = ['Custom Cakes', 'Cupcakes', 'Artisan Treats', 'Celebration Cakes'];
+
+// Navigation Bar Component
+function NavigationBar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const navLinks = [
+    { to: '/', label: 'Home' },
+    { to: '/about', label: 'About' },
+    { to: '/packages', label: 'Packages' },
+    { to: '/services', label: 'Services' },
+    { to: '/gallery', label: 'Gallery' },
+    { to: '/contact', label: 'Contact' }
+  ];
+
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Features />
-      <Team />
-      <Growth />
-      <Ideas />
-      <Packages />
-      <CTA />
-      <Blog />
-      <Testimonials />
-      <Newsletter />
-      <Footer />
-      <ScrollToTop />
-    </div>
+    <header className="site-header">
+      <div className="header-main" style={{ padding: '8px 40px' }}>
+        <Link to="/" className="site-logo" style={{ display: 'flex', alignItems: 'center' }}>
+          <img
+            src="/logo.png"
+            alt="Momma Micky's Cakes Official Logo"
+            style={{ height: '90px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.35))' }}
+          />
+        </Link>
+        <nav className={`site-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+          <ul>
+            {navLinks.map((item) => (
+              <li key={item.to}>
+                <Link
+                  to={item.to}
+                  className={location.pathname === item.to ? 'active' : ''}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="header-actions">
+          <Link to="/contact" className="cart-btn">
+            <svg className="cart-icon" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+              <path d="M188 167H938C943 167 949 169 953 174 957 178 959 184 958 190L926 450C919 502 875 542 823 542H263L271 583C281 631 324 667 373 667H854C866 667 875 676 875 687S866 708 854 708H373C304 708 244 659 230 591L129 83H21C9 83 0 74 0 62S9 42 21 42H146C156 42 164 49 166 58L188 167ZM771 750C828 750 875 797 875 854S828 958 771 958 667 912 667 854 713 750 771 750ZM354 750C412 750 458 797 458 854S412 958 354 958 250 912 250 854 297 750 354 750Z"/>
+            </svg>
+            <span>$0.00 (0)</span>
+          </Link>
+          <div className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 132h416c8.8 0 16-7.2 16-16V76c0-8.8-7.2-16-16-16H16C7.2 60 0 67.2 0 76v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
   );
 }
 
-export default App;
+// Footer Component
+function Footer() {
+  return (
+    <footer className="site-footer" id="contact">
+      <div className="footer-grid">
+        <div className="footer-about">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '18px' }}>
+            <img
+              src="/logo.png"
+              alt="Momma Micky's Cakes Logo"
+              style={{ height: '62px', width: 'auto', objectFit: 'contain' }}
+            />
+            <div className="footer-logo-txt" style={{ margin: 0 }}>Momma Micky's Cakes</div>
+          </div>
+          <p>Premium handcrafted cakes and artisan confections. We bake each order with love, artistic mastery, and high-quality ingredients.</p>
+        </div>
+        <div className="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/packages">Packages</Link></li>
+            <li><Link to="/gallery">Gallery</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </div>
+        <div className="footer-col">
+          <h5>Our Specialties</h5>
+          <ul>
+            <li><Link to="/packages">Wedding Cakes</Link></li>
+            <li><Link to="/packages">Birthday Cakes</Link></li>
+            <li><Link to="/packages">Children's Themed Cakes</Link></li>
+            <li><Link to="/packages">Artisan Fruit Cakes</Link></li>
+            <li><Link to="/packages">Luxury Glamour Cakes</Link></li>
+          </ul>
+        </div>
+        <div className="footer-col">
+          <h5>Contact Us</h5>
+          <div className="footer-contact-item">
+            <span>Address:</span>
+            <span>1080 Bakery Blvd, Suite 200</span>
+          </div>
+          <div className="footer-contact-item">
+            <span>Info:</span>
+            <a href="mailto:info@mommamickyscakes.com">info@mommamickyscakes.com</a>
+          </div>
+          <div className="footer-contact-item">
+            <span>Orders:</span>
+            <a href="mailto:orders@mommamickyscakes.com">orders@mommamickyscakes.com</a>
+          </div>
+          <div className="footer-contact-item">
+            <span>Phone:</span>
+            <a href="tel:+1473389209">+1 473 389 209</a>
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p className="footer-copy">© 2025 Momma Micky's Cakes — All Rights Reserved.</p>
+        <div className="footer-social">
+          <a href="#" className="social-link" title="Facebook">fb</a>
+          <a href="#" className="social-link" title="Instagram">ig</a>
+          <a href="#" className="social-link" title="Twitter">tw</a>
+          <a href="#" className="social-link" title="YouTube">yt</a>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+// HomePage Component
+function HomePage() {
+  const [heroIdx, setHeroIdx] = useState(0);
+  const [wordIdx, setWordIdx] = useState(0);
+  const [wordAnim, setWordAnim] = useState({ opacity: 1, transform: 'translateY(0)' });
+
+  const [serviceIdx, setServiceIdx] = useState(0);
+  const serviceSlides = [
+    {
+      img: '/cakes/cake-09.jpg',
+      title: 'Bespoke Baking',
+      desc: 'Our approach combines creativity and confectionery artistry to craft cakes that elevate every celebration.'
+    },
+    {
+      img: '/cakes/cake-02.jpg',
+      title: 'Party & Event Catering',
+      desc: 'From weddings to milestone birthdays, Momma Micky\'s Cakes designs dessert tables and signature centerpieces.'
+    }
+  ];
+
+  const [openAccordion, setOpenAccordion] = useState(0);
+  const testimonials = [
+    {
+      quote: "Momma Micky's Cakes made our celebration unforgettable! The custom tier cake was both breathtakingly beautiful and delicious.",
+      name: "John Miller",
+      city: "Seattle",
+      avatar: '/cakes/cake-03.jpg'
+    },
+    {
+      quote: "The details on the custom birthday cake were a massive hit with all our guests. Highly recommend Momma Micky's Cakes!",
+      name: "Emily Johnson",
+      city: "Miami",
+      avatar: '/cakes/cake-08.jpg'
+    },
+    {
+      quote: "Unmatched attention to detail and mouth-watering flavors. Momma Micky's Cakes is our family's go-to bakery for every special occasion.",
+      name: "Sarah Williams",
+      city: "New York",
+      avatar: '/cakes/cake-06.jpg'
+    }
+  ];
+  const [tIdx, setTIdx] = useState(0);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
+
+  useEffect(() => {
+    // Preload every hero image so slides don't flash blank when they first appear
+    HERO_SLIDES.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
+    const heroInterval = setInterval(() => {
+      setHeroIdx((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 4000);
+
+    let swapTimeout;
+    const wordInterval = setInterval(() => {
+      setWordAnim({ opacity: 0, transform: 'translateY(-15px)' });
+      swapTimeout = setTimeout(() => {
+        setWordIdx((prev) => (prev + 1) % HERO_WORDS.length);
+        setWordAnim({ opacity: 1, transform: 'translateY(0)' });
+      }, 400);
+    }, 3500);
+
+    const serviceInterval = setInterval(() => {
+      setServiceIdx((prev) => (prev + 1) % serviceSlides.length);
+    }, 5500);
+
+    const tInterval = setInterval(() => {
+      setTIdx((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+
+    return () => {
+      clearInterval(heroInterval);
+      clearInterval(wordInterval);
+      clearInterval(serviceInterval);
+      clearInterval(tInterval);
+      clearTimeout(swapTimeout);
+    };
+  }, []);
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    setSubscribed(true);
+    setTimeout(() => setSubscribed(false), 5000);
+  };
+
+  return (
+    <>
+      {/* HERO SECTION */}
+      <section className="hero" id="hero">
+        <div className="hero-slideshow" aria-hidden="true">
+          {HERO_SLIDES.map((s, idx) => (
+            <div
+              key={s}
+              className={`slide ${idx === heroIdx ? 'active' : ''}`}
+              style={{ backgroundImage: `url('${s}')` }}
+            />
+          ))}
+        </div>
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <h1 className="hero-headline">
+            Fresh <span className="rotating-word" style={wordAnim}>{HERO_WORDS[wordIdx]}</span>
+          </h1>
+          <p className="hero-subtitle">Handcrafted With Love By Momma Micky's Cakes</p>
+          <Link to="/contact" className="btn">Order Your Cake</Link>
+        </div>
+      </section>
+
+      {/* ABOUT SECTION */}
+      <section className="about-section">
+        <div className="about-inner">
+          <div className="about-left">
+            <div className="about-left-bg" style={{ backgroundImage: "url('/cakes/cake-01.jpg')" }}></div>
+            <img
+              className="about-circle-img"
+              src="/cakes/cake-01.jpg"
+              alt="Momma Micky's Sliced Layer Cake"
+            />
+            <div className="about-text">
+              <h2>Artisan Layer Cakes & Quality</h2>
+              <h5>Momma Micky's Signature Sponge & Frosting</h5>
+            </div>
+          </div>
+          <div className="play-btn-wrap" style={{ backgroundImage: "url('/cakes/cake-04.jpg')" }}>
+            <div className="play-btn" onClick={() => setIsVideoOpen(true)}>
+              <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div className="gallery-grid">
+          <img src="/cakes/cake-02.jpg" alt="Black & Gold Luxury Cake" />
+          <img src="/cakes/cake-03.jpg" alt="Chic Hat Glamour Cake" />
+          <img src="/cakes/cake-06.jpg" alt="Stitch & Angel Birthday Cake" />
+          <img src="/cakes/cake-07.jpg" alt="Dino peppa Birthday Cake" />
+        </div>
+      </section>
+
+      {/* SERVICES SPLIT */}
+      <section className="services-split" id="services">
+        <div className="services-slider">
+          {serviceSlides.map((slide, idx) => (
+            <div
+              key={idx}
+              className={`services-slide ${idx === serviceIdx ? 'active' : ''}`}
+              style={{ backgroundImage: `url('${slide.img}')` }}
+            >
+              <div className="slide-content">
+                <h5>{slide.title}</h5>
+                <p>{slide.desc}</p>
+              </div>
+            </div>
+          ))}
+          <div className="slider-nav">
+            {serviceSlides.map((_, idx) => (
+              <span
+                key={idx}
+                className={`slider-dot ${idx === serviceIdx ? 'active' : ''}`}
+                onClick={() => setServiceIdx(idx)}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="services-content">
+          <div>
+            <span className="tag">Crafted Just For You</span>
+            <h2 style={{ marginTop: '10px' }}>Custom Cakes Made For Every Moment</h2>
+            <p style={{ marginTop: '16px' }}>At Momma Micky's Cakes, we turn your sweetest dreams into reality with exquisite cakes baked fresh daily from premium, natural ingredients.</p>
+            <p style={{ marginTop: '12px' }}>Whether celebrating a wedding, milestone birthday, or themed celebration, our designs bring elegance, joy, and unforgettable taste to your table.</p>
+          </div>
+
+          <div className="accordion" style={{ marginTop: '20px' }}>
+            <div className={`accordion-item ${openAccordion === 0 ? 'open' : ''}`}>
+              <div className="accordion-title" onClick={() => setOpenAccordion(openAccordion === 0 ? -1 : 0)}>
+                <svg className="accordion-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+                Custom Design Consultation
+              </div>
+              <div className="accordion-body">
+                We collaborate closely with you on theme, colors, flavor combinations, and decorative toppers to match your party aesthetic.
+              </div>
+            </div>
+            <div className={`accordion-item ${openAccordion === 1 ? 'open' : ''}`}>
+              <div className="accordion-title" onClick={() => setOpenAccordion(openAccordion === 1 ? -1 : 1)}>
+                <svg className="accordion-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+                Finest Organic & Fresh Ingredients
+              </div>
+              <div className="accordion-body">
+                Every tier is baked with Belgian chocolate, pure Madagascar vanilla, churned butter, and farm-fresh eggs for superior flavor and texture.
+              </div>
+            </div>
+            <div className={`accordion-item ${openAccordion === 2 ? 'open' : ''}`}>
+              <div className="accordion-title" onClick={() => setOpenAccordion(openAccordion === 2 ? -1 : 2)}>
+                <svg className="accordion-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+                Careful Delivery & Setup
+              </div>
+              <div className="accordion-body">
+                Momma Micky's Cakes provides temperature-controlled delivery and on-site tiered assembly for all large event orders.
+              </div>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '20px' }}>
+            <Link to="/services" className="btn">Our Full Services</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CAKE SHOP SPOTLIGHT */}
+      <section className="growth-section" id="shop">
+        <div className="growth-header">
+          <span className="tag">Momma Micky's Cakes Favorites</span>
+          <h2>Our Custom Handcrafted Signatures</h2>
+        </div>
+        <div className="growth-grid">
+          <div className="growth-card">
+            <img src="/cakes/cake-02.jpg" alt="Pablo Black & Gold Cake" />
+            <div className="growth-card-info">
+              <h4>Pablo Luxury Black & Gold</h4>
+              <p>Stunning contrast cake with black brushstroke, gold leaf, and floating metallic spheres.</p>
+              <div className="growth-card-actions">
+                <span>$65.00</span>
+                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+              </div>
+            </div>
+          </div>
+          <div className="growth-card">
+            <img src="/cakes/cake-09.jpg" alt="Lady Laca Floral Gold Cake" />
+            <div className="growth-card-info">
+              <h4>Lady Laca Sunburst Blossom</h4>
+              <p>Pastel peach tier with golden fans, orange sugar dahlias, and gold butterfly accents.</p>
+              <div className="growth-card-actions">
+                <span>$70.00</span>
+                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+              </div>
+            </div>
+          </div>
+          <div className="growth-card">
+            <img src="/cakes/cake-06.jpg" alt="Stitch & Angel Theme Cake" />
+            <div className="growth-card-info">
+              <h4>Stitch & Angel Birthday Fantasy</h4>
+              <p>Baby blue tier with custom Stitch & Angel edible art, ice cream cone topper & pink hearts.</p>
+              <div className="growth-card-actions">
+                <span>$75.00</span>
+                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+              </div>
+            </div>
+          </div>
+          <div className="growth-card">
+            <img src="/cakes/cake-03.jpg" alt="Mzukulu Pink Glamour" />
+            <div className="growth-card-info">
+              <h4>Mzukulu Pink Glamour Hat</h4>
+              <p>Blush pink finish with chic fashion topper, golden bubbles, and dual candles.</p>
+              <div className="growth-card-actions">
+                <span>$68.00</span>
+                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+              </div>
+            </div>
+          </div>
+          <div className="growth-card">
+            <img src="/cakes/cake-08.jpg" alt="Nomae Magenta Butterfly" />
+            <div className="growth-card-info">
+              <h4>Nomae Magenta Butterfly Elegance</h4>
+              <p>Textured white tier with vibrant magenta fashion illustration and flying 3D butterflies.</p>
+              <div className="growth-card-actions">
+                <span>$65.00</span>
+                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+              </div>
+            </div>
+          </div>
+          <div className="growth-card">
+            <img src="/cakes/cake-10.jpg" alt="Minnie Mouse Chocolate Dream" />
+            <div className="growth-card-info">
+              <h4>Alma's Minnie Mouse Chocolate Cake</h4>
+              <p>Rich chocolate sponge filled with vanilla buttercream, mini chocolate bars, and Minnie toppers.</p>
+              <div className="growth-card-actions">
+                <span>$60.00</span>
+                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '50px' }}>
+          <Link to="/packages" className="btn">Explore Full Menu</Link>
+        </div>
+      </section>
+
+      {/* PACKAGES / PRICING */}
+      <section className="packages-section" id="prices">
+        <div className="packages-header">
+          <span className="tag">Celebration Packs</span>
+          <h2>Momma Micky's Cakes Bundles</h2>
+        </div>
+        <div className="packages-grid">
+          <div className="package-card">
+            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-04.jpg')" }}></div>
+            <div className="package-overlay"></div>
+            <div className="package-content">
+              <h4>Purple Ruffle Glam</h4>
+              <p>Textured lavender rosettes, silver glitter top, and black bow ribbons.</p>
+            </div>
+          </div>
+          <div className="package-card">
+            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-07.jpg')" }}></div>
+            <div className="package-overlay"></div>
+            <div className="package-content">
+              <h4>Dino Explorer Birthday</h4>
+              <p>Vibrant teal tier with friendly dinosaur toppers and jungle palm leaves.</p>
+            </div>
+          </div>
+          <div className="package-card">
+            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-05.jpg')" }}></div>
+            <div className="package-overlay"></div>
+            <div className="package-content">
+              <h4>Traditional Fruit Cake Feast</h4>
+              <p>Rich, slow-matured spiced fruit loaves packed with candied cherries and raisins.</p>
+            </div>
+          </div>
+          <div className="package-card">
+            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-01.jpg')" }}></div>
+            <div className="package-overlay"></div>
+            <div className="package-content">
+              <h4>Golden Velvet Multi-Tier</h4>
+              <p>Four tall layers of red velvet and vanilla sponge with golden sphere accents.</p>
+            </div>
+          </div>
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '40px' }}>
+          <Link to="/packages" className="btn" style={{ background: '#fff', color: 'var(--color-orange)' }}>View All Packages</Link>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="testimonials-section">
+        <div className="testimonials-bg" style={{ backgroundImage: "url('/cakes/cake-02.jpg')" }}></div>
+        <div className="testimonials-overlay"></div>
+        <div className="testimonials-inner">
+          <p className="testimonials-title">What Our Clients Say About Momma Micky's Cakes</p>
+          <div className="testimonial-carousel">
+            <div className="testimonial-slide active">
+              <p className="testimonial-text">"{testimonials[tIdx].quote}"</p>
+              <div className="testimonial-author">
+                <img className="testimonial-avatar" src={testimonials[tIdx].avatar} alt={testimonials[tIdx].name} />
+                <div>
+                  <div className="testimonial-name">{testimonials[tIdx].name}</div>
+                  <div className="testimonial-city">{testimonials[tIdx].city}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="testimonial-nav">
+            <div className="testimonial-btn" onClick={() => setTIdx((tIdx - 1 + testimonials.length) % testimonials.length)}>
+              <svg viewBox="0 0 1000 1000"><path d="M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z"/></svg>
+            </div>
+            <div className="testimonial-dots">
+              {testimonials.map((_, idx) => (
+                <span
+                  key={idx}
+                  className={`t-dot ${idx === tIdx ? 'active' : ''}`}
+                  onClick={() => setTIdx(idx)}
+                />
+              ))}
+            </div>
+            <div className="testimonial-btn" onClick={() => setTIdx((tIdx + 1) % testimonials.length)}>
+              <svg viewBox="0 0 1000 1000"><path d="M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z"/></svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEWSLETTER */}
+      <section className="newsletter-section" id="newsletter">
+        <div className="newsletter-inner">
+          <span className="tag">Sweet Deals</span>
+          <h2>Join Momma Micky's VIP Club</h2>
+          <p>Subscribe to receive seasonal cake menus, discounts on custom party orders, and free baking recipes from Momma Micky's Cakes!</p>
+          <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          {subscribed && (
+            <p style={{ marginTop: '16px', color: 'var(--color-orange)', fontFamily: 'var(--font-heading)' }}>
+              Thank you for subscribing to Momma Micky's Cakes!
+            </p>
+          )}
+        </div>
+      </section>
+
+      {/* VIDEO MODAL */}
+      <div className={`video-modal ${isVideoOpen ? 'open' : ''}`} onClick={() => setIsVideoOpen(false)}>
+        <div className="video-modal-inner" onClick={(e) => e.stopPropagation()}>
+          <div className="video-close" onClick={() => setIsVideoOpen(false)}>✕</div>
+          {isVideoOpen && (
+            <iframe
+              src="https://www.youtube.com/embed/XHOmBV4js_E?autoplay=1"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title="Momma Micky's Cakes Video"
+            />
+          )}
+        </div>
+      </div>
+    </>
+  );
+}
+
+// Main App Router Setup
+export default function App() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setShowScrollTop(window.scrollY > 400);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <Router>
+      <div className="mommamickys-app">
+        <NavigationBar />
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/packages" element={<PackagesPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+
+          <Route path="/gallery" element={<GalleryPage />} />
+
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+
+        <Footer />
+
+        {/* SCROLL TO TOP */}
+        <div
+          className={`scroll-top ${showScrollTop ? 'visible' : ''}`}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <svg viewBox="0 0 320 512"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg>
+        </div>
+      </div>
+    </Router>
+  );
+}

@@ -5,9 +5,9 @@ export default function Hero() {
   const [currentWord, setCurrentWord] = useState(0);
   
   const slides = [
-    'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/slide-01.jpg',
-    'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/slide-02.jpg',
-    'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/slide-03.jpg'
+    'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1600&q=80',
+    'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=1600&q=80',
+    'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=1600&q=80'
   ];
 
   const words = ['Spooky', 'Delicious', 'Creative', 'Magical'];

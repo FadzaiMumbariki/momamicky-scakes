@@ -1,0 +1,14 @@
+/* Hero fixes - overrides for .hero styles from App.css */
+
+.hero {
+  height: 100vh !important;
+  min-height: 100vh !important;
+}
+
+.hero-slideshow {
+  height: 100% !important;
+}
+
+.hero-slideshow .slide {
+  height: 100% !important;
+}

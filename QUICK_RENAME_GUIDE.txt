@@ -1,0 +1,30 @@
+🎂 QUICK IMAGE RENAMING GUIDE
+================================
+
+Save your 10 cake photos to this folder:
+C:\Users\fadza\Music\mommamicky\public\images\cakes\
+
+With these EXACT names:
+------------------------
+
+1. Blue Stitch & Angel cake          → stitch-cake.jpg
+2. Pink & gold "Lady Laca"           → birthday-gold.jpg
+3. Gold with red/vanilla layers      → layered-red-vanilla.jpg
+4. Pink fashion lady "Mzukulu"       → fashion-pink.jpg
+5. Turquoise dinosaur "Sia @ 4"      → dino-1st.jpg
+6. Magenta fashion lady "Nomae @ 32" → fashion-magenta.jpg
+7. Black & gold "Pablo"              → pablo.jpg
+8. Purple butterfly cake             → purple-butterfly.jpg
+9. Minnie Mouse "ALMA"               → minnie-mouse.jpg
+10. Fruit cakes on stand             → fruitcakes.jpg
+
+
+CHECKLIST:
+----------
+☐ All 10 files in: public/images/cakes/
+☐ All filenames exactly as shown (lowercase, with .jpg)
+☐ Browser refreshed (Ctrl + Shift + R)
+
+
+Then visit: http://localhost:5173
+Your cakes will be displayed throughout the website! 🎉

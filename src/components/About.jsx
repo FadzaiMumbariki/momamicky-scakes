@@ -1,14 +1,6 @@
+import { galleryImages } from '../data/cakes';
+
 export default function About() {
-  const galleryImages = [
-    'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/gallery-01.jpg',
-    'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/gallery-02.jpg',
-    'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/gallery-03.jpg',
-    'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/gallery-04.jpg',
-    'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/gallery-05.jpg',
-    'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/gallery-06.jpg',
-    'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/gallery-07.jpg',
-    'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/gallery-08.jpg'
-  ];
 
   return (
     <section className="about-section" id="about">

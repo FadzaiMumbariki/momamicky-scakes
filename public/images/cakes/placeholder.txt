@@ -1,0 +1,16 @@
+This folder contains your cake images.
+
+Please add the following 10 images with these exact names:
+
+1. stitch-cake.jpg
+2. birthday-gold.jpg
+3. layered-red-vanilla.jpg
+4. fashion-pink.jpg
+5. dino-1st.jpg
+6. fashion-magenta.jpg
+7. pablo.jpg
+8. purple-butterfly.jpg
+9. minnie-mouse.jpg
+10. fruitcakes.jpg
+
+The website is configured to use these images automatically!

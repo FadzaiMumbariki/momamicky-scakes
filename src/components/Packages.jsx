@@ -1,26 +1,7 @@
+import { packages as packageData } from '../data/cakes';
+
 export default function Packages() {
-  const packages = [
-    {
-      image: 'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/package-01.jpg',
-      title: 'Basic Package',
-      description: 'Perfect for small gatherings'
-    },
-    {
-      image: 'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/package-02.jpg',
-      title: 'Premium Package',
-      description: 'For special celebrations'
-    },
-    {
-      image: 'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/package-03.jpg',
-      title: 'Luxury Package',
-      description: 'Ultimate wedding experience'
-    },
-    {
-      image: 'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/package-04.jpg',
-      title: 'Custom Package',
-      description: 'Tailored to your needs'
-    }
-  ];
+  const packages = packageData;
   
   return (
     <section className="packages-section">

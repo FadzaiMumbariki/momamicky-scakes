@@ -1,26 +1,11 @@
 import { useState, useEffect } from 'react';
+import { serviceSlides } from '../data/cakes';
 
 export default function Services() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [openAccordion, setOpenAccordion] = useState(0);
   
-  const slides = [
-    {
-      image: 'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/service-01.jpg',
-      title: 'Wedding Cakes',
-      description: 'Custom designed cakes for your special day'
-    },
-    {
-      image: 'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/service-02.jpg',
-      title: 'Birthday Cakes',
-      description: 'Colorful and fun designs for all ages'
-    },
-    {
-      image: 'https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/service-03.jpg',
-      title: 'Corporate Events',
-      description: 'Professional catering for business functions'
-    }
-  ];
+  const slides = serviceSlides;
 
   const services = [
     {
