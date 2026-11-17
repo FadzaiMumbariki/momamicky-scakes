@@ -11,10 +11,14 @@ import './hero-fix.css'; // must come AFTER App.css so it overrides old .hero ru
 
 // Hero content lives outside the component so it is created once
 const HERO_SLIDES = [
+  '/cakes/1000569250.jpg',
   '/cakes/cake-02.jpg',
+  '/cakes/1000569113.jpg',
+  '/cakes/1000569248.jpg',
   '/cakes/cake-09.jpg',
+  '/cakes/1000569276.jpg',
   '/cakes/cake-06.jpg',
-  '/cakes/cake-08.jpg'
+  '/cakes/1000569263.jpg'
 ];
 const HERO_WORDS = ['Custom Cakes', 'Cupcakes', 'Artisan Treats', 'Celebration Cakes'];
 
@@ -541,12 +545,14 @@ function HomePage() {
         <div className="video-modal-inner" onClick={(e) => e.stopPropagation()}>
           <div className="video-close" onClick={() => setIsVideoOpen(false)}>✕</div>
           {isVideoOpen && (
-            <iframe
-              src="https://www.youtube.com/embed/XHOmBV4js_E?autoplay=1"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title="Momma Micky's Cakes Video"
-            />
+            <video
+              src="/cakes/1000569213.mp4"
+              controls
+              autoPlay
+              style={{ width: '100%', maxHeight: '80vh', borderRadius: '8px', display: 'block' }}
+            >
+              Your browser does not support HTML5 video.
+            </video>
           )}
         </div>
       </div>

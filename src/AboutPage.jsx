@@ -260,12 +260,14 @@ export default function AboutPage() {
         <div className="video-modal-inner" onClick={e => e.stopPropagation()}>
           <div className="video-close" onClick={() => setIsVideoOpen(false)}>✕</div>
           {isVideoOpen && (
-            <iframe
-              src="https://www.youtube.com/embed/XHOmBV4js_E?autoplay=1"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title="Momma Micky's Cakes Video"
-            />
+            <video
+              src="/cakes/1000569213.mp4"
+              controls
+              autoPlay
+              style={{ width: '100%', maxHeight: '80vh', borderRadius: '8px', display: 'block' }}
+            >
+              Your browser does not support HTML5 video.
+            </video>
           )}
         </div>
       </div>

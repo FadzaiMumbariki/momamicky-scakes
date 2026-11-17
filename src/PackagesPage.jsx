@@ -70,11 +70,109 @@ export default function PackagesPage() {
     },
     {
       image: '/cakes/cake-10.jpg',
-      title: 'Alma\'s Minnie Mouse Chocolate',
+      title: "Alma's Minnie Mouse Chocolate",
       description: 'Rich chocolate sponge filled with vanilla buttercream, mini chocolate bars, and Minnie toppers.',
       price: '$60.00',
       category: 'birthday'
     },
+    {
+      image: '/cakes/1000569113.jpg',
+      title: 'Floral Crown Symphony Tier',
+      description: 'Cascading sugar blossoms, delicate pastel roses, and fresh organic sponge layers.',
+      price: '$78.00',
+      category: 'wedding'
+    },
+    {
+      image: '/cakes/1000569134.jpg',
+      title: 'Emerald Gold Leaf Elegance',
+      description: 'Contemporary deep emerald tier accented with 24k edible gold leaf and geometric flair.',
+      price: '$72.00',
+      category: 'wedding'
+    },
+    {
+      image: '/cakes/1000569248.jpg',
+      title: 'Rose Champagne Grandeur',
+      description: 'Infused with sparkling champagne notes and finished with shimmering gold petal rosettes.',
+      price: '$88.00',
+      category: 'wedding'
+    },
+    {
+      image: '/cakes/1000569250.jpg',
+      title: 'Monarch Marble & Gold Splendor',
+      description: 'Hand-painted marble fondant with veined gold leaf and minimalist architectural tiers.',
+      price: '$79.00',
+      category: 'wedding'
+    },
+    {
+      image: '/cakes/1000569247.jpg',
+      title: 'Carnival Confetti Birthday Box',
+      description: 'Playful rainbow sprinkle explosion with custom festive balloon toppers.',
+      price: '$58.00',
+      category: 'birthday'
+    },
+    {
+      image: '/cakes/1000569251.jpg',
+      title: 'Princess Tiara Strawberry Delight',
+      description: 'Royal tiara embellishments, pink sugar ruffles, and real strawberry vanilla cream.',
+      price: '$72.00',
+      category: 'birthday'
+    },
+    {
+      image: '/cakes/1000569258.jpg',
+      title: 'Fairy Tale Castle Adventure',
+      description: 'Whimsical castle spires, sparkle dust, and pastel pink turrets for magical birthdays.',
+      price: '$85.00',
+      category: 'birthday'
+    },
+    {
+      image: '/cakes/1000569267.jpg',
+      title: 'Wonderland Safari Jungle Cake',
+      description: 'Friendly animal toppers, lush monstera leaves, and handcrafted edible jungle vines.',
+      price: '$76.00',
+      category: 'birthday'
+    },
+    {
+      image: '/cakes/1000569163.jpg',
+      title: 'Chocolate Cascade Drip Platter',
+      description: 'Velvety dark chocolate drip over vanilla bean frosting loaded with artisan confections.',
+      price: '$62.00',
+      category: 'treats'
+    },
+    {
+      image: '/cakes/1000569242.jpg',
+      title: 'Strawberry Blossom Artisan Box',
+      description: 'Fresh organic strawberry layers with cream cheese frosting and dehydrated berry dust.',
+      price: '$64.00',
+      category: 'treats'
+    },
+    {
+      image: '/cakes/1000569255.jpg',
+      title: 'Caramel Macchiato Tower',
+      description: 'Espresso-soaked sponge layered with salted caramel buttercream and roasted nuts.',
+      price: '$68.00',
+      category: 'treats'
+    },
+    {
+      image: '/cakes/1000569259.jpg',
+      title: 'Belgian Dark Truffle Bliss',
+      description: 'Decadent 70% dark Belgian cocoa ganache crowned with handcrafted dusting truffles.',
+      price: '$75.00',
+      category: 'treats'
+    },
+    {
+      image: '/cakes/1000569274.jpg',
+      title: 'Diamond Jubilee Triple Tier',
+      description: 'Grand three-tier centerpiece cake with crystalline sugar geometry and silver embroidery.',
+      price: '$98.00',
+      category: 'wedding'
+    },
+    {
+      image: '/cakes/1000569276.jpg',
+      title: "Momma Micky's Signature Masterpiece",
+      description: 'Our premier bakery showpiece combining the most intricate custom sugar craft.',
+      price: '$85.00',
+      category: 'wedding'
+    }
   ];
   
   const filteredPackages = activeFilter === 'all' 
@@ -100,35 +198,50 @@ export default function PackagesPage() {
               className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
               onClick={() => setActiveFilter('all')}
             >
-              All Cakes
-            </button>
-            <button 
-              className={`filter-btn ${activeFilter === 'birthday' ? 'active' : ''}`}
-              onClick={() => setActiveFilter('birthday')}
-            >
-              Birthday Cakes
+              All Packages ({packages.length})
             </button>
             <button 
               className={`filter-btn ${activeFilter === 'wedding' ? 'active' : ''}`}
               onClick={() => setActiveFilter('wedding')}
             >
-              Wedding & Events
+              Weddings & Luxury
+            </button>
+            <button 
+              className={`filter-btn ${activeFilter === 'birthday' ? 'active' : ''}`}
+              onClick={() => setActiveFilter('birthday')}
+            >
+              Birthdays & Themed
             </button>
             <button 
               className={`filter-btn ${activeFilter === 'treats' ? 'active' : ''}`}
               onClick={() => setActiveFilter('treats')}
             >
-              Special Treats
+              Artisan Treats & Loaves
             </button>
           </div>
-          
-          {/* Package Grid */}
+
+          {/* Packages Grid */}
           <div className="packages-grid-full">
-            {filteredPackages.map((pkg, index) => (
-              <div key={index} className="package-full-card">
+            {filteredPackages.map((pkg, idx) => (
+              <div key={idx} className="package-full-card">
                 <div className="package-full-image">
-                  <img src={pkg.image} alt={pkg.title} />
+                  <img src={pkg.image} alt={pkg.title} loading="lazy" />
                   <div className="package-overlay"></div>
+                  <span style={{
+                    position: 'absolute',
+                    top: '12px',
+                    left: '12px',
+                    background: 'var(--color-primary)',
+                    color: '#fff',
+                    padding: '4px 12px',
+                    borderRadius: '20px',
+                    fontSize: '0.75em',
+                    fontFamily: 'var(--font-heading)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}>
+                    {pkg.category}
+                  </span>
                 </div>
                 <div className="package-full-info">
                   <h3>{pkg.title}</h3>
@@ -140,6 +253,15 @@ export default function PackagesPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '60px' }}>
+            <p style={{ color: 'var(--color-text)', marginBottom: '16px', fontSize: '1.05em' }}>
+              Looking to see every single cake created by Momma Micky?
+            </p>
+            <Link to="/gallery" className="btn" style={{ padding: '14px 34px' }}>
+              Explore Complete 50+ Cake Gallery
+            </Link>
           </div>
         </div>
       </section>
