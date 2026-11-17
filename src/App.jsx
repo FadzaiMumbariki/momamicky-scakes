@@ -178,9 +178,6 @@ function Footer() {
 // HomePage Component
 function HomePage() {
   const { addToCart, setCustomizerOpen } = useCart();
-  const [heroIdx, setHeroIdx] = useState(0);
-  const [wordIdx, setWordIdx] = useState(0);
-  const [wordAnim, setWordAnim] = useState({ opacity: 1, transform: 'translateY(0)' });
 
   const [serviceIdx, setServiceIdx] = useState(0);
   const serviceSlides = [
@@ -222,25 +219,6 @@ function HomePage() {
   const [subscribed, setSubscribed] = useState(false);
 
   useEffect(() => {
-    // Preload every hero image so slides don't flash blank when they first appear
-    HERO_SLIDES.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-
-    const heroInterval = setInterval(() => {
-      setHeroIdx((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 4000);
-
-    let swapTimeout;
-    const wordInterval = setInterval(() => {
-      setWordAnim({ opacity: 0, transform: 'translateY(-15px)' });
-      swapTimeout = setTimeout(() => {
-        setWordIdx((prev) => (prev + 1) % HERO_WORDS.length);
-        setWordAnim({ opacity: 1, transform: 'translateY(0)' });
-      }, 400);
-    }, 3500);
-
     const serviceInterval = setInterval(() => {
       setServiceIdx((prev) => (prev + 1) % serviceSlides.length);
     }, 5500);
@@ -250,11 +228,8 @@ function HomePage() {
     }, 5000);
 
     return () => {
-      clearInterval(heroInterval);
-      clearInterval(wordInterval);
       clearInterval(serviceInterval);
       clearInterval(tInterval);
-      clearTimeout(swapTimeout);
     };
   }, []);
 
@@ -268,22 +243,12 @@ function HomePage() {
     <>
       {/* HERO SECTION */}
       <section className="hero" id="hero">
-        <div className="hero-slideshow" aria-hidden="true">
-          {HERO_SLIDES.map((s, idx) => (
-            <div
-              key={s}
-              className={`slide ${idx === heroIdx ? 'active' : ''}`}
-              style={{ backgroundImage: `url('${s}')` }}
-            />
-          ))}
-        </div>
+        <div className="hero-background" style={{ backgroundImage: "url('/cakes/cake-02.jpg')" }}></div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <h1 className="hero-headline">
-            Fresh <span className="rotating-word" style={wordAnim}>{HERO_WORDS[wordIdx]}</span>
-          </h1>
-          <p className="hero-subtitle">Handcrafted With Love By Momma Micky's Cakes</p>
-          <Link to="/contact" className="btn">Order Your Cake</Link>
+          <h1 className="hero-headline">Momma Micky's Cakes</h1>
+          <p className="hero-subtitle">High Quality Standards</p>
+          <Link to="/contact" className="btn">Contact Us</Link>
         </div>
       </section>
 
@@ -547,11 +512,11 @@ function HomePage() {
 
       {/* INTERACTIVE CAKE BUILDER PROMO BANNER */}
       <section style={{
-        background: 'linear-gradient(135deg, #2D2D2D 0%, #17151C 100%)',
+        background: 'linear-gradient(135deg, var(--color-pink-soft) 0%, var(--color-beige) 100%)',
         padding: '70px 30px',
-        color: '#fff',
-        borderTop: '2px solid var(--color-orange)',
-        borderBottom: '2px solid var(--color-orange)'
+        color: 'var(--color-text)',
+        borderTop: '2px solid var(--color-gold)',
+        borderBottom: '2px solid var(--color-gold)'
       }}>
         <div style={{
           maxWidth: '1200px',
@@ -565,10 +530,10 @@ function HomePage() {
             <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1.05em' }}>
               Custom Confection Studio
             </span>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2em, 4vw, 3.2em)', color: '#fff', margin: '12px 0 16px', lineHeight: 1.2 }}>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2em, 4vw, 3.2em)', color: 'var(--color-primary)', margin: '12px 0 16px', lineHeight: 1.2 }}>
               Design Your Own Dream Cake
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.05em', lineHeight: 1.7, marginBottom: '28px' }}>
+            <p style={{ color: 'var(--color-text)', fontSize: '1.05em', lineHeight: 1.7, marginBottom: '28px' }}>
               Have an exact idea in mind? Use our interactive cake builder to choose tier sizes, gourmet sponge flavors, fillings, artisan frostings, and 24K gold or floral accents with instant live pricing.
             </p>
             <button
@@ -576,7 +541,7 @@ function HomePage() {
               className="btn"
               style={{ padding: '14px 34px', fontSize: '1.1em', cursor: 'pointer' }}
             >
-              ✨ Launch Interactive Cake Builder
+              Launch Interactive Cake Builder
             </button>
           </div>
           <div style={{ position: 'relative', borderRadius: '14px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.4)' }}>
@@ -596,10 +561,11 @@ function HomePage() {
               borderRadius: '8px',
               display: 'flex',
               justifyContent: 'space-between',
-              alignItems: 'center'
+              alignItems: 'center',
+              color: '#fff'
             }}>
               <span style={{ fontSize: '0.9em', fontWeight: 600 }}>Tiers • Flavors • Frostings • Inscriptions</span>
-              <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>Customized For You</span>
+              <span style={{ color: 'var(--color-gold)', fontWeight: 700 }}>Customized For You</span>
             </div>
           </div>
         </div>
@@ -753,7 +719,7 @@ function AppContent({ showScrollTop }) {
           borderLeft: '4px solid var(--color-orange)',
           animation: 'fadeIn 0.3s ease'
         }}>
-          <span style={{ fontSize: '1.4em' }}>🎂</span>
+          <span style={{ fontSize: '1.4em' }}></span>
           <div style={{ fontWeight: 600, fontSize: '0.95em' }}>{toastMessage}</div>
         </div>
       )}

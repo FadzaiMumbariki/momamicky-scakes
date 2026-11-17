@@ -70,19 +70,19 @@ export default function ContactPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'radial-gradient(circle at center, #232028 0%, #111014 100%)',
+          background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)',
           textAlign: 'center',
-          color: '#fff',
+          color: 'var(--color-text)',
           overflow: 'hidden',
           padding: '80px 20px'
         }}
       >
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', margin: '0 auto' }}>
-          <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1em' }}>What we do</span>
-          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '12px 0 16px', color: '#fff', lineHeight: 1.2 }}>
+          <span className="tag" style={{ color: 'var(--color-gold)', fontSize: '1em' }}>What we do</span>
+          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '12px 0 16px', color: 'var(--color-primary)', lineHeight: 1.2 }}>
             Simple tools for big goals
           </h1>
-          <p style={{ fontSize: '1em', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, maxWidth: '650px', margin: '0 auto' }}>
+          <p style={{ fontSize: '1em', color: 'var(--color-text)', lineHeight: 1.6, maxWidth: '650px', margin: '0 auto' }}>
             At the core of our mission is a deep commitment to excellence and client satisfaction. Our team works tirelessly to provide thoughtful solutions, ensuring that every detail reflects care.
           </p>
         </div>
@@ -366,12 +366,12 @@ export default function ContactPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="cta-section" style={{ background: 'var(--color-orange)', padding: '80px 20px', textAlign: 'center' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto', color: '#fff' }}>
-          <h2 style={{ fontSize: '2.5em', marginBottom: '16px', color: '#fff', fontFamily: 'var(--font-heading)' }}>
+      <section className="cta-section" style={{ background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)', padding: '80px 20px', textAlign: 'center' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', color: 'var(--color-text)' }}>
+          <h2 style={{ fontSize: '2.5em', marginBottom: '16px', color: 'var(--color-primary)', fontFamily: 'var(--font-heading)' }}>
             Ready to Create Something Amazing?
           </h2>
-          <p style={{ fontSize: '1.15em', marginBottom: '30px', color: 'rgba(255,255,255,0.9)' }}>
+          <p style={{ fontSize: '1.15em', marginBottom: '30px', color: 'var(--color-text)' }}>
             Let's bring your cake vision to life. Contact us today!
           </p>
           <Link to="/" className="cta-btn">Back to Home</Link>

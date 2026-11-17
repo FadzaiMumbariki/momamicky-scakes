@@ -14,16 +14,16 @@ export default function ServicesPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'radial-gradient(circle at center, #232028 0%, #111014 100%)',
+          background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)',
           textAlign: 'center',
-          color: '#fff',
+          color: 'var(--color-text)',
           overflow: 'hidden',
           padding: '80px 20px'
         }}
       >
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', margin: '0 auto' }}>
-          <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1em' }}>What we do</span>
-          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '12px 0 16px', color: '#fff', lineHeight: 1.2 }}>
+          <span className="tag" style={{ color: 'var(--color-gold)', fontSize: '1em' }}>What we do</span>
+          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '12px 0 16px', color: 'var(--color-primary)', lineHeight: 1.2 }}>
             We help your business grow
           </h1>
         </div>
@@ -47,7 +47,7 @@ export default function ServicesPage() {
                 className="btn"
                 style={{ padding: '14px 34px', fontSize: '1.1em', cursor: 'pointer' }}
               >
-                ✨ Build Custom Cake
+                Build Custom Cake
               </button>
               <Link to="/contact" className="btn btn-outline" style={{ padding: '14px 34px', fontSize: '1.1em' }}>
                 Get In Touch
@@ -186,12 +186,12 @@ export default function ServicesPage() {
       </section>
 
       {/* CALL TO ACTION */}
-      <section className="cta-section" style={{ background: 'var(--color-orange)', padding: '80px 20px', textAlign: 'center' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto', color: '#fff' }}>
-          <h2 style={{ fontSize: '2.5em', marginBottom: '16px', color: '#fff', fontFamily: 'var(--font-heading)' }}>
+      <section className="cta-section" style={{ background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)', padding: '80px 20px', textAlign: 'center' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', color: 'var(--color-text)' }}>
+          <h2 style={{ fontSize: '2.5em', marginBottom: '16px', color: 'var(--color-primary)', fontFamily: 'var(--font-heading)' }}>
             Ready to Order Your Dream Cake?
           </h2>
-          <p style={{ fontSize: '1.15em', marginBottom: '30px', color: 'rgba(255,255,255,0.9)' }}>
+          <p style={{ fontSize: '1.15em', marginBottom: '30px', color: 'var(--color-text)' }}>
             Let's create something amazing together. Contact us today to discuss your celebration needs.
           </p>
           <Link to="/contact" className="cta-btn">Get Started Today</Link>

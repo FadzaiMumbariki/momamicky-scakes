@@ -102,23 +102,23 @@ export default function CustomCakeBuilderModal() {
         {/* Header */}
         <div style={{
           padding: '20px 28px',
-          background: 'var(--color-primary)',
-          color: '#fff',
+          background: 'var(--color-pink)',
+          color: 'var(--color-primary)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
           <div>
-            <span style={{ color: 'var(--color-orange)', textTransform: 'uppercase', fontSize: '0.75em', letterSpacing: '1px', fontWeight: 600 }}>
+            <span style={{ color: 'var(--color-gold-dark)', textTransform: 'uppercase', fontSize: '0.75em', letterSpacing: '1px', fontWeight: 600 }}>
               Interactive Cake Builder
             </span>
-            <h3 style={{ margin: '4px 0 0', fontFamily: 'var(--font-heading)', color: '#fff', fontSize: '1.4em' }}>
+            <h3 style={{ margin: '4px 0 0', fontFamily: 'var(--font-heading)', color: 'var(--color-primary)', fontSize: '1.4em' }}>
               Design Your Dream Cake
             </h3>
           </div>
           <button
             onClick={() => setCustomizerOpen(false)}
-            style={{ background: 'none', border: 'none', color: '#fff', fontSize: '1.6em', cursor: 'pointer' }}
+            style={{ background: 'none', border: 'none', color: 'var(--color-primary)', fontSize: '1.6em', cursor: 'pointer' }}
           >
             ✕
           </button>
@@ -233,11 +233,11 @@ export default function CustomCakeBuilderModal() {
                       height: '20px',
                       borderRadius: '50%',
                       border: '2px solid var(--color-orange)',
-                      background: flavor === f.name ? 'var(--color-orange)' : 'transparent',
+                      background: flavor === f.name ? 'var(--color-gold)' : 'transparent',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#fff',
+                      color: '#3E2F28',
                       fontSize: '0.7em'
                     }}>
                       {flavor === f.name ? '✓' : ''}
@@ -285,11 +285,11 @@ export default function CustomCakeBuilderModal() {
                       height: '20px',
                       borderRadius: '50%',
                       border: '2px solid var(--color-orange)',
-                      background: frosting === fr.name ? 'var(--color-orange)' : 'transparent',
+                      background: frosting === fr.name ? 'var(--color-gold)' : 'transparent',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#fff',
+                      color: '#3E2F28',
                       fontSize: '0.7em'
                     }}>
                       {frosting === fr.name ? '✓' : ''}
@@ -441,7 +441,7 @@ export default function CustomCakeBuilderModal() {
                 className="btn"
                 style={{ padding: '10px 24px', fontSize: '0.9em' }}
               >
-                Add Custom Cake to Cart 🎂
+                Add Custom Cake to Cart
               </button>
             )}
           </div>

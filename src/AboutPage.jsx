@@ -15,24 +15,24 @@ export default function AboutPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'radial-gradient(circle at center, #232028 0%, #111014 100%)',
+          background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)',
           textAlign: 'center',
-          color: '#fff',
+          color: 'var(--color-text)',
           overflow: 'hidden',
           padding: '80px 20px'
         }}
       >
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', margin: '0 auto' }}>
-          <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1em' }}>What we do</span>
-          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '12px 0 16px', color: '#fff', lineHeight: 1.2 }}>
+          <span className="tag" style={{ color: 'var(--color-gold)', fontSize: '1em' }}>What we do</span>
+          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '12px 0 16px', color: 'var(--color-primary)', lineHeight: 1.2 }}>
             Discover more about our work
           </h1>
-          <p style={{ fontSize: '1em', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, maxWidth: '650px', margin: '0 auto 24px' }}>
+          <p style={{ fontSize: '1em', color: 'var(--color-text)', lineHeight: 1.6, maxWidth: '650px', margin: '0 auto 24px' }}>
             At Momma Micky's Cakes, baking is an art form. We are dedicated to creating memorable culinary moments with handcrafted celebration cakes baked with passion, love, and the finest natural ingredients.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
             <Link to="/contact" className="btn" style={{ padding: '10px 24px', fontSize: '1em' }}>Contact Us</Link>
-            <Link to="/packages" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff', padding: '10px 24px', fontSize: '1em' }}>Explore Cakes</Link>
+            <Link to="/packages" className="btn btn-outline" style={{ color: 'var(--color-primary)', borderColor: 'var(--color-gold)', padding: '10px 24px', fontSize: '1em' }}>Explore Cakes</Link>
           </div>
         </div>
       </section>
@@ -85,7 +85,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. DISCOVER MORE ABOUT OUR WORK (SPLIT + VIDEO) */}
-      <section className="about-section" style={{ background: 'var(--color-dark)', padding: '0' }}>
+      <section className="about-section" style={{ background: 'var(--color-beige)', padding: '0' }}>
         <div className="about-inner">
           <div className="about-left">
             <div className="about-left-bg" style={{ backgroundImage: "url('/cakes/cake-01.webp')" }}></div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
             <div className="about-text">
               <h2>Discover more about our work</h2>
               <h5>Attention To Detail</h5>
-              <p style={{ color: 'rgba(255,255,255,0.8)', marginTop: '14px', maxWidth: '420px', fontSize: '0.95em' }}>
+              <p style={{ color: 'var(--color-text)', marginTop: '14px', maxWidth: '420px', fontSize: '0.95em' }}>
                 Every single tier is designed from sketch to oven with meticulous precision. We combine delicate sponge textures with artisan frostings to deliver perfection in every slice.
               </p>
             </div>
@@ -208,10 +208,10 @@ export default function AboutPage() {
       </section>
 
       {/* 6. CALL TO ACTION */}
-      <section className="cta-section" style={{ background: 'var(--color-orange)', padding: '70px 20px', textAlign: 'center' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto', color: '#fff' }}>
-          <h2 style={{ fontSize: '2.4em', marginBottom: '14px', color: '#fff' }}>Taste the Passion in Every Slice</h2>
-          <p style={{ fontSize: '1.15em', marginBottom: '28px', color: 'rgba(255,255,255,0.9)' }}>
+      <section className="cta-section" style={{ background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)', padding: '70px 20px', textAlign: 'center' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', color: 'var(--color-text)' }}>
+          <h2 style={{ fontSize: '2.4em', marginBottom: '14px', color: 'var(--color-primary)' }}>Taste the Passion in Every Slice</h2>
+          <p style={{ fontSize: '1.15em', marginBottom: '28px', color: 'var(--color-text)' }}>
             Book a tasting or consult with our master baker for your upcoming celebration.
           </p>
           <Link to="/contact" className="cta-btn">Book Your Consultation</Link>

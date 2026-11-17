@@ -71,8 +71,8 @@ export default function CartDrawer() {
         {/* Header */}
         <div style={{
           padding: '20px 24px',
-          background: 'var(--color-primary)',
-          color: '#fff',
+          background: 'var(--color-pink)',
+          color: 'var(--color-primary)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center'
@@ -80,10 +80,10 @@ export default function CartDrawer() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
 
             <div>
-              <h3 style={{ margin: 0, fontFamily: 'var(--font-heading)', color: '#fff', fontSize: '1.25em' }}>
+              <h3 style={{ margin: 0, fontFamily: 'var(--font-heading)', color: 'var(--color-primary)', fontSize: '1.25em' }}>
                 Your Order Cart
               </h3>
-              <span style={{ fontSize: '0.8em', color: 'rgba(255,255,255,0.8)' }}>
+              <span style={{ fontSize: '0.8em', color: 'var(--color-text)' }}>
                 {cartCount} item{cartCount !== 1 ? 's' : ''} selected
               </span>
             </div>
@@ -93,7 +93,7 @@ export default function CartDrawer() {
             style={{
               background: 'none',
               border: 'none',
-              color: '#fff',
+              color: 'var(--color-primary)',
               fontSize: '1.6em',
               cursor: 'pointer',
               lineHeight: 1

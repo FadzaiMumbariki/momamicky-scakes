@@ -446,7 +446,7 @@ export default function GalleryPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #2D2D2D 0%, #1a1a1a 100%)',
+        background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)',
         padding: '80px 40px',
         overflow: 'hidden'
       }}>
@@ -456,7 +456,7 @@ export default function GalleryPage() {
           backgroundImage: 'url(/cakes/1000569250.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.25
+          opacity: 0.14
         }}></div>
         <div style={{
           position: 'relative',
@@ -467,7 +467,7 @@ export default function GalleryPage() {
           <span style={{
             fontFamily: 'var(--font-heading)',
             fontSize: '1.1em',
-            color: 'var(--color-orange)',
+            color: 'var(--color-gold)',
             letterSpacing: '2px',
             display: 'block',
             marginBottom: '12px',
@@ -478,7 +478,7 @@ export default function GalleryPage() {
           <h1 style={{
             fontFamily: 'var(--font-heading)',
             fontSize: 'clamp(2.4em, 5vw, 4em)',
-            color: 'white',
+            color: 'var(--color-primary)',
             marginBottom: '16px',
             fontWeight: 500,
             lineHeight: 1.2
@@ -487,14 +487,14 @@ export default function GalleryPage() {
           </h1>
           <p style={{
             fontSize: '1.05em',
-            color: 'rgba(255,255,255,0.85)',
+            color: 'var(--color-text)',
             lineHeight: '1.7',
             maxWidth: '650px',
             margin: '0 auto 24px'
           }}>
             Explore over 50 of our freshly baked, custom celebration cakes. From lavish weddings to unforgettable birthday centrepieces, every cake is tailored to your taste.
           </p>
-          <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', padding: '6px 18px', borderRadius: '30px', color: '#fff', fontSize: '0.9em' }}>
+          <div style={{ display: 'inline-block', background: '#fff', border: '1px solid var(--color-border)', padding: '6px 18px', borderRadius: '30px', color: 'var(--color-primary)', fontSize: '0.9em' }}>
             Showing <strong>{filteredProducts.length}</strong> creations in gallery
           </div>
         </div>
@@ -508,23 +508,23 @@ export default function GalleryPage() {
         margin: '0 auto'
       }}>
         <div style={{
-          background: 'radial-gradient(circle at center, #232028 0%, #17151c 100%)',
+          background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)',
           borderRadius: '16px',
           padding: '40px 30px',
-          color: '#fff',
+          color: 'var(--color-text)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '30px',
           alignItems: 'center'
         }}>
           <div>
-            <span style={{ color: 'var(--color-orange)', textTransform: 'uppercase', fontSize: '0.85em', letterSpacing: '1.5px', fontWeight: 600 }}>
+            <span style={{ color: 'var(--color-gold)', textTransform: 'uppercase', fontSize: '0.85em', letterSpacing: '1.5px', fontWeight: 600 }}>
               Bakery In Action
             </span>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8em, 3vw, 2.5em)', margin: '10px 0 16px', color: '#fff' }}>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8em, 3vw, 2.5em)', margin: '10px 0 16px', color: 'var(--color-primary)' }}>
               Behind the Scenes at Momma Micky's
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, marginBottom: '24px', fontSize: '0.95em' }}>
+            <p style={{ color: 'var(--color-text)', lineHeight: 1.7, marginBottom: '24px', fontSize: '0.95em' }}>
               Watch how our passionate team blends premium ingredients with artistic cake decorating. Every layer is carefully stacked and decorated with love.
             </p>
             <Link to="/contact" className="btn" style={{ padding: '12px 28px' }}>
@@ -638,7 +638,7 @@ export default function GalleryPage() {
         }}>
           {filteredProducts.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-              <div style={{ fontSize: '3em', marginBottom: '16px' }}>🎂</div>
+              <div style={{ fontSize: '3em', marginBottom: '16px' }}></div>
               <h3 style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-primary)' }}>No cakes found</h3>
               <p style={{ color: 'var(--color-text)', marginTop: '8px' }}>
                 Try adjusting your search query or switching to another category.
@@ -713,7 +713,7 @@ export default function GalleryPage() {
                       position: 'absolute',
                       top: '12px',
                       left: '12px',
-                      background: 'rgba(23, 21, 28, 0.82)',
+                      background: 'rgba(74, 59, 53, 0.82)',
                       color: '#fff',
                       fontSize: '0.72em',
                       padding: '4px 10px',
@@ -784,9 +784,9 @@ export default function GalleryPage() {
                       <button
                         onClick={() => addToCart(product)}
                         style={{
-                          background: 'var(--color-orange)',
+                          background: 'var(--color-gold)',
                           border: 'none',
-                          color: '#fff',
+                          color: '#3E2F28',
                           padding: '8px 16px',
                           borderRadius: '6px',
                           fontFamily: 'var(--font-heading)',
@@ -900,7 +900,7 @@ export default function GalleryPage() {
 
       {/* CTA SECTION */}
       <section style={{
-        background: 'var(--color-orange)',
+        background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)',
         padding: '80px 40px',
         textAlign: 'center'
       }}>
@@ -911,7 +911,7 @@ export default function GalleryPage() {
           <h2 style={{
             fontFamily: 'var(--font-heading)',
             fontSize: 'clamp(2em, 4vw, 3em)',
-            color: '#fff',
+            color: 'var(--color-primary)',
             marginBottom: '16px',
             fontWeight: 500
           }}>
@@ -919,7 +919,7 @@ export default function GalleryPage() {
           </h2>
           <p style={{
             fontSize: '1.1em',
-            color: 'rgba(255,255,255,0.9)',
+            color: 'var(--color-text)',
             marginBottom: '32px',
             lineHeight: '1.7'
           }}>
@@ -929,8 +929,8 @@ export default function GalleryPage() {
             to="/contact"
             style={{
               display: 'inline-block',
-              background: '#fff',
-              color: 'var(--color-orange)',
+              background: 'var(--color-gold)',
+              color: '#3E2F28',
               padding: '16px 40px',
               fontFamily: 'var(--font-heading)',
               fontSize: '1.2em',
@@ -941,12 +941,12 @@ export default function GalleryPage() {
               borderRadius: '6px'
             }}
             onMouseEnter={(e) => {
-              e.target.style.background = 'var(--color-dark)';
+              e.target.style.background = 'var(--color-gold-dark)';
               e.target.style.color = '#fff';
             }}
             onMouseLeave={(e) => {
-              e.target.style.background = '#fff';
-              e.target.style.color = 'var(--color-orange)';
+              e.target.style.background = 'var(--color-gold)';
+              e.target.style.color = '#3E2F28';
             }}
           >
             Request Custom Cake
