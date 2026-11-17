@@ -571,7 +571,7 @@ export default function GalleryPage() {
                 onClick={() => setSelectedCategory(cat.id)}
                 style={{
                   background: selectedCategory === cat.id ? 'var(--color-orange)' : '#f5f5f5',
-                  color: selectedCategory === cat.id ? '#fff' : 'var(--color-primary)',
+                  color: selectedCategory === cat.id ? '#3E2F28' : 'var(--color-primary)',
                   border: 'none',
                   padding: '8px 18px',
                   borderRadius: '30px',
@@ -795,8 +795,8 @@ export default function GalleryPage() {
                           cursor: 'pointer',
                           transition: 'background 0.25s ease'
                         }}
-                        onMouseEnter={(e) => e.target.style.background = 'var(--color-dark)'}
-                        onMouseLeave={(e) => e.target.style.background = 'var(--color-orange)'}
+                        onMouseEnter={(e) => e.target.style.background = 'var(--color-gold-dark)'}
+                        onMouseLeave={(e) => e.target.style.background = 'var(--color-gold)'}
                       >
                         Order Now
                       </button>
@@ -942,7 +942,7 @@ export default function GalleryPage() {
             }}
             onMouseEnter={(e) => {
               e.target.style.background = 'var(--color-gold-dark)';
-              e.target.style.color = '#fff';
+              e.target.style.color = '#3E2F28';
             }}
             onMouseLeave={(e) => {
               e.target.style.background = 'var(--color-gold)';

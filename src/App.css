@@ -2,9 +2,9 @@
   /* Soft pink, beige & gold palette */
   --color-primary:   #4A3B35; /* warm espresso - headings */
   --color-text:      #6E625B; /* warm taupe - body text */
-  --color-accent:    #C2A14D; /* gold accent */
-  --color-orange:    #C2A14D; /* gold (legacy accent name) */
-  --color-purple:    #9E7F33; /* deep gold - hover */
+  --color-accent:    #FDC6ED; /* main pink accent */
+  --color-orange:    #FDC6ED; /* main pink (legacy accent name) */
+  --color-purple:    #E07AC4; /* deep pink - hover */
   --color-dark:      #4A3B35; /* legacy dark surface tone */
   --color-white:     #FFFFFF;
   --color-light:     #FBF6F0; /* beige */
@@ -16,8 +16,8 @@
   --color-beige-soft: #FBF6F0;
   --color-pink:       #F9E4EA;
   --color-pink-soft:  #FDF2F5;
-  --color-gold:       #C2A14D;
-  --color-gold-dark:  #9E7F33;
+  --color-gold:       #FDC6ED;
+  --color-gold-dark:  #E07AC4;
   --font-heading:    'Griffy', cursive;
   --font-body:       'Open Sans', sans-serif;
   --max-width:       1350px;
@@ -79,7 +79,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
   cursor: pointer;
   transition: background var(--transition), color var(--transition);
 }
-.btn:hover { background: var(--color-purple); color: #fff; }
+.btn:hover { background: var(--color-purple); color: #3E2F28; }
 
 /* FLOATING DECORATIONS */
 .float-deco {
@@ -798,7 +798,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
   transition: background var(--transition), color var(--transition);
   white-space: nowrap;
 }
-.cta-btn:hover { background: var(--color-gold-dark); color: #fff; }
+.cta-btn:hover { background: var(--color-gold-dark); color: #3E2F28; }
 
 /* BLOG SECTION */
 .blog-section { background: var(--color-beige); padding: 100px 40px; }
@@ -943,12 +943,12 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 }
 .testimonial-btn:hover { background: var(--color-orange); border-color: var(--color-orange); }
 .testimonial-btn svg { width: 16px; height: 16px; fill: var(--color-primary); }
-.testimonial-btn:hover svg { fill: white; }
+.testimonial-btn:hover svg { fill: #3E2F28; }
 .testimonial-dots { display: flex; gap: 8px; }
 .t-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
-  background: rgba(194,161,77,0.35);
+  background: rgba(224,122,196,0.4);
   cursor: pointer;
   transition: background var(--transition);
 }
@@ -1075,7 +1075,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
   color: var(--color-primary);
   font-size: 0.85em;
 }
-.social-link:hover { background: var(--color-orange); color: white; }
+.social-link:hover { background: var(--color-orange); color: #3E2F28; }
 
 @media (max-width: 1024px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1100,7 +1100,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 }
 .scroll-top.visible { opacity: 1; pointer-events: all; }
 .scroll-top:hover { background: var(--color-purple); }
-.scroll-top svg { width: 18px; height: 18px; fill: white; }
+.scroll-top svg { width: 18px; height: 18px; fill: #3E2F28; }
 
 .whatsapp-chat-link {
   position: fixed;
@@ -1292,11 +1292,11 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 
 .packages-page-filters .filter-btn.active {
   background: var(--color-gold);
-  color: white;
+  color: #3E2F28;
 }
 
 .packages-page-filters .filter-btn:hover:not(.active) {
-  background: rgba(194, 161, 77, 0.12);
+  background: rgba(253, 198, 237, 0.4);
   color: var(--color-gold-dark);
 }
 
@@ -1378,7 +1378,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
   gap: 8px;
   padding: 10px 18px;
   background: var(--color-gold);
-  color: white;
+  color: #3E2F28;
   border: none;
   border-radius: 25px;
   font-size: 0.85em;
@@ -1507,13 +1507,13 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 
 .filter-btn:hover {
   background: var(--color-orange);
-  color: var(--color-white);
+  color: #3E2F28;
   border-color: var(--color-orange);
 }
 
 .filter-btn.active {
   background: var(--color-orange);
-  color: var(--color-white);
+  color: #3E2F28;
   border-color: var(--color-orange);
 }
 

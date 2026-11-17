@@ -73,8 +73,8 @@ function NavigationBar() {
             style={{
               padding: '8px 16px',
               fontSize: '0.85em',
-              borderColor: 'var(--color-orange)',
-              color: 'var(--color-orange)',
+              borderColor: 'var(--color-gold-dark)',
+              color: 'var(--color-primary)',
               background: 'transparent',
               display: 'inline-flex',
               alignItems: 'center',
@@ -240,12 +240,21 @@ function HomePage() {
     <>
       {/* HERO SECTION */}
       <section className="hero" id="hero">
-        <div className="hero-background" style={{ backgroundImage: "url('/cakes/cake-02.jpg')" }}></div>
+        <div className="hero-background hero-background-blur" style={{ backgroundImage: "url('/cakes/cake-06.jpg')" }}></div>
+        <div className="hero-background hero-background-sharp" style={{ backgroundImage: "url('/cakes/cake-06.jpg')" }}></div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
+          <p className="hero-tag">Custom Celebration Cakes</p>
           <h1 className="hero-headline">Momma Micky's Cakes</h1>
           <p className="hero-subtitle">High Quality Standards</p>
-          <Link to="/contact" className="btn">Contact Us</Link>
+          <p className="hero-description">
+            From birthdays and weddings to one-of-a-kind themed celebrations, every cake is handcrafted to order.
+            Share your idea with us and we'll create a delicious centerpiece made just for your occasion.
+          </p>
+          <div className="hero-actions">
+            <Link to="/contact" className="btn">Contact Us</Link>
+            <Link to="/gallery" className="btn hero-outline">View Our Cakes</Link>
+          </div>
         </div>
       </section>
 
@@ -609,7 +618,7 @@ function HomePage() {
           </div>
         </div>
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <Link to="/packages" className="btn" style={{ background: '#fff', color: 'var(--color-orange)' }}>View All Packages</Link>
+          <Link to="/packages" className="btn" style={{ background: '#fff', color: 'var(--color-primary)' }}>View All Packages</Link>
         </div>
       </section>
 
