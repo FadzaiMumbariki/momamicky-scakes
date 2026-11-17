@@ -36,15 +36,15 @@ export default function Footer() {
           <h5>Contact Info</h5>
           <div className="footer-contact-item">
             <span>Address:</span>
-            <span>123 Cake Street, Suite 100</span>
+            <span>3697 Emganwini</span>
           </div>
           <div className="footer-contact-item">
             <span>Phone:</span>
-            <span>(555) 123-4567</span>
+            <span>+263 78 834 0047</span>
           </div>
           <div className="footer-contact-item">
             <span>Email:</span>
-            <span>info@mommamicky.com</span>
+            <span>mudiwas980@gmail.com</span>
           </div>
         </div>
       </div>

@@ -110,7 +110,7 @@ export default function ContactPage() {
                 orders@mommamickyscakes.com
               </p>
               <p style={{ color: 'var(--color-text)', fontWeight: 600 }}>
-                +1 473 389 209
+                +263 78 834 0047
               </p>
             </div>
 
@@ -128,10 +128,10 @@ export default function ContactPage() {
                 Find answers to common queries and additional information about our services.
               </p>
               <p style={{ color: 'var(--color-orange)', fontWeight: 600, marginBottom: '8px' }}>
-                info@mommamickyscakes.com
+                mudiwas980@gmail.com
               </p>
               <p style={{ color: 'var(--color-text)', fontWeight: 600 }}>
-                +1 473 389 209
+                +263 78 834 0047
               </p>
             </div>
 
@@ -149,10 +149,10 @@ export default function ContactPage() {
                 Learn more about our company, our mission, and our values.
               </p>
               <p style={{ color: 'var(--color-orange)', fontWeight: 600, marginBottom: '8px' }}>
-                hello@mommamickyscakes.com
+                mudiwas980@gmail.com
               </p>
               <p style={{ color: 'var(--color-text)', fontWeight: 600 }}>
-                +1 473 389 209
+                +263 78 834 0047
               </p>
             </div>
 

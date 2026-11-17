@@ -1,10 +1,10 @@
 // Fill these in with the real business details. Anything left empty is hidden on the site.
 // whatsapp: digits only, with country code and no "+" (e.g. 1473389209)
 export const CONTACT = {
-  whatsapp: '1473389209',
-  phone: '+1 473 389 209',
+  whatsapp: '263788340047',
+  phone: '+263 78 834 0047',
   email: 'orders@mommamickyscakes.com',
-  address: '1080 Bakery Blvd, Suite 200',
+  address: '3697 Emganwini',
   facebook: 'https://facebook.com',
   instagram: 'https://instagram.com',
   tiktok: '',

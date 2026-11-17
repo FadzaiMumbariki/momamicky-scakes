@@ -146,11 +146,11 @@ function Footer() {
           <h5>Contact Us</h5>
           <div className="footer-contact-item">
             <span>Address:</span>
-            <span>1080 Bakery Blvd, Suite 200</span>
+            <span>3697 Emganwini</span>
           </div>
           <div className="footer-contact-item">
             <span>Info:</span>
-            <a href="mailto:info@mommamickyscakes.com">info@mommamickyscakes.com</a>
+            <a href="mailto:mudiwas980@gmail.com">mudiwas980@gmail.com</a>
           </div>
           <div className="footer-contact-item">
             <span>Orders:</span>
@@ -158,7 +158,7 @@ function Footer() {
           </div>
           <div className="footer-contact-item">
             <span>Phone:</span>
-            <a href="tel:+1473389209">+1 473 389 209</a>
+            <a href="tel:+263788340047">+263 78 834 0047</a>
           </div>
         </div>
       </div>
