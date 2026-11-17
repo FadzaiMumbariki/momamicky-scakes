@@ -9,6 +9,7 @@ import GalleryPage from './GalleryPage.jsx';
 import { CartProvider, useCart } from './context/CartContext.jsx';
 import CartDrawer from './components/CartDrawer.jsx';
 import CustomCakeBuilderModal from './components/CustomCakeBuilderModal.jsx';
+import { CONTACT } from './config.js';
 import './App.css';
 import './hero-fix.css'; // must come AFTER App.css so it overrides old .hero rules
 
@@ -730,6 +731,20 @@ function AppContent({ showScrollTop }) {
       </Routes>
 
       <Footer />
+
+      <a
+        className="whatsapp-chat-link"
+        href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent("Hi Momma Micky's Cakes, I'd like to ask about a cake.")}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with Momma Micky's Cakes on WhatsApp"
+      >
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <path d="M16 3.2a12.2 12.2 0 0 0-10.3 18.8L4 28l6.2-1.6A12.2 12.2 0 1 0 16 3.2Z" fill="none" stroke="currentColor" strokeWidth="2.2" />
+          <path d="M11.1 9.2c-.5 0-1 .3-1.3.7-.7.9-1.6 2.2-1.1 4.3 1 4.1 5.2 7.9 9.1 8.8 1.5.4 2.8-.1 3.8-.8.6-.4.8-1.2.6-1.9l-.4-1.3c-.1-.4-.5-.7-.9-.9l-2.7-1.2c-.4-.2-.9-.1-1.2.3l-.8 1c-1.7-.8-3-2-3.9-3.7l.9-.8c.3-.3.4-.8.2-1.2l-1.1-2.6c-.2-.4-.6-.7-1.1-.7h-.1Z" fill="currentColor" />
+        </svg>
+        <span>Chat with us</span>
+      </a>
 
       {/* SCROLL TO TOP */}
       <div

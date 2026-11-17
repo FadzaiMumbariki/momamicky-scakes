@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext.jsx';
+import { CONTACT } from '../config.js';
 
 export default function CartDrawer() {
   const { cartItems, isCartOpen, setIsCartOpen, removeFromCart, updateQuantity, clearCart, cartTotal, cartCount } = useCart();
@@ -25,7 +26,7 @@ export default function CartDrawer() {
     message += `\nPlease let me know your availability and payment instructions. Thank you!`;
 
     const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/1473389209?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/${CONTACT.whatsapp}?text=${encoded}`, '_blank', 'noopener,noreferrer');
   };
 
   const handleContactCheckout = () => {

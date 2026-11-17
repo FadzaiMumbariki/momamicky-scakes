@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { CONTACT } from './config.js';
 
 export default function ContactPage() {
   const location = useLocation();
@@ -57,7 +58,7 @@ export default function ContactPage() {
     if (formData.message) msg += `*Details:*\n${formData.message}\n`;
 
     const encoded = encodeURIComponent(msg);
-    window.open(`https://wa.me/1473389209?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/${CONTACT.whatsapp}?text=${encoded}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
