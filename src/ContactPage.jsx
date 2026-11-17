@@ -106,9 +106,6 @@ export default function ContactPage() {
               <p style={{ color: 'var(--color-text)', marginBottom: '20px', lineHeight: 1.7 }}>
                 Find all the necessary contact details to get in touch with us effortlessly.
               </p>
-              <p style={{ color: 'var(--color-orange)', fontWeight: 600, marginBottom: '8px' }}>
-                orders@mommamickyscakes.com
-              </p>
               <p style={{ color: 'var(--color-text)', fontWeight: 600 }}>
                 +263 78 834 0047
               </p>

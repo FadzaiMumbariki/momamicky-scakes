@@ -153,10 +153,6 @@ function Footer() {
             <a href="mailto:mudiwas980@gmail.com">mudiwas980@gmail.com</a>
           </div>
           <div className="footer-contact-item">
-            <span>Orders:</span>
-            <a href="mailto:orders@mommamickyscakes.com">orders@mommamickyscakes.com</a>
-          </div>
-          <div className="footer-contact-item">
             <span>Phone:</span>
             <a href="tel:+263788340047">+263 78 834 0047</a>
           </div>

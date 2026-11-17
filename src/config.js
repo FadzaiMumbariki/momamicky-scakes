@@ -3,7 +3,7 @@
 export const CONTACT = {
   whatsapp: '263788340047',
   phone: '+263 78 834 0047',
-  email: 'orders@mommamickyscakes.com',
+  email: 'mudiwas980@gmail.com',
   address: '3697 Emganwini',
   facebook: 'https://facebook.com',
   instagram: 'https://instagram.com',
