@@ -148,6 +148,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 }
 .cart-icon { width: 22px; height: 22px; fill: var(--color-orange); }
 .hamburger {
+  border: 0; padding: 0;
   width: 36px; height: 36px;
   background: rgba(0, 0, 0, 0.06);
   border-radius: 50%;
@@ -271,7 +272,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 .about-left-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/ndimg-parallax-01.jpg');
+  background-image: none;
   background-size: cover;
   background-position: center;
   opacity: 0.15;
@@ -293,7 +294,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
   position: relative;
   width: 100%;
   min-height: 400px;
-  background-image: url('https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/ndimg-parallax-01.jpg');
+  background-image: none;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -518,7 +519,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 .team-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/ndimg-parallax-04.jpg');
+  background-image: none;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -871,7 +872,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 .testimonials-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/ndimg-parallax-03.jpg');
+  background-image: none;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1386,7 +1387,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 .packages-hero-section {
   position: relative;
   height: 400px;
-  background-image: url('/cakes/cake-02.jpg');
+  background-image: url('/cakes/cake-02.webp');
   background-size: cover;
   background-position: center;
   display: flex;

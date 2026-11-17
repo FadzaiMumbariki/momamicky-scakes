@@ -40,7 +40,7 @@ export default function AboutPage() {
       {/* WHAT WE DO SECTION - Split with Image */}
       <section style={{ background: '#fff', padding: '0', overflow: 'hidden' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', minHeight: '620px', alignItems: 'stretch' }}>
-
+          
           {/* Left Content Column */}
           <div style={{ padding: '80px 60px 80px 80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1.25em', marginBottom: '14px', display: 'block', fontWeight: 600 }}>
@@ -76,8 +76,8 @@ export default function AboutPage() {
           {/* Right Image Column */}
           <div style={{ position: 'relative', minHeight: '450px' }}>
             <img
-              src="/cakes/cake-04.jpg"
-              alt="Momma Micky's Handcrafted Halloween Treats"
+              src="/cakes/cake-04.webp"
+              alt="Momma Micky's Handcrafted Treats"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
           </div>
@@ -88,10 +88,10 @@ export default function AboutPage() {
       <section className="about-section" style={{ background: 'var(--color-dark)', padding: '0' }}>
         <div className="about-inner">
           <div className="about-left">
-            <div className="about-left-bg" style={{ backgroundImage: "url('/cakes/cake-01.jpg')" }}></div>
+            <div className="about-left-bg" style={{ backgroundImage: "url('/cakes/cake-01.webp')" }}></div>
             <img
               className="about-circle-img"
-              src="/cakes/cake-01.jpg"
+              src="/cakes/cake-01.webp"
               alt="Momma Micky's Sliced Layer Cake"
             />
             <div className="about-text">
@@ -102,19 +102,19 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="play-btn-wrap" style={{ backgroundImage: "url('/cakes/cake-04.jpg')" }}>
+          <div className="play-btn-wrap" style={{ backgroundImage: "url('/cakes/cake-04.webp')" }}>
             <div className="play-btn" onClick={() => setIsVideoOpen(true)}>
               <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+                <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
               </svg>
             </div>
           </div>
         </div>
         <div className="gallery-grid">
-          <img src="/cakes/cake-02.jpg" alt="Pablo Luxury Cake" />
-          <img src="/cakes/cake-03.jpg" alt="Mzukulu Pink Glamour" />
-          <img src="/cakes/cake-06.jpg" alt="Stitch & Angel Cake" />
-          <img src="/cakes/cake-07.jpg" alt="Dino Birthday Cake" />
+          <img loading="lazy" decoding="async" src="/cakes/cake-02.webp" alt="Pablo Luxury Cake" />
+          <img loading="lazy" decoding="async" src="/cakes/cake-03.webp" alt="Mzukulu Pink Glamour" />
+          <img loading="lazy" decoding="async" src="/cakes/cake-06.webp" alt="Stitch & Angel Cake" />
+          <img loading="lazy" decoding="async" src="/cakes/cake-07.webp" alt="Dino Birthday Cake" />
         </div>
       </section>
 
@@ -132,15 +132,15 @@ export default function AboutPage() {
               At the core of our mission is a deep commitment to excellence and client satisfaction. Our team works tirelessly to provide thoughtful solutions, ensuring that every detail reflects care.
             </p>
           </div>
-
+          
           {/* Three Package Cards */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '25px' }}>
-
+            
             {/* Card 1: Comfort Plus */}
             <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease' }}>
-              <img
-                src="/cakes/cake-04.jpg"
-                alt="Halloween Cupcakes Comfort Plus"
+              <img loading="lazy" decoding="async" 
+                src="/cakes/cake-04.webp" 
+                alt="Decorated cupcakes" 
                 style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }}
               />
               <div style={{ background: '#fff', padding: '25px', textAlign: 'center' }}>
@@ -153,9 +153,9 @@ export default function AboutPage() {
 
             {/* Card 2: Daily Favorite */}
             <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease' }}>
-              <img
-                src="/cakes/cake-07.jpg"
-                alt="Dino Birthday Cake Daily Favorite"
+              <img loading="lazy" decoding="async" 
+                src="/cakes/cake-07.webp" 
+                alt="Dino Birthday Cake Daily Favorite" 
                 style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }}
               />
               <div style={{ background: '#fff', padding: '25px', textAlign: 'center' }}>
@@ -168,9 +168,9 @@ export default function AboutPage() {
 
             {/* Card 3: Basic Box */}
             <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease' }}>
-              <img
-                src="/cakes/cake-06.jpg"
-                alt="Stitch Character Cake Basic Box"
+              <img loading="lazy" decoding="async" 
+                src="/cakes/cake-06.webp" 
+                alt="Stitch Character Cake Basic Box" 
                 style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }}
               />
               <div style={{ background: '#fff', padding: '25px', textAlign: 'center' }}>
@@ -201,45 +201,8 @@ export default function AboutPage() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <img src="/cakes/cake-08.jpg" alt="Cake Detail" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px', boxShadow: '0 6px 20px rgba(0,0,0,0.08)' }} />
-            <img src="/cakes/cake-09.jpg" alt="Cake Detail" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px', boxShadow: '0 6px 20px rgba(0,0,0,0.08)', marginTop: '30px' }} />
-          </div>
-        </div>
-      </section>
-
-      {/* 5. MEET OUR ARTISANS */}
-      <section style={{ padding: '90px 20px', background: '#fff' }}>
-        <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
-          <span className="tag">Our Team</span>
-          <h2 style={{ fontSize: '2.5em', margin: '10px 0 50px' }}>Meet the Bakers Behind Momma Micky's</h2>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
-            <div style={{ padding: '20px', textAlign: 'center' }}>
-              <img src="/cakes/cake-01.jpg" alt="Baker" style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover', margin: '0 auto 20px', border: '3px solid var(--color-orange)' }} />
-              <h4 style={{ fontSize: '1.3em', marginBottom: '6px' }}>Master Cake Artist</h4>
-              <p style={{ color: 'var(--color-orange)', fontSize: '0.95em', fontWeight: 600, marginBottom: '10px' }}>Sponge & Flavor Specialist</p>
-              <p style={{ color: 'var(--color-text)', fontSize: '0.9em', lineHeight: 1.6 }}>
-                Over a decade mastering delicate crumb textures, Swiss buttercreams, and gourmet fruit compotes.
-              </p>
-            </div>
-
-            <div style={{ padding: '20px', textAlign: 'center' }}>
-              <img src="/cakes/cake-08.jpg" alt="Decorator" style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover', margin: '0 auto 20px', border: '3px solid var(--color-orange)' }} />
-              <h4 style={{ fontSize: '1.3em', marginBottom: '6px' }}>Fondant & Sugar Sculptor</h4>
-              <p style={{ color: 'var(--color-orange)', fontSize: '0.95em', fontWeight: 600, marginBottom: '10px' }}>Design Lead</p>
-              <p style={{ color: 'var(--color-text)', fontSize: '0.9em', lineHeight: 1.6 }}>
-                Specializes in sugar flowers, edible metallic finishes, and themed 3D character toppers.
-              </p>
-            </div>
-
-            <div style={{ padding: '20px', textAlign: 'center' }}>
-              <img src="/cakes/cake-09.jpg" alt="Event Specialist" style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover', margin: '0 auto 20px', border: '3px solid var(--color-orange)' }} />
-              <h4 style={{ fontSize: '1.3em', marginBottom: '6px' }}>Celebration Stylist</h4>
-              <p style={{ color: 'var(--color-orange)', fontSize: '0.95em', fontWeight: 600, marginBottom: '10px' }}>Event Coordinator</p>
-              <p style={{ color: 'var(--color-text)', fontSize: '0.9em', lineHeight: 1.6 }}>
-                Ensures dessert tables and centerpiece towers are flawlessly coordinated with party decor.
-              </p>
-            </div>
+            <img loading="lazy" decoding="async" src="/cakes/cake-08.webp" alt="Cake Detail" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px', boxShadow: '0 6px 20px rgba(0,0,0,0.08)' }} />
+            <img loading="lazy" decoding="async" src="/cakes/cake-09.webp" alt="Cake Detail" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px', boxShadow: '0 6px 20px rgba(0,0,0,0.08)', marginTop: '30px' }} />
           </div>
         </div>
       </section>

@@ -9,6 +9,8 @@
   height: 100% !important;
 }
 
+.hero { height: 100svh !important; min-height: 100svh !important; }
+
 .hero-slideshow .slide {
   height: 100% !important;
 }

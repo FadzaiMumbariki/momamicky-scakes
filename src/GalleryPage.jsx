@@ -13,7 +13,7 @@ export default function GalleryPage() {
       id: 1,
       name: 'Pablo Black & Gold Luxury Cake',
       price: 65.00,
-      image: '/cakes/cake-02.jpg',
+      image: '/cakes/cake-02.webp',
       category: 'luxury',
       description: 'Stunning contrast cake with black brushstroke, gold leaf accents and floating metallic spheres.'
     },
@@ -21,7 +21,7 @@ export default function GalleryPage() {
       id: 2,
       name: 'Lady Laca Sunburst Blossom',
       price: 70.00,
-      image: '/cakes/cake-09.jpg',
+      image: '/cakes/cake-09.webp',
       category: 'wedding',
       description: 'Pastel peach tier with golden fans, orange sugar dahlias, and gold butterfly accents.'
     },
@@ -29,7 +29,7 @@ export default function GalleryPage() {
       id: 3,
       name: 'Stitch & Angel Birthday Fantasy',
       price: 75.00,
-      image: '/cakes/cake-06.jpg',
+      image: '/cakes/cake-06.webp',
       category: 'kids',
       description: 'Baby blue tier with custom Stitch & Angel edible art, ice cream cone topper & pink hearts.'
     },
@@ -37,7 +37,7 @@ export default function GalleryPage() {
       id: 4,
       name: 'Mzukulu Pink Glamour Hat',
       price: 68.00,
-      image: '/cakes/cake-03.jpg',
+      image: '/cakes/cake-03.webp',
       category: 'celebration',
       description: 'Blush pink finish with chic fashion topper, golden bubbles, and dual celebration candles.'
     },
@@ -45,7 +45,7 @@ export default function GalleryPage() {
       id: 5,
       name: 'Nomae Magenta Butterfly Elegance',
       price: 65.00,
-      image: '/cakes/cake-08.jpg',
+      image: '/cakes/cake-08.webp',
       category: 'wedding',
       description: 'Textured white tier with vibrant magenta fashion illustration and flying 3D butterflies.'
     },
@@ -53,7 +53,7 @@ export default function GalleryPage() {
       id: 6,
       name: "Alma's Minnie Mouse Chocolate",
       price: 60.00,
-      image: '/cakes/cake-10.jpg',
+      image: '/cakes/cake-10.webp',
       category: 'kids',
       description: 'Rich chocolate sponge with vanilla buttercream, mini chocolate bars, and Minnie toppers.'
     },
@@ -61,7 +61,7 @@ export default function GalleryPage() {
       id: 7,
       name: 'Purple Ruffle Glam Cake',
       price: 72.00,
-      image: '/cakes/cake-04.jpg',
+      image: '/cakes/cake-04.webp',
       category: 'luxury',
       description: 'Textured lavender rosettes with silver glitter top and black bow ribbons.'
     },
@@ -69,7 +69,7 @@ export default function GalleryPage() {
       id: 8,
       name: 'Traditional Fruit Cake Feast',
       price: 45.00,
-      image: '/cakes/cake-05.jpg',
+      image: '/cakes/cake-05.webp',
       category: 'treats',
       description: 'Rich, slow-matured spiced fruit loaves packed with candied cherries, raisins, and aromatic spices.'
     },
@@ -77,7 +77,7 @@ export default function GalleryPage() {
       id: 9,
       name: 'Dino Explorer Birthday Cake',
       price: 70.00,
-      image: '/cakes/cake-07.jpg',
+      image: '/cakes/cake-07.webp',
       category: 'kids',
       description: 'Vibrant teal tier with friendly dinosaur toppers and jungle palm leaves.'
     },
@@ -85,7 +85,7 @@ export default function GalleryPage() {
       id: 10,
       name: 'Golden Velvet Multi-Tier',
       price: 85.00,
-      image: '/cakes/cake-01.jpg',
+      image: '/cakes/cake-01.webp',
       category: 'wedding',
       description: 'Four tall layers of red velvet and vanilla sponge with golden sphere accents.'
     },
@@ -93,7 +93,7 @@ export default function GalleryPage() {
       id: 11,
       name: 'Royal Pearl Celebration Tier',
       price: 80.00,
-      image: '/cakes/1000568924.jpg',
+      image: '/cakes/1000568924.webp',
       category: 'luxury',
       description: 'Hand-piped pearls, smooth ivory fondant, and decadent gold leaf detailing.'
     },
@@ -101,7 +101,7 @@ export default function GalleryPage() {
       id: 12,
       name: 'Floral Crown Symphony Cake',
       price: 78.00,
-      image: '/cakes/1000569113.jpg',
+      image: '/cakes/1000569113.webp',
       category: 'wedding',
       description: 'Enchanting floral cascade with hand-sculpted blossoms and delicate sugar petals.'
     },
@@ -109,7 +109,7 @@ export default function GalleryPage() {
       id: 13,
       name: 'Emerald & Gold Leaf Confection',
       price: 72.00,
-      image: '/cakes/1000569134.jpg',
+      image: '/cakes/1000569134.webp',
       category: 'luxury',
       description: 'Rich emerald textures complemented by 24k edible gold dust and contemporary geometric lines.'
     },
@@ -117,7 +117,7 @@ export default function GalleryPage() {
       id: 14,
       name: 'Radiant Sunset Buttercream',
       price: 68.00,
-      image: '/cakes/1000569141.jpg',
+      image: '/cakes/1000569141.webp',
       category: 'celebration',
       description: 'Warm sunset gradient buttercream frosted to perfection with delicate wafer paper fans.'
     },
@@ -125,7 +125,7 @@ export default function GalleryPage() {
       id: 15,
       name: 'Pastel Romance Tier Cake',
       price: 75.00,
-      image: '/cakes/1000569160.jpg',
+      image: '/cakes/1000569160.webp',
       category: 'wedding',
       description: 'Soft pastel hues with layered textures, dried floral arrangements, and romantic script.'
     },
@@ -133,7 +133,7 @@ export default function GalleryPage() {
       id: 16,
       name: 'Chocolate Cascade Drip Cake',
       price: 62.00,
-      image: '/cakes/1000569163.jpg',
+      image: '/cakes/1000569163.webp',
       category: 'treats',
       description: 'Velvety dark chocolate drip running down vanilla bean frosting loaded with artisan confections.'
     },
@@ -141,7 +141,7 @@ export default function GalleryPage() {
       id: 17,
       name: 'Enchanted Forest Fantasy',
       price: 74.00,
-      image: '/cakes/1000569169.jpg',
+      image: '/cakes/1000569169.webp',
       category: 'celebration',
       description: 'Woodland-inspired textures, edible moss accents, and chocolate bark elements.'
     },
@@ -149,7 +149,7 @@ export default function GalleryPage() {
       id: 18,
       name: 'Whispering Lilac Delight',
       price: 66.00,
-      image: '/cakes/1000569240.jpg',
+      image: '/cakes/1000569240.webp',
       category: 'wedding',
       description: 'Gentle lavender brushstrokes with pearlescent beads and fresh botanical sprigs.'
     },
@@ -157,7 +157,7 @@ export default function GalleryPage() {
       id: 19,
       name: 'Velvet Noir Gold Shimmer',
       price: 70.00,
-      image: '/cakes/1000569241.jpg',
+      image: '/cakes/1000569241.webp',
       category: 'luxury',
       description: 'Deep midnight glaze crowned with shimmering sugar crystals and gold painted accents.'
     },
@@ -165,7 +165,7 @@ export default function GalleryPage() {
       id: 20,
       name: 'Strawberry Blossom Fantasy',
       price: 64.00,
-      image: '/cakes/1000569242.jpg',
+      image: '/cakes/1000569242.webp',
       category: 'treats',
       description: 'Fresh organic strawberry layers with cream cheese frosting and dehydrated berry dust.'
     },
@@ -173,7 +173,7 @@ export default function GalleryPage() {
       id: 21,
       name: 'Golden Jubilee Milestone',
       price: 82.00,
-      image: '/cakes/1000569243.jpg',
+      image: '/cakes/1000569243.webp',
       category: 'celebration',
       description: 'Custom anniversary or milestone celebration cake embellished with sculpted numbers and fans.'
     },
@@ -181,7 +181,7 @@ export default function GalleryPage() {
       id: 22,
       name: 'Sapphire Starry Night',
       price: 76.00,
-      image: '/cakes/1000569244.jpg',
+      image: '/cakes/1000569244.webp',
       category: 'luxury',
       description: 'Constellation-inspired midnight blue finish with sparkling silver dust and celestial toppers.'
     },
@@ -189,7 +189,7 @@ export default function GalleryPage() {
       id: 23,
       name: 'Sweet Garden Party Tier',
       price: 69.00,
-      image: '/cakes/1000569246.jpg',
+      image: '/cakes/1000569246.webp',
       category: 'wedding',
       description: 'Intricate piped floral borders inspired by English cottage gardens with vanilla sponge.'
     },
@@ -197,7 +197,7 @@ export default function GalleryPage() {
       id: 24,
       name: 'Carnival Confetti Birthday',
       price: 58.00,
-      image: '/cakes/1000569247.jpg',
+      image: '/cakes/1000569247.webp',
       category: 'kids',
       description: 'Joyful sprinkle explosions with custom colorful balloon garland toppers and candy pop art.'
     },
@@ -205,7 +205,7 @@ export default function GalleryPage() {
       id: 25,
       name: 'Rose Champagne Grandeur',
       price: 88.00,
-      image: '/cakes/1000569248.jpg',
+      image: '/cakes/1000569248.webp',
       category: 'luxury',
       description: 'Infused with sparkling rosé notes, covered in champagne gold luster and hand-piped rosettes.'
     },
@@ -213,7 +213,7 @@ export default function GalleryPage() {
       id: 26,
       name: 'Tropical Mango Sunrise',
       price: 62.00,
-      image: '/cakes/1000569249.jpg',
+      image: '/cakes/1000569249.webp',
       category: 'treats',
       description: 'Zesty mango passionfruit curd layers encased in coconut-infused buttercream.'
     },
@@ -221,7 +221,7 @@ export default function GalleryPage() {
       id: 27,
       name: 'Monarch Marble & Gold',
       price: 79.00,
-      image: '/cakes/1000569250.jpg',
+      image: '/cakes/1000569250.webp',
       category: 'luxury',
       description: 'Hand-painted marble fondant with veined gold leaf and minimalist modern cake architecture.'
     },
@@ -229,7 +229,7 @@ export default function GalleryPage() {
       id: 28,
       name: 'Princess Tiara Strawberry Cake',
       price: 72.00,
-      image: '/cakes/1000569251.jpg',
+      image: '/cakes/1000569251.webp',
       category: 'kids',
       description: 'Royal crown embellishments, pink sugar ruffles, and sweet vanilla strawberry cream.'
     },
@@ -237,7 +237,7 @@ export default function GalleryPage() {
       id: 29,
       name: 'Citrus Blossom Delight',
       price: 55.00,
-      image: '/cakes/1000569252.jpg',
+      image: '/cakes/1000569252.webp',
       category: 'treats',
       description: 'Lemon zest sponge with candied orange crisps and rosemary herb garnishes.'
     },
@@ -245,7 +245,7 @@ export default function GalleryPage() {
       id: 30,
       name: 'Vintage Lace Pearl Wedding',
       price: 95.00,
-      image: '/cakes/1000569253.jpg',
+      image: '/cakes/1000569253.webp',
       category: 'wedding',
       description: 'Timeless heirloom edible lace applied over pristine ivory satin fondant with three tiers.'
     },
@@ -253,7 +253,7 @@ export default function GalleryPage() {
       id: 31,
       name: 'Rainbow Wonder Joy Cake',
       price: 65.00,
-      image: '/cakes/1000569254.jpg',
+      image: '/cakes/1000569254.webp',
       category: 'kids',
       description: 'Six vibrant inner cake layers revealed upon slicing, finished in fluffy cloud frosting.'
     },
@@ -261,7 +261,7 @@ export default function GalleryPage() {
       id: 32,
       name: 'Caramel Macchiato Tower',
       price: 68.00,
-      image: '/cakes/1000569255.jpg',
+      image: '/cakes/1000569255.webp',
       category: 'treats',
       description: 'Espresso-soaked sponge layered with salted caramel buttercream and roasted macadamias.'
     },
@@ -269,7 +269,7 @@ export default function GalleryPage() {
       id: 33,
       name: 'Celestial Midnight Galaxy',
       price: 84.00,
-      image: '/cakes/1000569256.jpg',
+      image: '/cakes/1000569256.webp',
       category: 'luxury',
       description: 'Mirror glaze cosmic swirl with interstellar purple and gold accents for grand events.'
     },
@@ -277,7 +277,7 @@ export default function GalleryPage() {
       id: 34,
       name: 'Sweet Blossom Basket',
       price: 70.00,
-      image: '/cakes/1000569257.jpg',
+      image: '/cakes/1000569257.webp',
       category: 'celebration',
       description: 'Basketweave textured piping filled with an abundance of pastel buttercream wild roses.'
     },
@@ -285,7 +285,7 @@ export default function GalleryPage() {
       id: 35,
       name: 'Fairy Tale Castle Dream',
       price: 85.00,
-      image: '/cakes/1000569258.jpg',
+      image: '/cakes/1000569258.webp',
       category: 'kids',
       description: 'Whimsical castle spires, sparkle dust, and pastel pink turrets for royal birthday dreams.'
     },
@@ -293,7 +293,7 @@ export default function GalleryPage() {
       id: 36,
       name: 'Belgian Dark Truffle Bliss',
       price: 75.00,
-      image: '/cakes/1000569259.jpg',
+      image: '/cakes/1000569259.webp',
       category: 'treats',
       description: 'Decadent 70% dark Belgian cocoa ganache crowned with handcrafted dusting truffles.'
     },
@@ -301,7 +301,7 @@ export default function GalleryPage() {
       id: 37,
       name: 'Peaches & Cream Silk',
       price: 67.00,
-      image: '/cakes/1000569260.jpg',
+      image: '/cakes/1000569260.webp',
       category: 'celebration',
       description: 'Silky smooth buttercream in peach ombré tones with fragrant floral embellishments.'
     },
@@ -309,7 +309,7 @@ export default function GalleryPage() {
       id: 38,
       name: 'Golden Honeycomb Artisan',
       price: 63.00,
-      image: '/cakes/1000569261.jpg',
+      image: '/cakes/1000569261.webp',
       category: 'treats',
       description: 'Crisp honey toffee crunch pieces, real wildflower honey drizzle, and golden spheres.'
     },
@@ -317,7 +317,7 @@ export default function GalleryPage() {
       id: 39,
       name: 'Opal Elegance Two-Tier',
       price: 89.00,
-      image: '/cakes/1000569262.jpg',
+      image: '/cakes/1000569262.webp',
       category: 'wedding',
       description: 'Iridescent pearl sheen across two balanced tiers topped with an exquisite sugar orchid.'
     },
@@ -325,7 +325,7 @@ export default function GalleryPage() {
       id: 40,
       name: 'Glamour Starlight Couture',
       price: 78.00,
-      image: '/cakes/1000569263.jpg',
+      image: '/cakes/1000569263.webp',
       category: 'luxury',
       description: 'High-fashion aesthetic with textured sequins, metallic paint, and sculpted monogram plaque.'
     },
@@ -333,7 +333,7 @@ export default function GalleryPage() {
       id: 41,
       name: 'Wildflower Meadow Cake',
       price: 71.00,
-      image: '/cakes/1000569264.jpg',
+      image: '/cakes/1000569264.webp',
       category: 'wedding',
       description: 'Rustic textured edges with pressed edible pansies, violas, and organic lavender.'
     },
@@ -341,7 +341,7 @@ export default function GalleryPage() {
       id: 42,
       name: 'Cocoa Hazelnut Crunch',
       price: 64.00,
-      image: '/cakes/1000569265.jpg',
+      image: '/cakes/1000569265.webp',
       category: 'treats',
       description: 'Nutella buttercream frosting with toasted hazelnuts and crispy wafer layers.'
     },
@@ -349,7 +349,7 @@ export default function GalleryPage() {
       id: 43,
       name: 'Neon Glow Party Special',
       price: 73.00,
-      image: '/cakes/1000569266.jpg',
+      image: '/cakes/1000569266.webp',
       category: 'celebration',
       description: 'Electrifying bright splash colors, playful acrylic party toppers, and fun geometric tiers.'
     },
@@ -357,7 +357,7 @@ export default function GalleryPage() {
       id: 44,
       name: 'Wonderland Safari Adventure',
       price: 76.00,
-      image: '/cakes/1000569267.jpg',
+      image: '/cakes/1000569267.webp',
       category: 'kids',
       description: 'Safari animal toppers, lush monstera leaves, and handcrafted edible jungle vines.'
     },
@@ -365,7 +365,7 @@ export default function GalleryPage() {
       id: 45,
       name: 'Rose Gold Petal Splendor',
       price: 82.00,
-      image: '/cakes/1000569268.jpg',
+      image: '/cakes/1000569268.webp',
       category: 'wedding',
       description: 'Cascade of cascading rose gold dusted petals draping down pure white vanilla tiers.'
     },
@@ -373,7 +373,7 @@ export default function GalleryPage() {
       id: 46,
       name: 'Ruby Velvet Decadence',
       price: 77.00,
-      image: '/cakes/1000569271.jpg',
+      image: '/cakes/1000569271.webp',
       category: 'luxury',
       description: 'Deep ruby red velvet tiers with gold-leaf accents, cream cheese silk, and sugar gems.'
     },
@@ -381,7 +381,7 @@ export default function GalleryPage() {
       id: 47,
       name: 'Lavender Dreamscape Cake',
       price: 69.00,
-      image: '/cakes/1000569272.jpg',
+      image: '/cakes/1000569272.webp',
       category: 'celebration',
       description: 'Dreamy lavender swirls with meringue kisses, white chocolate spheres, and dried blooms.'
     },
@@ -389,7 +389,7 @@ export default function GalleryPage() {
       id: 48,
       name: 'Artisan Lemon Meringue Tower',
       price: 60.00,
-      image: '/cakes/1000569273.jpg',
+      image: '/cakes/1000569273.webp',
       category: 'treats',
       description: 'Torched Italian meringue peaks crowned over bright lemon curd and shortbread layers.'
     },
@@ -397,7 +397,7 @@ export default function GalleryPage() {
       id: 49,
       name: 'Diamond Jubilee Triple Tier',
       price: 98.00,
-      image: '/cakes/1000569274.jpg',
+      image: '/cakes/1000569274.webp',
       category: 'wedding',
       description: 'Grand three-tier centerpiece cake with crystalline sugar geometry and silver embroidery.'
     },
@@ -405,7 +405,7 @@ export default function GalleryPage() {
       id: 50,
       name: 'Sweet Celebration Carousel',
       price: 79.00,
-      image: '/cakes/1000569275.jpg',
+      image: '/cakes/1000569275.webp',
       category: 'kids',
       description: 'Carousel horse toppers, pastel carnation piping, and festive celebration ribbons.'
     },
@@ -413,7 +413,7 @@ export default function GalleryPage() {
       id: 51,
       name: 'Signature Momma Micky Masterpiece',
       price: 85.00,
-      image: '/cakes/1000569276.jpg',
+      image: '/cakes/1000569276.webp',
       category: 'luxury',
       description: "Our signature bakery showpiece combining Momma Micky's most beloved artisanal techniques."
     }
@@ -453,7 +453,7 @@ export default function GalleryPage() {
         <div style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'url(/cakes/1000569250.jpg)',
+          backgroundImage: 'url(/cakes/1000569250.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: 0.25
@@ -535,7 +535,7 @@ export default function GalleryPage() {
             <video
               src="/cakes/1000569213.mp4"
               controls
-              poster="/cakes/1000569250.jpg"
+              poster="/cakes/1000569250.webp"
               style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '380px', objectFit: 'contain' }}
             >
               Your browser does not support video playback.

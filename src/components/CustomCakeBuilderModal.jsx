@@ -5,7 +5,7 @@ export default function CustomCakeBuilderModal() {
   const { customizerOpen, setCustomizerOpen, addToCart, setIsCartOpen } = useCart();
 
   const [step, setStep] = useState(1);
-  const [size, setSize] = useState({ name: 'Single Tier 8" (Serves 14-18)', price: 60, image: '/cakes/1000569250.jpg' });
+  const [size, setSize] = useState({ name: 'Single Tier 8" (Serves 14-18)', price: 60, image: '/cakes/1000569250.webp' });
   const [flavor, setFlavor] = useState('Belgian Chocolate Truffle');
   const [frosting, setFrosting] = useState('Swiss Meringue Buttercream');
   const [addons, setAddons] = useState([]);
@@ -15,10 +15,10 @@ export default function CustomCakeBuilderModal() {
   if (!customizerOpen) return null;
 
   const sizeOptions = [
-    { name: 'Single Tier 6" (Serves 8-10)', price: 45, image: '/cakes/cake-03.jpg' },
-    { name: 'Single Tier 8" (Serves 14-18)', price: 60, image: '/cakes/1000569250.jpg' },
-    { name: 'Double Tier 6" + 8" (Serves 30-38)', price: 115, image: '/cakes/1000569262.jpg' },
-    { name: 'Triple Tier Grand Celebration (Serves 60+)', price: 195, image: '/cakes/1000569274.jpg' }
+    { name: 'Single Tier 6" (Serves 8-10)', price: 45, image: '/cakes/cake-03.webp' },
+    { name: 'Single Tier 8" (Serves 14-18)', price: 60, image: '/cakes/1000569250.webp' },
+    { name: 'Double Tier 6" + 8" (Serves 30-38)', price: 115, image: '/cakes/1000569262.webp' },
+    { name: 'Triple Tier Grand Celebration (Serves 60+)', price: 195, image: '/cakes/1000569274.webp' }
   ];
 
   const flavorOptions = [
