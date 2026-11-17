@@ -1,26 +1,63 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function ContactPage() {
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
+    inquiryType: 'Custom Cake Order',
+    eventDate: '',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (location.state) {
+      const { cartSummary, cartTotal, eventDate, orderNotes } = location.state;
+      let initialMsg = '';
+      if (cartSummary) initialMsg += `Order Items: ${cartSummary}\nEstimated Total: ${cartTotal}\n`;
+      if (orderNotes) initialMsg += `Special Instructions: ${orderNotes}\n`;
+      setFormData(prev => ({
+        ...prev,
+        eventDate: eventDate || prev.eventDate,
+        message: initialMsg || prev.message
+      }));
+    }
+  }, [location.state]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 3000);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        inquiryType: 'Custom Cake Order',
+        eventDate: '',
+        message: ''
+      });
+    }, 4000);
   };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSendWhatsApp = () => {
+    let msg = `*Momma Micky's Cakes Inquiry*\n`;
+    if (formData.name) msg += `*Name:* ${formData.name}\n`;
+    if (formData.phone) msg += `*Phone:* ${formData.phone}\n`;
+    if (formData.email) msg += `*Email:* ${formData.email}\n`;
+    if (formData.inquiryType) msg += `*Type:* ${formData.inquiryType}\n`;
+    if (formData.eventDate) msg += `*Event Date:* ${formData.eventDate}\n`;
+    if (formData.message) msg += `*Details:*\n${formData.message}\n`;
+
+    const encoded = encodeURIComponent(msg);
+    window.open(`https://wa.me/1473389209?text=${encoded}`, '_blank');
   };
 
   return (
@@ -186,9 +223,43 @@ export default function ContactPage() {
               />
             </div>
 
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginBottom: '20px' }}>
+              <div>
+                <label style={{ display: 'block', marginBottom: '8px', color: 'var(--color-primary)', fontWeight: 600, fontSize: '0.95em' }}>
+                  Inquiry Type
+                </label>
+                <select
+                  name="inquiryType"
+                  value={formData.inquiryType}
+                  onChange={handleChange}
+                  style={{ width: '100%', padding: '14px 16px', border: '2px solid var(--color-border)', borderRadius: '4px', fontSize: '1em', fontFamily: 'var(--font-body)', outline: 'none', background: '#fff' }}
+                >
+                  <option value="Custom Cake Order">Custom Cake Order</option>
+                  <option value="Wedding Cake Consultation">Wedding Cake Consultation</option>
+                  <option value="Birthday / Celebration Party">Birthday / Celebration Party</option>
+                  <option value="Artisan Confections & Cupcakes">Artisan Confections & Cupcakes</option>
+                  <option value="General Question">General Question</option>
+                </select>
+              </div>
+              <div>
+                <label style={{ display: 'block', marginBottom: '8px', color: 'var(--color-primary)', fontWeight: 600, fontSize: '0.95em' }}>
+                  Target Event / Delivery Date
+                </label>
+                <input
+                  type="date"
+                  name="eventDate"
+                  value={formData.eventDate}
+                  onChange={handleChange}
+                  style={{ width: '100%', padding: '14px 16px', border: '2px solid var(--color-border)', borderRadius: '4px', fontSize: '1em', fontFamily: 'var(--font-body)', outline: 'none', transition: 'border-color 0.3s' }}
+                  onFocus={(e) => e.target.style.borderColor = 'var(--color-orange)'}
+                  onBlur={(e) => e.target.style.borderColor = 'var(--color-border)'}
+                />
+              </div>
+            </div>
+
             <div style={{ marginBottom: '28px' }}>
               <label style={{ display: 'block', marginBottom: '8px', color: 'var(--color-primary)', fontWeight: 600, fontSize: '0.95em' }}>
-                Your Message *
+                Your Message & Order Details *
               </label>
               <textarea
                 name="message"
@@ -196,15 +267,37 @@ export default function ContactPage() {
                 onChange={handleChange}
                 required
                 rows="6"
+                placeholder="Tell us about your event theme, number of guests, desired flavors, cake inscriptions, or any specific reference images..."
                 style={{ width: '100%', padding: '14px 16px', border: '2px solid var(--color-border)', borderRadius: '4px', fontSize: '1em', fontFamily: 'var(--font-body)', outline: 'none', transition: 'border-color 0.3s', resize: 'vertical' }}
                 onFocus={(e) => e.target.style.borderColor = 'var(--color-orange)'}
                 onBlur={(e) => e.target.style.borderColor = 'var(--color-border)'}
               />
             </div>
 
-            <div style={{ textAlign: 'center' }}>
-              <button type="submit" className="btn" style={{ padding: '16px 48px', fontSize: '1.15em', cursor: 'pointer' }}>
-                Send Message
+            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <button type="submit" className="btn" style={{ padding: '16px 36px', fontSize: '1.05em', cursor: 'pointer' }}>
+                Send Message via Email
+              </button>
+              <button
+                type="button"
+                onClick={handleSendWhatsApp}
+                style={{
+                  background: '#25D366',
+                  color: '#fff',
+                  border: 'none',
+                  padding: '16px 36px',
+                  borderRadius: '6px',
+                  fontSize: '1.05em',
+                  fontFamily: 'var(--font-heading)',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  boxShadow: '0 4px 15px rgba(37, 211, 102, 0.3)'
+                }}
+              >
+                <span>💬</span> Chat & Order on WhatsApp
               </button>
             </div>
 

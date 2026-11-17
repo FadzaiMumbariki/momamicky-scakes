@@ -40,7 +40,7 @@ export default function AboutPage() {
       {/* WHAT WE DO SECTION - Split with Image */}
       <section style={{ background: '#fff', padding: '0', overflow: 'hidden' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', minHeight: '620px', alignItems: 'stretch' }}>
-          
+
           {/* Left Content Column */}
           <div style={{ padding: '80px 60px 80px 80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1.25em', marginBottom: '14px', display: 'block', fontWeight: 600 }}>
@@ -105,7 +105,7 @@ export default function AboutPage() {
           <div className="play-btn-wrap" style={{ backgroundImage: "url('/cakes/cake-04.jpg')" }}>
             <div className="play-btn" onClick={() => setIsVideoOpen(true)}>
               <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
+                <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
               </svg>
             </div>
           </div>
@@ -132,15 +132,15 @@ export default function AboutPage() {
               At the core of our mission is a deep commitment to excellence and client satisfaction. Our team works tirelessly to provide thoughtful solutions, ensuring that every detail reflects care.
             </p>
           </div>
-          
+
           {/* Three Package Cards */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '25px' }}>
-            
+
             {/* Card 1: Comfort Plus */}
             <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease' }}>
-              <img 
-                src="/cakes/cake-04.jpg" 
-                alt="Halloween Cupcakes Comfort Plus" 
+              <img
+                src="/cakes/cake-04.jpg"
+                alt="Halloween Cupcakes Comfort Plus"
                 style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }}
               />
               <div style={{ background: '#fff', padding: '25px', textAlign: 'center' }}>
@@ -153,9 +153,9 @@ export default function AboutPage() {
 
             {/* Card 2: Daily Favorite */}
             <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease' }}>
-              <img 
-                src="/cakes/cake-07.jpg" 
-                alt="Dino Birthday Cake Daily Favorite" 
+              <img
+                src="/cakes/cake-07.jpg"
+                alt="Dino Birthday Cake Daily Favorite"
                 style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }}
               />
               <div style={{ background: '#fff', padding: '25px', textAlign: 'center' }}>
@@ -168,9 +168,9 @@ export default function AboutPage() {
 
             {/* Card 3: Basic Box */}
             <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease' }}>
-              <img 
-                src="/cakes/cake-06.jpg" 
-                alt="Stitch Character Cake Basic Box" 
+              <img
+                src="/cakes/cake-06.jpg"
+                alt="Stitch Character Cake Basic Box"
                 style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }}
               />
               <div style={{ background: '#fff', padding: '25px', textAlign: 'center' }}>
@@ -212,7 +212,7 @@ export default function AboutPage() {
         <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
           <span className="tag">Our Team</span>
           <h2 style={{ fontSize: '2.5em', margin: '10px 0 50px' }}>Meet the Bakers Behind Momma Micky's</h2>
-          
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
             <div style={{ padding: '20px', textAlign: 'center' }}>
               <img src="/cakes/cake-01.jpg" alt="Baker" style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover', margin: '0 auto 20px', border: '3px solid var(--color-orange)' }} />

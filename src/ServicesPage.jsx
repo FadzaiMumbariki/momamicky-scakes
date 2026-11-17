@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from './context/CartContext.jsx';
 
 export default function ServicesPage() {
+  const { setCustomizerOpen } = useCart();
   return (
     <div className="services-page-view" style={{ paddingTop: '110px' }}>
       {/* HERO BANNER */}
@@ -39,8 +41,15 @@ export default function ServicesPage() {
             <p style={{ color: 'var(--color-text)', fontSize: '1.05em', lineHeight: 1.9, marginBottom: '36px' }}>
               We believe quality service comes from passion, experience, and integrity combined. Our team is here to support you with personalized care and effective solutions tailored specifically for your needs. We prioritize your goals and work diligently to consistently exceed your expectations.
             </p>
-            <div>
-              <Link to="/contact" className="btn" style={{ padding: '14px 38px', fontSize: '1.15em' }}>
+            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+              <button
+                onClick={() => setCustomizerOpen(true)}
+                className="btn"
+                style={{ padding: '14px 34px', fontSize: '1.1em', cursor: 'pointer' }}
+              >
+                ✨ Build Custom Cake
+              </button>
+              <Link to="/contact" className="btn btn-outline" style={{ padding: '14px 34px', fontSize: '1.1em' }}>
                 Get In Touch
               </Link>
             </div>

@@ -6,6 +6,9 @@ import PackagesPage from './PackagesPage.jsx';
 import ServicesPage from './ServicesPage.jsx';
 import ContactPage from './ContactPage.jsx';
 import GalleryPage from './GalleryPage.jsx';
+import { CartProvider, useCart } from './context/CartContext.jsx';
+import CartDrawer from './components/CartDrawer.jsx';
+import CustomCakeBuilderModal from './components/CustomCakeBuilderModal.jsx';
 import './App.css';
 import './hero-fix.css'; // must come AFTER App.css so it overrides old .hero rules
 
@@ -26,6 +29,7 @@ const HERO_WORDS = ['Custom Cakes', 'Cupcakes', 'Artisan Treats', 'Celebration C
 function NavigationBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { cartCount, cartTotal, setIsCartOpen, setCustomizerOpen } = useCart();
 
   const navLinks = [
     { to: '/', label: 'Home' },
@@ -61,13 +65,36 @@ function NavigationBar() {
             ))}
           </ul>
         </nav>
-        <div className="header-actions">
-          <Link to="/contact" className="cart-btn">
+        <div className="header-actions" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <button
+            onClick={() => setCustomizerOpen(true)}
+            className="btn btn-outline"
+            style={{
+              padding: '8px 16px',
+              fontSize: '0.85em',
+              borderColor: 'var(--color-orange)',
+              color: 'var(--color-orange)',
+              background: 'transparent',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              cursor: 'pointer'
+            }}
+          >
+            <span>✨</span> Build Custom Cake
+          </button>
+          <button
+            type="button"
+            className="cart-btn"
+            onClick={() => setIsCartOpen(true)}
+            style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+            title="Open Order Cart"
+          >
             <svg className="cart-icon" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
               <path d="M188 167H938C943 167 949 169 953 174 957 178 959 184 958 190L926 450C919 502 875 542 823 542H263L271 583C281 631 324 667 373 667H854C866 667 875 676 875 687S866 708 854 708H373C304 708 244 659 230 591L129 83H21C9 83 0 74 0 62S9 42 21 42H146C156 42 164 49 166 58L188 167ZM771 750C828 750 875 797 875 854S828 958 771 958 667 912 667 854 713 750 771 750ZM354 750C412 750 458 797 458 854S412 958 354 958 250 912 250 854 297 750 354 750Z"/>
             </svg>
-            <span>$0.00 (0)</span>
-          </Link>
+            <span>${cartTotal.toFixed(2)} ({cartCount})</span>
+          </button>
           <div className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 132h416c8.8 0 16-7.2 16-16V76c0-8.8-7.2-16-16-16H16C7.2 60 0 67.2 0 76v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16z"/>
@@ -150,6 +177,7 @@ function Footer() {
 
 // HomePage Component
 function HomePage() {
+  const { addToCart, setCustomizerOpen } = useCart();
   const [heroIdx, setHeroIdx] = useState(0);
   const [wordIdx, setWordIdx] = useState(0);
   const [wordAnim, setWordAnim] = useState({ opacity: 1, transform: 'translateY(0)' });
@@ -374,7 +402,20 @@ function HomePage() {
               <p>Stunning contrast cake with black brushstroke, gold leaf, and floating metallic spheres.</p>
               <div className="growth-card-actions">
                 <span>$65.00</span>
-                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+                <button
+                  onClick={() => addToCart({
+                    id: 1,
+                    name: 'Pablo Luxury Black & Gold',
+                    price: 65.00,
+                    image: '/cakes/cake-02.jpg',
+                    category: 'luxury',
+                    description: 'Stunning contrast cake with black brushstroke, gold leaf, and floating metallic spheres.'
+                  })}
+                  className="btn"
+                  style={{ marginLeft: 'auto', padding: '8px 18px', cursor: 'pointer' }}
+                >
+                  Order
+                </button>
               </div>
             </div>
           </div>
@@ -385,7 +426,20 @@ function HomePage() {
               <p>Pastel peach tier with golden fans, orange sugar dahlias, and gold butterfly accents.</p>
               <div className="growth-card-actions">
                 <span>$70.00</span>
-                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+                <button
+                  onClick={() => addToCart({
+                    id: 2,
+                    name: 'Lady Laca Sunburst Blossom',
+                    price: 70.00,
+                    image: '/cakes/cake-09.jpg',
+                    category: 'wedding',
+                    description: 'Pastel peach tier with golden fans, orange sugar dahlias, and gold butterfly accents.'
+                  })}
+                  className="btn"
+                  style={{ marginLeft: 'auto', padding: '8px 18px', cursor: 'pointer' }}
+                >
+                  Order
+                </button>
               </div>
             </div>
           </div>
@@ -396,7 +450,20 @@ function HomePage() {
               <p>Baby blue tier with custom Stitch & Angel edible art, ice cream cone topper & pink hearts.</p>
               <div className="growth-card-actions">
                 <span>$75.00</span>
-                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+                <button
+                  onClick={() => addToCart({
+                    id: 3,
+                    name: 'Stitch & Angel Birthday Fantasy',
+                    price: 75.00,
+                    image: '/cakes/cake-06.jpg',
+                    category: 'kids',
+                    description: 'Baby blue tier with custom Stitch & Angel edible art, ice cream cone topper & pink hearts.'
+                  })}
+                  className="btn"
+                  style={{ marginLeft: 'auto', padding: '8px 18px', cursor: 'pointer' }}
+                >
+                  Order
+                </button>
               </div>
             </div>
           </div>
@@ -407,18 +474,44 @@ function HomePage() {
               <p>Blush pink finish with chic fashion topper, golden bubbles, and dual candles.</p>
               <div className="growth-card-actions">
                 <span>$68.00</span>
-                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+                <button
+                  onClick={() => addToCart({
+                    id: 4,
+                    name: 'Mzukulu Pink Glamour Hat',
+                    price: 68.00,
+                    image: '/cakes/cake-03.jpg',
+                    category: 'celebration',
+                    description: 'Blush pink finish with chic fashion topper, golden bubbles, and dual candles.'
+                  })}
+                  className="btn"
+                  style={{ marginLeft: 'auto', padding: '8px 18px', cursor: 'pointer' }}
+                >
+                  Order
+                </button>
               </div>
             </div>
           </div>
           <div className="growth-card">
-            <img src="/cakes/cake-08.jpg" alt="Nomae Magenta Butterfly" />
+            <img src="/cakes/1000569250.jpg" alt="Monarch Marble & Gold" />
             <div className="growth-card-info">
-              <h4>Nomae Magenta Butterfly Elegance</h4>
-              <p>Textured white tier with vibrant magenta fashion illustration and flying 3D butterflies.</p>
+              <h4>Monarch Marble & Gold</h4>
+              <p>Hand-painted marble fondant with veined gold leaf and minimalist modern cake architecture.</p>
               <div className="growth-card-actions">
-                <span>$65.00</span>
-                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+                <span>$79.00</span>
+                <button
+                  onClick={() => addToCart({
+                    id: 27,
+                    name: 'Monarch Marble & Gold',
+                    price: 79.00,
+                    image: '/cakes/1000569250.jpg',
+                    category: 'luxury',
+                    description: 'Hand-painted marble fondant with veined gold leaf and minimalist modern cake architecture.'
+                  })}
+                  className="btn"
+                  style={{ marginLeft: 'auto', padding: '8px 18px', cursor: 'pointer' }}
+                >
+                  Order
+                </button>
               </div>
             </div>
           </div>
@@ -429,13 +522,86 @@ function HomePage() {
               <p>Rich chocolate sponge filled with vanilla buttercream, mini chocolate bars, and Minnie toppers.</p>
               <div className="growth-card-actions">
                 <span>$60.00</span>
-                <Link to="/contact" className="btn" style={{ marginLeft: 'auto' }}>Order</Link>
+                <button
+                  onClick={() => addToCart({
+                    id: 6,
+                    name: "Alma's Minnie Mouse Chocolate",
+                    price: 60.00,
+                    image: '/cakes/cake-10.jpg',
+                    category: 'kids',
+                    description: 'Rich chocolate sponge filled with vanilla buttercream, mini chocolate bars, and Minnie toppers.'
+                  })}
+                  className="btn"
+                  style={{ marginLeft: 'auto', padding: '8px 18px', cursor: 'pointer' }}
+                >
+                  Order
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div style={{ textAlign: 'center', marginTop: '50px' }}>
-          <Link to="/packages" className="btn">Explore Full Menu</Link>
+          <Link to="/gallery" className="btn">Explore All 50+ Cakes in Gallery</Link>
+        </div>
+      </section>
+
+      {/* INTERACTIVE CAKE BUILDER PROMO BANNER */}
+      <section style={{
+        background: 'linear-gradient(135deg, #2D2D2D 0%, #17151C 100%)',
+        padding: '70px 30px',
+        color: '#fff',
+        borderTop: '2px solid var(--color-orange)',
+        borderBottom: '2px solid var(--color-orange)'
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '40px',
+          alignItems: 'center'
+        }}>
+          <div>
+            <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1.05em' }}>
+              Custom Confection Studio
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2em, 4vw, 3.2em)', color: '#fff', margin: '12px 0 16px', lineHeight: 1.2 }}>
+              Design Your Own Dream Cake
+            </h2>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.05em', lineHeight: 1.7, marginBottom: '28px' }}>
+              Have an exact idea in mind? Use our interactive cake builder to choose tier sizes, gourmet sponge flavors, fillings, artisan frostings, and 24K gold or floral accents with instant live pricing.
+            </p>
+            <button
+              onClick={() => setCustomizerOpen(true)}
+              className="btn"
+              style={{ padding: '14px 34px', fontSize: '1.1em', cursor: 'pointer' }}
+            >
+              ✨ Launch Interactive Cake Builder
+            </button>
+          </div>
+          <div style={{ position: 'relative', borderRadius: '14px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.4)' }}>
+            <img
+              src="/cakes/1000569250.jpg"
+              alt="Momma Micky Custom Cake Studio"
+              style={{ width: '100%', height: '360px', objectFit: 'cover', display: 'block' }}
+            />
+            <div style={{
+              position: 'absolute',
+              bottom: '16px',
+              left: '16px',
+              right: '16px',
+              background: 'rgba(23, 21, 28, 0.85)',
+              backdropFilter: 'blur(6px)',
+              padding: '12px 20px',
+              borderRadius: '8px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center'
+            }}>
+              <span style={{ fontSize: '0.9em', fontWeight: 600 }}>Tiers • Flavors • Frostings • Inscriptions</span>
+              <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>Customized For You</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -560,6 +726,60 @@ function HomePage() {
   );
 }
 
+function AppContent({ showScrollTop }) {
+  const { toastMessage } = useCart();
+
+  return (
+    <div className="mommamickys-app">
+      <NavigationBar />
+      <CartDrawer />
+      <CustomCakeBuilderModal />
+
+      {/* Global Toast Notification */}
+      {toastMessage && (
+        <div style={{
+          position: 'fixed',
+          bottom: '30px',
+          right: '30px',
+          background: 'var(--color-primary)',
+          color: '#fff',
+          padding: '16px 26px',
+          borderRadius: '8px',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+          zIndex: 99999,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          borderLeft: '4px solid var(--color-orange)',
+          animation: 'fadeIn 0.3s ease'
+        }}>
+          <span style={{ fontSize: '1.4em' }}>🎂</span>
+          <div style={{ fontWeight: 600, fontSize: '0.95em' }}>{toastMessage}</div>
+        </div>
+      )}
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/packages" element={<PackagesPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+
+      <Footer />
+
+      {/* SCROLL TO TOP */}
+      <div
+        className={`scroll-top ${showScrollTop ? 'visible' : ''}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        <svg viewBox="0 0 320 512"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg>
+      </div>
+    </div>
+  );
+}
+
 // Main App Router Setup
 export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -571,31 +791,10 @@ export default function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="mommamickys-app">
-        <NavigationBar />
-
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/packages" element={<PackagesPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-
-          <Route path="/gallery" element={<GalleryPage />} />
-
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-
-        <Footer />
-
-        {/* SCROLL TO TOP */}
-        <div
-          className={`scroll-top ${showScrollTop ? 'visible' : ''}`}
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          <svg viewBox="0 0 320 512"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg>
-        </div>
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <AppContent showScrollTop={showScrollTop} />
+      </Router>
+    </CartProvider>
   );
 }

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from './context/CartContext.jsx';
 
 export default function PackagesPage() {
+  const { addToCart } = useCart();
   const [activeFilter, setActiveFilter] = useState('all');
   
   const packages = [
@@ -248,7 +250,20 @@ export default function PackagesPage() {
                   <p>{pkg.description}</p>
                   <div className="package-full-footer">
                     <span className="package-price">{pkg.price}</span>
-                    <Link to="/contact" className="btn btn-small">Order Now</Link>
+                    <button
+                      onClick={() => addToCart({
+                        id: `pkg-${pkg.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
+                        name: pkg.title,
+                        price: pkg.price,
+                        image: pkg.image,
+                        category: pkg.category,
+                        description: pkg.description
+                      })}
+                      className="btn btn-small"
+                      style={{ cursor: 'pointer' }}
+                    >
+                      Order Now
+                    </button>
                   </div>
                 </div>
               </div>

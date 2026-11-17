@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from './context/CartContext.jsx';
 
 export default function GalleryPage() {
-  const [cart, setCart] = useState([]);
+  const { addToCart, setIsCartOpen, setCustomizerOpen } = useCart();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
-  const [cartNotification, setCartNotification] = useState('');
 
   const products = [
     {
@@ -436,41 +436,8 @@ export default function GalleryPage() {
     return matchesCategory && matchesSearch;
   });
 
-  const addToCart = (product) => {
-    setCart((prev) => [...prev, product]);
-    setCartNotification(`Added "${product.name}" to your order list!`);
-    setTimeout(() => setCartNotification(''), 3500);
-  };
-
   return (
     <div style={{ marginTop: '100px' }}>
-      {/* TOAST NOTIFICATION */}
-      {cartNotification && (
-        <div style={{
-          position: 'fixed',
-          bottom: '30px',
-          right: '30px',
-          background: 'var(--color-primary)',
-          color: '#fff',
-          padding: '16px 26px',
-          borderRadius: '8px',
-          boxShadow: '0 10px 25px rgba(0,0,0,0.3)',
-          zIndex: 9999,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          borderLeft: '4px solid var(--color-orange)',
-          animation: 'fadeIn 0.3s ease'
-        }}>
-          <span style={{ fontSize: '1.2em' }}>🍰</span>
-          <div>
-            <div style={{ fontWeight: 600 }}>{cartNotification}</div>
-            <Link to="/contact" style={{ color: 'var(--color-orange)', fontSize: '0.85em', textDecoration: 'underline' }}>
-              Proceed to checkout & inquiry
-            </Link>
-          </div>
-        </div>
-      )}
 
       {/* HERO SECTION */}
       <section style={{
