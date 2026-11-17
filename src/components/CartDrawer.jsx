@@ -78,7 +78,7 @@ export default function CartDrawer() {
           alignItems: 'center'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontSize: '1.4em' }}>🎂</span>
+
             <div>
               <h3 style={{ margin: 0, fontFamily: 'var(--font-heading)', color: '#fff', fontSize: '1.25em' }}>
                 Your Order Cart

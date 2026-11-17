@@ -81,7 +81,7 @@ function NavigationBar() {
               cursor: 'pointer'
             }}
           >
-            <span>✨</span> Build Custom Cake
+            Build Custom Cake
           </button>
           <button
             type="button"

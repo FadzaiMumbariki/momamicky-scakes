@@ -7,7 +7,7 @@ export default function Header() {
     <header className="site-header">
       <div className="header-top-bar">
         <div className="top-left">
-          <span>📍 123 Cake Street</span>
+          <span>123 Cake Street</span>
           <div className="dot"></div>
           <span>📞 (555) 123-4567</span>
         </div>
