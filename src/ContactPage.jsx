@@ -67,7 +67,8 @@ export default function ContactPage() {
       <section
         style={{
           position: 'relative',
-          minHeight: '100vh',
+          minHeight: '260px',
+          height: '35vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -75,12 +76,12 @@ export default function ContactPage() {
           textAlign: 'center',
           color: 'var(--color-text)',
           overflow: 'hidden',
-          padding: '80px 20px'
+          padding: '40px 20px'
         }}
       >
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', margin: '0 auto' }}>
-          <span className="tag" style={{ color: 'var(--color-gold)', fontSize: '1em' }}>What we do</span>
-          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '12px 0 16px', color: 'var(--color-primary)', lineHeight: 1.2 }}>
+          <span className="tag" style={{ color: 'var(--color-gold)', fontSize: '0.95em', fontWeight: 600 }}>What we do</span>
+          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.2em)', margin: '10px 0 14px', color: 'var(--color-primary)', lineHeight: 1.2 }}>
             Simple tools for big goals
           </h1>
           <p style={{ fontSize: '1em', color: 'var(--color-text)', lineHeight: 1.6, maxWidth: '650px', margin: '0 auto' }}>
