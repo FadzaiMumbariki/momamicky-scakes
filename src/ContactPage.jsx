@@ -73,20 +73,31 @@ export default function ContactPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)',
+          backgroundImage: "url('/cakes/1000569248.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 35%',
+          backgroundRepeat: 'no-repeat',
           textAlign: 'center',
-          color: 'var(--color-text)',
+          color: '#fff',
           overflow: 'hidden',
           padding: '40px 20px'
         }}
       >
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(180deg, rgba(23, 21, 28, 0.45) 0%, rgba(23, 21, 28, 0.65) 50%, rgba(23, 21, 28, 0.82) 100%)',
+            zIndex: 1
+          }}
+        />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', margin: '0 auto' }}>
-          <span className="tag" style={{ color: 'var(--color-gold)', fontSize: '0.95em', fontWeight: 600 }}>What we do</span>
-          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.2em)', margin: '10px 0 14px', color: 'var(--color-primary)', lineHeight: 1.2 }}>
+          <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '0.95em', fontWeight: 600, letterSpacing: '1px' }}>Get In Touch</span>
+          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.2em)', margin: '10px 0 14px', color: '#fff', lineHeight: 1.2, fontFamily: 'var(--font-heading)', textShadow: '0 2px 10px rgba(0,0,0,0.6)' }}>
             Simple tools for big goals
           </h1>
-          <p style={{ fontSize: '1em', color: 'var(--color-text)', lineHeight: 1.6, maxWidth: '650px', margin: '0 auto' }}>
-            At the core of our mission is a deep commitment to excellence and client satisfaction. Our team works tirelessly to provide thoughtful solutions, ensuring that every detail reflects care.
+          <p style={{ fontSize: '1em', color: 'rgba(255,255,255,0.95)', lineHeight: 1.6, maxWidth: '650px', margin: '0 auto', textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
+            At the core of our mission is a deep commitment to excellence and client satisfaction. Our team is here to create your dream celebration cake.
           </p>
         </div>
       </section>

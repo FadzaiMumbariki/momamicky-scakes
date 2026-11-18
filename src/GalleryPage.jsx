@@ -442,59 +442,68 @@ export default function GalleryPage() {
       {/* HERO SECTION */}
       <section style={{
         position: 'relative',
-        minHeight: '60vh',
+        minHeight: '280px',
+        height: '38vh',
+        maxHeight: '360px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)',
-        padding: '80px 40px',
-        overflow: 'hidden'
+        backgroundImage: "url('/cakes/1000569250.webp')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center 35%',
+        backgroundRepeat: 'no-repeat',
+        padding: '40px 20px',
+        overflow: 'hidden',
+        textAlign: 'center'
       }}>
         <div style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'url(/cakes/1000569250.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.14
-        }}></div>
+          background: 'linear-gradient(180deg, rgba(23, 21, 28, 0.45) 0%, rgba(23, 21, 28, 0.65) 50%, rgba(23, 21, 28, 0.82) 100%)',
+          zIndex: 1
+        }} />
         <div style={{
           position: 'relative',
-          zIndex: 1,
+          zIndex: 2,
           textAlign: 'center',
-          maxWidth: '850px'
+          maxWidth: '850px',
+          margin: '0 auto',
+          color: '#fff'
         }}>
           <span style={{
             fontFamily: 'var(--font-heading)',
-            fontSize: '1.1em',
-            color: 'var(--color-gold)',
+            fontSize: '1em',
+            color: 'var(--color-orange)',
             letterSpacing: '2px',
             display: 'block',
-            marginBottom: '12px',
-            textTransform: 'uppercase'
+            marginBottom: '10px',
+            textTransform: 'uppercase',
+            fontWeight: 600
           }}>
             Handcrafted Signature Collection
           </span>
           <h1 style={{
             fontFamily: 'var(--font-heading)',
-            fontSize: 'clamp(2.4em, 5vw, 4em)',
-            color: 'var(--color-primary)',
-            marginBottom: '16px',
+            fontSize: 'clamp(2.4em, 5vw, 3.8em)',
+            color: '#fff',
+            marginBottom: '12px',
             fontWeight: 500,
-            lineHeight: 1.2
+            lineHeight: 1.15,
+            textShadow: '0 2px 10px rgba(0,0,0,0.6)'
           }}>
             Momma Micky's Complete Gallery
           </h1>
           <p style={{
             fontSize: '1.05em',
-            color: 'var(--color-text)',
-            lineHeight: '1.7',
+            color: 'rgba(255,255,255,0.95)',
+            lineHeight: 1.6,
             maxWidth: '650px',
-            margin: '0 auto 24px'
+            margin: '0 auto 16px',
+            textShadow: '0 1px 6px rgba(0,0,0,0.5)'
           }}>
             Explore over 50 of our freshly baked, custom celebration cakes. From lavish weddings to unforgettable birthday centrepieces, every cake is tailored to your taste.
           </p>
-          <div style={{ display: 'inline-block', background: '#fff', border: '1px solid var(--color-border)', padding: '6px 18px', borderRadius: '30px', color: 'var(--color-primary)', fontSize: '0.9em' }}>
+          <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(4px)', border: '1px solid rgba(255,255,255,0.3)', padding: '6px 18px', borderRadius: '30px', color: '#fff', fontSize: '0.9em' }}>
             Showing <strong>{filteredProducts.length}</strong> creations in gallery
           </div>
         </div>

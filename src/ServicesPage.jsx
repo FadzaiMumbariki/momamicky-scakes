@@ -16,19 +16,30 @@ export default function ServicesPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)',
+          backgroundImage: "url('/cakes/cake-09.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 35%',
+          backgroundRepeat: 'no-repeat',
           textAlign: 'center',
-          color: 'var(--color-text)',
+          color: '#fff',
           overflow: 'hidden',
           padding: '40px 20px'
         }}
       >
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(180deg, rgba(23, 21, 28, 0.45) 0%, rgba(23, 21, 28, 0.65) 50%, rgba(23, 21, 28, 0.82) 100%)',
+            zIndex: 1
+          }}
+        />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', margin: '0 auto' }}>
           <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1em', fontWeight: 600, letterSpacing: '1px' }}>What We Do</span>
-          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '10px 0 12px', color: 'var(--color-primary)', lineHeight: 1.15, fontFamily: 'var(--font-heading)' }}>
+          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '10px 0 12px', color: '#fff', lineHeight: 1.15, fontFamily: 'var(--font-heading)', textShadow: '0 2px 10px rgba(0,0,0,0.6)' }}>
             We Help Your Business Grow
           </h1>
-          <p style={{ fontSize: '1.05em', color: 'var(--color-text)', lineHeight: 1.6, maxWidth: '650px', margin: '0 auto' }}>
+          <p style={{ fontSize: '1.05em', color: 'rgba(255,255,255,0.95)', lineHeight: 1.6, maxWidth: '650px', margin: '0 auto', textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
             Tailored confectionery catering and dessert displays designed for your celebrations
           </p>
         </div>
