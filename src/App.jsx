@@ -583,22 +583,7 @@ function HomePage() {
               alt="Momma Micky Custom Cake Studio"
               style={{ width: '100%', height: '360px', objectFit: 'cover', display: 'block' }}
             />
-            <div style={{
-              position: 'absolute',
-              bottom: '16px',
-              left: '16px',
-              right: '16px',
-              background: 'rgba(23, 21, 28, 0.85)',
-              backdropFilter: 'blur(6px)',
-              padding: '12px 20px',
-              borderRadius: '8px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center'
-            }}>
-              <span style={{ fontSize: '0.9em', fontWeight: 600 }}>Tiers • Flavors • Frostings • Inscriptions</span>
-              <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>Customized For You</span>
-            </div>
+
           </div>
         </div>
       </section>
