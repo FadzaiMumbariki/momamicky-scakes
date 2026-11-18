@@ -112,7 +112,6 @@ export default function CartDrawer() {
         }}>
           {cartItems.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '60px 20px', color: 'var(--color-text)' }}>
-              <div style={{ fontSize: '3.5em', marginBottom: '14px' }}>🛒</div>
               <h4 style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-primary)', fontSize: '1.3em', marginBottom: '8px' }}>
                 Your cart is empty
               </h4>
@@ -310,7 +309,7 @@ export default function CartDrawer() {
                   boxShadow: '0 4px 12px rgba(37, 211, 102, 0.3)'
                 }}
               >
-                <span>💬</span> Order Instantly via WhatsApp
+                Order Instantly via WhatsApp
               </button>
 
               <button

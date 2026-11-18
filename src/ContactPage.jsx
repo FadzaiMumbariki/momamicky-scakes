@@ -295,7 +295,7 @@ export default function ContactPage() {
                   boxShadow: '0 4px 15px rgba(37, 211, 102, 0.3)'
                 }}
               >
-                <span>💬</span> Chat & Order on WhatsApp
+                Chat & Order on WhatsApp
               </button>
             </div>
 

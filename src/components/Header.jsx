@@ -9,7 +9,7 @@ export default function Header() {
         <div className="top-left">
           <span>3697 Emganwini</span>
           <div className="dot"></div>
-          <span>📞 +263 78 834 0047</span>
+          <span>+263 78 834 0047</span>
         </div>
         <div className="top-right">
           <span>Mon - Sat: 9:00 AM - 7:00 PM</span>

@@ -740,7 +740,7 @@ export default function GalleryPage() {
                       alignItems: 'center',
                       gap: '4px'
                     }}>
-                      <span>🔍 Zoom</span>
+                      <span>Zoom</span>
                     </div>
                   </div>
 
