@@ -6,6 +6,7 @@ export default function Hero() {
   const [currentWord, setCurrentWord] = useState(0);
 
   const slides = [
+    '/homepage-hero-momma.jpg',
     '/cakes/cake-02.jpg',
     '/cakes/cake-09.jpg',
     '/cakes/cake-06.jpg',

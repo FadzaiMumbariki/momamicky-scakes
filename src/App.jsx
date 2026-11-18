@@ -240,8 +240,8 @@ function HomePage() {
     <>
       {/* HERO SECTION */}
       <section className="hero" id="hero">
-        <div className="hero-background hero-background-blur" style={{ backgroundImage: "url('/cakes/cake-06.jpg')" }}></div>
-        <div className="hero-background hero-background-sharp" style={{ backgroundImage: "url('/cakes/cake-06.jpg')" }}></div>
+        <div className="hero-background hero-background-blur" style={{ backgroundImage: "url('/homepage-hero-momma.jpg')" }}></div>
+        <div className="hero-background hero-background-sharp" style={{ backgroundImage: "url('/homepage-hero-momma.jpg')" }}></div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <p className="hero-tag">Custom Celebration Cakes</p>
