@@ -20,7 +20,7 @@
   width: 100% !important;
   height: 100% !important;
   background-size: cover !important;
-  background-position: center !important;
+  background-position: center 20% !important;
   background-repeat: no-repeat !important;
   z-index: 0 !important;
 }
@@ -106,15 +106,13 @@
 
 /* Homepage hero image layers and additional copy */
 .hero-background-blur {
-  z-index: 0 !important;
-  background-size: cover !important;
-  filter: blur(12px) brightness(0.55);
-  transform: scale(1.06);
+  display: none !important;
 }
 
 .hero-background-sharp {
   z-index: 0 !important;
-  background-size: contain !important;
+  background-size: cover !important;
+  background-position: center 20% !important;
 }
 
 .hero-tag {

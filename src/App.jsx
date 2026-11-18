@@ -9,7 +9,6 @@ import GalleryPage from './GalleryPage.jsx';
 import { CartProvider, useCart } from './context/CartContext.jsx';
 import CartDrawer from './components/CartDrawer.jsx';
 import CustomCakeBuilderModal from './components/CustomCakeBuilderModal.jsx';
-import { CONTACT } from './config.js';
 import './App.css';
 import './hero-fix.css'; // must come AFTER App.css so it overrides old .hero rules
 
@@ -73,8 +72,8 @@ function NavigationBar() {
             style={{
               padding: '8px 16px',
               fontSize: '0.85em',
-              borderColor: 'var(--color-gold-dark)',
-              color: 'var(--color-primary)',
+              borderColor: 'var(--color-orange)',
+              color: 'var(--color-orange)',
               background: 'transparent',
               display: 'inline-flex',
               alignItems: 'center',
@@ -92,13 +91,13 @@ function NavigationBar() {
             title="Open Order Cart"
           >
             <svg className="cart-icon" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-              <path d="M188 167H938C943 167 949 169 953 174 957 178 959 184 958 190L926 450C919 502 875 542 823 542H263L271 583C281 631 324 667 373 667H854C866 667 875 676 875 687S866 708 854 708H373C304 708 244 659 230 591L129 83H21C9 83 0 74 0 62S9 42 21 42H146C156 42 164 49 166 58L188 167ZM771 750C828 750 875 797 875 854S828 958 771 958 667 912 667 854 713 750 771 750ZM354 750C412 750 458 797 458 854S412 958 354 958 250 912 250 854 297 750 354 750Z"/>
+              <path d="M188 167H938C943 167 949 169 953 174 957 178 959 184 958 190L926 450C919 502 875 542 823 542H263L271 583C281 631 324 667 373 667H854C866 667 875 676 875 687S866 708 854 708H373C304 708 244 659 230 591L129 83H21C9 83 0 74 0 62S9 42 21 42H146C156 42 164 49 166 58L188 167ZM771 750C828 750 875 797 875 854S828 958 771 958 667 912 667 854 713 750 771 750ZM354 750C412 750 458 797 458 854S412 958 354 958 250 912 250 854 297 750 354 750Z" />
             </svg>
             <span>${cartTotal.toFixed(2)} ({cartCount})</span>
           </button>
           <div className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 132h416c8.8 0 16-7.2 16-16V76c0-8.8-7.2-16-16-16H16C7.2 60 0 67.2 0 76v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16z"/>
+              <path d="M16 132h416c8.8 0 16-7.2 16-16V76c0-8.8-7.2-16-16-16H16C7.2 60 0 67.2 0 76v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16z" />
             </svg>
           </div>
         </div>
@@ -147,15 +146,19 @@ function Footer() {
           <h5>Contact Us</h5>
           <div className="footer-contact-item">
             <span>Address:</span>
-            <span>3697 Emganwini</span>
+            <span>1080 Bakery Blvd, Suite 200</span>
           </div>
           <div className="footer-contact-item">
             <span>Info:</span>
-            <a href="mailto:mudiwas980@gmail.com">mudiwas980@gmail.com</a>
+            <a href="mailto:info@mommamickyscakes.com">info@mommamickyscakes.com</a>
+          </div>
+          <div className="footer-contact-item">
+            <span>Orders:</span>
+            <a href="mailto:orders@mommamickyscakes.com">orders@mommamickyscakes.com</a>
           </div>
           <div className="footer-contact-item">
             <span>Phone:</span>
-            <a href="tel:+263788340047">+263 78 834 0047</a>
+            <a href="tel:+1473389209">+1 473 389 209</a>
           </div>
         </div>
       </div>
@@ -175,6 +178,9 @@ function Footer() {
 // HomePage Component
 function HomePage() {
   const { addToCart, setCustomizerOpen } = useCart();
+  const [heroIdx, setHeroIdx] = useState(0);
+  const [wordIdx, setWordIdx] = useState(0);
+  const [wordAnim, setWordAnim] = useState({ opacity: 1, transform: 'translateY(0)' });
 
   const [serviceIdx, setServiceIdx] = useState(0);
   const serviceSlides = [
@@ -216,6 +222,25 @@ function HomePage() {
   const [subscribed, setSubscribed] = useState(false);
 
   useEffect(() => {
+    // Preload every hero image so slides don't flash blank when they first appear
+    HERO_SLIDES.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
+    const heroInterval = setInterval(() => {
+      setHeroIdx((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 4000);
+
+    let swapTimeout;
+    const wordInterval = setInterval(() => {
+      setWordAnim({ opacity: 0, transform: 'translateY(-15px)' });
+      swapTimeout = setTimeout(() => {
+        setWordIdx((prev) => (prev + 1) % HERO_WORDS.length);
+        setWordAnim({ opacity: 1, transform: 'translateY(0)' });
+      }, 400);
+    }, 3500);
+
     const serviceInterval = setInterval(() => {
       setServiceIdx((prev) => (prev + 1) % serviceSlides.length);
     }, 5500);
@@ -225,8 +250,11 @@ function HomePage() {
     }, 5000);
 
     return () => {
+      clearInterval(heroInterval);
+      clearInterval(wordInterval);
       clearInterval(serviceInterval);
       clearInterval(tInterval);
+      clearTimeout(swapTimeout);
     };
   }, []);
 
@@ -240,8 +268,7 @@ function HomePage() {
     <>
       {/* HERO SECTION */}
       <section className="hero" id="hero">
-        <div className="hero-background hero-background-blur" style={{ backgroundImage: "url('/homepage-hero-momma.jpg')" }}></div>
-        <div className="hero-background hero-background-sharp" style={{ backgroundImage: "url('/homepage-hero-momma.jpg')" }}></div>
+        <div className="hero-background" style={{ backgroundImage: "url('/cakes/cake-06.jpg')" }}></div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <p className="hero-tag">Custom Celebration Cakes</p>
@@ -276,7 +303,7 @@ function HomePage() {
           <div className="play-btn-wrap" style={{ backgroundImage: "url('/cakes/cake-04.webp')" }}>
             <div className="play-btn" onClick={() => setIsVideoOpen(true)}>
               <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
+                <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
               </svg>
             </div>
           </div>
@@ -326,7 +353,7 @@ function HomePage() {
           <div className="accordion" style={{ marginTop: '20px' }}>
             <div className={`accordion-item ${openAccordion === 0 ? 'open' : ''}`}>
               <div className="accordion-title" onClick={() => setOpenAccordion(openAccordion === 0 ? -1 : 0)}>
-                <svg className="accordion-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+                <svg className="accordion-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" /></svg>
                 Custom Design Consultation
               </div>
               <div className="accordion-body">
@@ -335,7 +362,7 @@ function HomePage() {
             </div>
             <div className={`accordion-item ${openAccordion === 1 ? 'open' : ''}`}>
               <div className="accordion-title" onClick={() => setOpenAccordion(openAccordion === 1 ? -1 : 1)}>
-                <svg className="accordion-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+                <svg className="accordion-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" /></svg>
                 Finest Organic & Fresh Ingredients
               </div>
               <div className="accordion-body">
@@ -344,7 +371,7 @@ function HomePage() {
             </div>
             <div className={`accordion-item ${openAccordion === 2 ? 'open' : ''}`}>
               <div className="accordion-title" onClick={() => setOpenAccordion(openAccordion === 2 ? -1 : 2)}>
-                <svg className="accordion-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>
+                <svg className="accordion-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" /></svg>
                 Careful Delivery & Setup
               </div>
               <div className="accordion-body">
@@ -518,11 +545,11 @@ function HomePage() {
 
       {/* INTERACTIVE CAKE BUILDER PROMO BANNER */}
       <section style={{
-        background: 'linear-gradient(135deg, var(--color-pink-soft) 0%, var(--color-beige) 100%)',
+        background: 'linear-gradient(135deg, #2D2D2D 0%, #17151C 100%)',
         padding: '70px 30px',
-        color: 'var(--color-text)',
-        borderTop: '2px solid var(--color-gold)',
-        borderBottom: '2px solid var(--color-gold)'
+        color: '#fff',
+        borderTop: '2px solid var(--color-orange)',
+        borderBottom: '2px solid var(--color-orange)'
       }}>
         <div style={{
           maxWidth: '1200px',
@@ -536,10 +563,10 @@ function HomePage() {
             <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1.05em' }}>
               Custom Confection Studio
             </span>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2em, 4vw, 3.2em)', color: 'var(--color-primary)', margin: '12px 0 16px', lineHeight: 1.2 }}>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2em, 4vw, 3.2em)', color: '#fff', margin: '12px 0 16px', lineHeight: 1.2 }}>
               Design Your Own Dream Cake
             </h2>
-            <p style={{ color: 'var(--color-text)', fontSize: '1.05em', lineHeight: 1.7, marginBottom: '28px' }}>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.05em', lineHeight: 1.7, marginBottom: '28px' }}>
               Have an exact idea in mind? Use our interactive cake builder to choose tier sizes, gourmet sponge flavors, fillings, artisan frostings, and 24K gold or floral accents with instant live pricing.
             </p>
             <button
@@ -547,7 +574,7 @@ function HomePage() {
               className="btn"
               style={{ padding: '14px 34px', fontSize: '1.1em', cursor: 'pointer' }}
             >
-              Launch Interactive Cake Builder
+              ✨ Launch Interactive Cake Builder
             </button>
           </div>
           <div style={{ position: 'relative', borderRadius: '14px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.4)' }}>
@@ -567,11 +594,10 @@ function HomePage() {
               borderRadius: '8px',
               display: 'flex',
               justifyContent: 'space-between',
-              alignItems: 'center',
-              color: '#fff'
+              alignItems: 'center'
             }}>
               <span style={{ fontSize: '0.9em', fontWeight: 600 }}>Tiers • Flavors • Frostings • Inscriptions</span>
-              <span style={{ color: 'var(--color-gold)', fontWeight: 700 }}>Customized For You</span>
+              <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>Customized For You</span>
             </div>
           </div>
         </div>
@@ -618,7 +644,7 @@ function HomePage() {
           </div>
         </div>
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <Link to="/packages" className="btn" style={{ background: '#fff', color: 'var(--color-primary)' }}>View All Packages</Link>
+          <Link to="/packages" className="btn" style={{ background: '#fff', color: 'var(--color-orange)' }}>View All Packages</Link>
         </div>
       </section>
 
@@ -642,7 +668,7 @@ function HomePage() {
           </div>
           <div className="testimonial-nav">
             <div className="testimonial-btn" onClick={() => setTIdx((tIdx - 1 + testimonials.length) % testimonials.length)}>
-              <svg viewBox="0 0 1000 1000"><path d="M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z"/></svg>
+              <svg viewBox="0 0 1000 1000"><path d="M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z" /></svg>
             </div>
             <div className="testimonial-dots">
               {testimonials.map((_, idx) => (
@@ -654,7 +680,7 @@ function HomePage() {
               ))}
             </div>
             <div className="testimonial-btn" onClick={() => setTIdx((tIdx + 1) % testimonials.length)}>
-              <svg viewBox="0 0 1000 1000"><path d="M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z"/></svg>
+              <svg viewBox="0 0 1000 1000"><path d="M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z" /></svg>
             </div>
           </div>
         </div>
@@ -725,7 +751,7 @@ function AppContent({ showScrollTop }) {
           borderLeft: '4px solid var(--color-orange)',
           animation: 'fadeIn 0.3s ease'
         }}>
-          <span style={{ fontSize: '1.4em' }}></span>
+          <span style={{ fontSize: '1.4em' }}>🎂</span>
           <div style={{ fontWeight: 600, fontSize: '0.95em' }}>{toastMessage}</div>
         </div>
       )}
@@ -741,26 +767,12 @@ function AppContent({ showScrollTop }) {
 
       <Footer />
 
-      <a
-        className="whatsapp-chat-link"
-        href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent("Hi Momma Micky's Cakes, I'd like to ask about a cake.")}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with Momma Micky's Cakes on WhatsApp"
-      >
-        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-          <path d="M16 3.2a12.2 12.2 0 0 0-10.3 18.8L4 28l6.2-1.6A12.2 12.2 0 1 0 16 3.2Z" fill="none" stroke="currentColor" strokeWidth="2.2" />
-          <path d="M11.1 9.2c-.5 0-1 .3-1.3.7-.7.9-1.6 2.2-1.1 4.3 1 4.1 5.2 7.9 9.1 8.8 1.5.4 2.8-.1 3.8-.8.6-.4.8-1.2.6-1.9l-.4-1.3c-.1-.4-.5-.7-.9-.9l-2.7-1.2c-.4-.2-.9-.1-1.2.3l-.8 1c-1.7-.8-3-2-3.9-3.7l.9-.8c.3-.3.4-.8.2-1.2l-1.1-2.6c-.2-.4-.6-.7-1.1-.7h-.1Z" fill="currentColor" />
-        </svg>
-        <span>Chat with us</span>
-      </a>
-
       {/* SCROLL TO TOP */}
       <div
         className={`scroll-top ${showScrollTop ? 'visible' : ''}`}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        <svg viewBox="0 0 320 512"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg>
+        <svg viewBox="0 0 320 512"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z" /></svg>
       </div>
     </div>
   );
