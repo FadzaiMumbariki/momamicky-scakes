@@ -67,8 +67,9 @@ export default function ContactPage() {
       <section
         style={{
           position: 'relative',
-          minHeight: '260px',
-          height: '35vh',
+          minHeight: '280px',
+          height: '38vh',
+          maxHeight: '360px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

@@ -11,7 +11,9 @@ export default function AboutPage() {
       <section
         style={{
           position: 'relative',
-          minHeight: '75vh',
+          minHeight: '280px',
+          height: '38vh',
+          maxHeight: '360px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -22,7 +24,7 @@ export default function AboutPage() {
           textAlign: 'center',
           color: '#fff',
           overflow: 'hidden',
-          padding: '100px 20px'
+          padding: '40px 20px'
         }}
       >
         <div
@@ -34,17 +36,13 @@ export default function AboutPage() {
           }}
         />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '850px', margin: '0 auto' }}>
-          <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1.05em', fontWeight: 600, letterSpacing: '1px' }}>What We Do</span>
-          <h1 style={{ fontSize: 'clamp(2.5em, 5.5vw, 4em)', margin: '14px 0 18px', color: '#fff', lineHeight: 1.15, fontFamily: 'var(--font-heading)', textShadow: '0 2px 10px rgba(0,0,0,0.6)' }}>
+          <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1em', fontWeight: 600, letterSpacing: '1px' }}>What We Do</span>
+          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '10px 0 12px', color: '#fff', lineHeight: 1.15, fontFamily: 'var(--font-heading)', textShadow: '0 2px 10px rgba(0,0,0,0.6)' }}>
             Discover More About Our Work
           </h1>
-          <p style={{ fontSize: '1.1em', color: 'rgba(255,255,255,0.95)', lineHeight: 1.7, maxWidth: '680px', margin: '0 auto 28px', textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
-            At Momma Micky's Cakes, baking is an art form. We are dedicated to creating memorable culinary moments with handcrafted celebration cakes baked with passion, love, and the finest natural ingredients.
+          <p style={{ fontSize: '1.05em', color: 'rgba(255,255,255,0.95)', lineHeight: 1.6, maxWidth: '680px', margin: '0 auto', textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
+            At Momma Micky's Cakes, baking is an art form. Every celebration cake is handcrafted with passion, love, and the finest natural ingredients.
           </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
-            <Link to="/contact" className="btn" style={{ padding: '12px 30px', fontSize: '1em' }}>Contact Us</Link>
-            <Link to="/packages" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff', padding: '12px 30px', fontSize: '1em' }}>Explore Cakes</Link>
-          </div>
         </div>
       </section>
 

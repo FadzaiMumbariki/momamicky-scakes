@@ -10,8 +10,9 @@ export default function ServicesPage() {
       <section
         style={{
           position: 'relative',
-          minHeight: '260px',
-          height: '35vh',
+          minHeight: '280px',
+          height: '38vh',
+          maxHeight: '360px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -23,10 +24,13 @@ export default function ServicesPage() {
         }}
       >
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', margin: '0 auto' }}>
-          <span className="tag" style={{ color: 'var(--color-gold)', fontSize: '0.95em', fontWeight: 600 }}>What we do</span>
-          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.2em)', margin: '10px 0 0', color: 'var(--color-primary)', lineHeight: 1.2 }}>
-            We help your business grow
+          <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1em', fontWeight: 600, letterSpacing: '1px' }}>What We Do</span>
+          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '10px 0 12px', color: 'var(--color-primary)', lineHeight: 1.15, fontFamily: 'var(--font-heading)' }}>
+            We Help Your Business Grow
           </h1>
+          <p style={{ fontSize: '1.05em', color: 'var(--color-text)', lineHeight: 1.6, maxWidth: '650px', margin: '0 auto' }}>
+            Tailored confectionery catering and dessert displays designed for your celebrations
+          </p>
         </div>
       </section>
 

@@ -1438,8 +1438,9 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 
 .packages-hero-section {
   position: relative;
-  min-height: 400px;
-  height: 50vh;
+  min-height: 280px;
+  height: 38vh;
+  max-height: 360px;
   background-image: url('/packages-hero-cake.jpg');
   background-size: cover;
   background-position: center 32%;
@@ -1448,6 +1449,7 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 40px 20px;
 }
 
 .packages-hero-overlay {
