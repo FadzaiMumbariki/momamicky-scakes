@@ -1438,9 +1438,12 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 
 .packages-hero-section {
   position: relative;
-  min-height: 360px;
+  min-height: 400px;
   height: 50vh;
-  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%);
+  background-image: url('/packages-hero-cake.jpg');
+  background-size: cover;
+  background-position: center 32%;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1450,28 +1453,31 @@ h5 { font-size: 1em; font-weight: 600; color: var(--color-primary); }
 .packages-hero-overlay {
   position: absolute;
   inset: 0;
-  background: transparent;
-  z-index: 0;
+  background: linear-gradient(180deg, rgba(23, 21, 28, 0.45) 0%, rgba(23, 21, 28, 0.65) 50%, rgba(23, 21, 28, 0.82) 100%);
+  z-index: 1;
 }
 
 .packages-hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 800px;
   padding: 0 20px;
+  color: #fff;
 }
 
 .packages-hero-content h1 {
   font-family: var(--font-heading);
   font-size: clamp(2.5em, 6vw, 4em);
-  color: var(--color-primary);
+  color: #fff;
   margin: 16px 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .packages-hero-content p {
-  color: var(--color-text);
-  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.15em;
   margin-top: 12px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .packages-main-section {

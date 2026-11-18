@@ -186,7 +186,7 @@ export default function PackagesPage() {
       <section className="packages-hero-section">
         <div className="packages-hero-overlay"></div>
         <div className="packages-hero-content">
-          <span className="tag tag-white">Celebration Packs</span>
+          <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1.05em', fontWeight: 600, letterSpacing: '1px' }}>Celebration Packs</span>
           <h1>Momma Micky's Cakes Packages</h1>
           <p>Handcrafted custom cakes baked with love for every special occasion</p>
         </div>
