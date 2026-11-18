@@ -143,8 +143,7 @@ export default function CartDrawer() {
                       alignItems: 'center'
                     }}
                   >
-                    <img
-                      src={item.image}
+                    <img loading="lazy" src={item.image}
                       alt={item.name || item.title}
                       style={{
                         width: '70px',
@@ -346,3 +345,4 @@ export default function CartDrawer() {
     </div>
   );
 }
+

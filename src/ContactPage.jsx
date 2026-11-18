@@ -73,7 +73,7 @@ export default function ContactPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundImage: "url('/cakes/1000569248.webp')",
+          backgroundImage: "url('/cakes/1000569248.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center 35%',
           backgroundRepeat: 'no-repeat',
@@ -336,7 +336,7 @@ export default function ContactPage() {
             {/* Feature 1 */}
             <div style={{ textAlign: 'center', padding: '30px 20px' }}>
               <div style={{ width: '100px', height: '100px', margin: '0 auto 20px', borderRadius: '50%', overflow: 'hidden', border: '3px solid var(--color-orange)' }}>
-                <img src="/cakes/cake-02.jpg" alt="High Quality Standards" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img loading="lazy" src="/cakes/cake-02.jpg" alt="High Quality Standards" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <h4 style={{ fontSize: '1.3em', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-heading)' }}>
                 High Quality Standards
@@ -349,7 +349,7 @@ export default function ContactPage() {
             {/* Feature 2 */}
             <div style={{ textAlign: 'center', padding: '30px 20px' }}>
               <div style={{ width: '100px', height: '100px', margin: '0 auto 20px', borderRadius: '50%', overflow: 'hidden', border: '3px solid var(--color-orange)' }}>
-                <img src="/cakes/cake-09.jpg" alt="Attention To Detail" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img loading="lazy" src="/cakes/cake-09.jpg" alt="Attention To Detail" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <h4 style={{ fontSize: '1.3em', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-heading)' }}>
                 Attention To Detail
@@ -362,7 +362,7 @@ export default function ContactPage() {
             {/* Feature 3 */}
             <div style={{ textAlign: 'center', padding: '30px 20px' }}>
               <div style={{ width: '100px', height: '100px', margin: '0 auto 20px', borderRadius: '50%', overflow: 'hidden', border: '3px solid var(--color-orange)' }}>
-                <img src="/cakes/cake-06.jpg" alt="Premium Experience" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img loading="lazy" src="/cakes/cake-06.jpg" alt="Premium Experience" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <h4 style={{ fontSize: '1.3em', marginBottom: '12px', color: 'var(--color-primary)', fontFamily: 'var(--font-heading)' }}>
                 Premium Experience
@@ -391,3 +391,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

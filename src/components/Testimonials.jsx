@@ -46,8 +46,7 @@ export default function Testimonials() {
           </p>
           
           <div className="testimonial-author">
-            <img 
-              src={testimonials[currentTestimonial].avatar} 
+            <img loading="lazy" src={testimonials[currentTestimonial].avatar} 
               alt={testimonials[currentTestimonial].author}
               className="testimonial-avatar"
             />
@@ -89,3 +88,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

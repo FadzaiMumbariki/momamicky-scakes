@@ -53,39 +53,41 @@ export default function AboutPage() {
           {/* Left Content Column */}
           <div style={{ padding: '80px 60px 80px 80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1.25em', marginBottom: '14px', display: 'block', fontWeight: 600 }}>
-              What we do
+              Our Story
             </span>
             <h2 style={{ fontSize: 'clamp(2.6em, 5vw, 4.2em)', color: 'var(--color-primary)', lineHeight: 1.15, marginBottom: '28px', fontFamily: 'var(--font-heading)' }}>
-              Discover more about<br />our work
+              The Heart Behind<br />Momma Micky's Cakes
             </h2>
+            <p style={{ color: 'var(--color-text)', fontSize: '1.05em', lineHeight: 1.85, maxWidth: '540px', marginBottom: '20px' }}>
+              What started as a passion for baking in Momma Micky's home kitchen has blossomed into a beloved bakery known for creating extraordinary celebration cakes. With over a decade of experience, we've perfected the art of combining premium ingredients with creative design to craft cakes that taste as amazing as they look.
+            </p>
             <p style={{ color: 'var(--color-text)', fontSize: '1.05em', lineHeight: 1.85, maxWidth: '540px', marginBottom: '34px' }}>
-              Our team is committed to delivering high-quality services tailored to your needs. With years of experience and a passion for excellence, we focus on creating solutions that truly make a difference. We believe in building strong relationships based on trust and clear communication.
+              Every cake tells a story, and we're honored to be part of your most precious memories. From intimate birthdays to grand weddings, we pour our hearts into every tier, buttercream swirl, and fondant detail.
             </p>
 
             {/* Progress Bar Item */}
             <div style={{ maxWidth: '500px', marginBottom: '36px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
                 <span style={{ fontFamily: 'var(--font-body)', fontSize: '1.05em', color: 'var(--color-primary)', fontWeight: 600 }}>
-                  High Quality Standards
+                  Customer Satisfaction
                 </span>
-                <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>85%</span>
+                <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>98%</span>
               </div>
               <div style={{ width: '100%', height: '8px', background: '#f0f0f0', borderRadius: '4px', overflow: 'hidden' }}>
-                <div style={{ width: '85%', height: '100%', background: 'var(--color-orange)', borderRadius: '4px', transition: 'width 1.2s ease' }}></div>
+                <div style={{ width: '98%', height: '100%', background: 'var(--color-orange)', borderRadius: '4px', transition: 'width 1.2s ease' }}></div>
               </div>
             </div>
 
             <div>
               <Link to="/contact" className="btn" style={{ padding: '14px 38px', fontSize: '1.15em' }}>
-                Learn More
+                Order Your Cake
               </Link>
             </div>
           </div>
 
           {/* Right Image Column */}
           <div style={{ position: 'relative', minHeight: '450px' }}>
-            <img
-              src="/cakes/cake-04.webp"
+            <img loading="lazy" src="/cakes/cake-04.jpg"
               alt="Momma Micky's Handcrafted Treats"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
@@ -97,21 +99,21 @@ export default function AboutPage() {
       <section className="about-section" style={{ background: 'var(--color-beige)', padding: '0' }}>
         <div className="about-inner">
           <div className="about-left">
-            <div className="about-left-bg" style={{ backgroundImage: "url('/cakes/cake-01.webp')" }}></div>
+            <div className="about-left-bg" style={{ backgroundImage: "url('/cakes/cake-01.jpg')" }}></div>
             <img
               className="about-circle-img"
-              src="/cakes/cake-01.webp"
+              src="/cakes/cake-01.jpg"
               alt="Momma Micky's Sliced Layer Cake"
             />
             <div className="about-text">
-              <h2>Discover more about our work</h2>
-              <h5>Attention To Detail</h5>
+              <h2>Handcrafted with Love</h2>
+              <h5>Premium Ingredients & Artisan Techniques</h5>
               <p style={{ color: 'var(--color-text)', marginTop: '14px', maxWidth: '420px', fontSize: '0.95em' }}>
-                Every single tier is designed from sketch to oven with meticulous precision. We combine delicate sponge textures with artisan frostings to deliver perfection in every slice.
+                Every single tier is designed from sketch to oven with meticulous precision. We use only the finest Belgian chocolate, pure Madagascar vanilla, and farm-fresh eggs to deliver perfection in every slice.
               </p>
             </div>
           </div>
-          <div className="play-btn-wrap" style={{ backgroundImage: "url('/cakes/cake-04.webp')" }}>
+          <div className="play-btn-wrap" style={{ backgroundImage: "url('/cakes/cake-04.jpg')" }}>
             <div className="play-btn" onClick={() => setIsVideoOpen(true)}>
               <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
                 <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
@@ -120,10 +122,10 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="gallery-grid">
-          <img loading="lazy" decoding="async" src="/cakes/cake-02.webp" alt="Pablo Luxury Cake" />
-          <img loading="lazy" decoding="async" src="/cakes/cake-03.webp" alt="Mzukulu Pink Glamour" />
-          <img loading="lazy" decoding="async" src="/cakes/cake-06.webp" alt="Stitch & Angel Cake" />
-          <img loading="lazy" decoding="async" src="/cakes/cake-07.webp" alt="Dino Birthday Cake" />
+          <img loading="lazy" decoding="async" src="/cakes/cake-02.jpg" alt="Pablo Luxury Cake" />
+          <img loading="lazy" decoding="async" src="/cakes/cake-03.jpg" alt="Mzukulu Pink Glamour" />
+          <img loading="lazy" decoding="async" src="/cakes/cake-06.jpg" alt="Stitch & Angel Cake" />
+          <img loading="lazy" decoding="async" src="/cakes/cake-07.jpg" alt="Dino Birthday Cake" />
         </div>
       </section>
 
@@ -132,13 +134,13 @@ export default function AboutPage() {
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '50px' }}>
             <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1.1em', marginBottom: '12px', display: 'block' }}>
-              Explore our world
+              Our Specialties
             </span>
             <h2 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', marginTop: '10px', fontFamily: 'var(--font-heading)', color: 'var(--color-primary)' }}>
-              Solutions made for your needs
+              Cake Packages for Every Occasion
             </h2>
             <p style={{ maxWidth: '700px', margin: '20px auto 0', color: 'var(--color-text)', fontSize: '1.05em', lineHeight: 1.8 }}>
-              At the core of our mission is a deep commitment to excellence and client satisfaction. Our team works tirelessly to provide thoughtful solutions, ensuring that every detail reflects care.
+              Whether you're celebrating a birthday, wedding, or any special milestone, we have the perfect cake package designed just for you. Each package includes custom design consultation and premium ingredients.
             </p>
           </div>
           
@@ -148,7 +150,7 @@ export default function AboutPage() {
             {/* Card 1: Comfort Plus */}
             <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease' }}>
               <img loading="lazy" decoding="async" 
-                src="/cakes/cake-04.webp" 
+                src="/cakes/cake-04.jpg" 
                 alt="Decorated cupcakes" 
                 style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }}
               />
@@ -163,7 +165,7 @@ export default function AboutPage() {
             {/* Card 2: Daily Favorite */}
             <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease' }}>
               <img loading="lazy" decoding="async" 
-                src="/cakes/cake-07.webp" 
+                src="/cakes/cake-07.jpg" 
                 alt="Dino Birthday Cake Daily Favorite" 
                 style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }}
               />
@@ -178,7 +180,7 @@ export default function AboutPage() {
             {/* Card 3: Basic Box */}
             <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.08)', transition: 'transform 0.3s ease' }}>
               <img loading="lazy" decoding="async" 
-                src="/cakes/cake-06.webp" 
+                src="/cakes/cake-06.jpg" 
                 alt="Stitch Character Cake Basic Box" 
                 style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }}
               />
@@ -198,20 +200,20 @@ export default function AboutPage() {
       <section style={{ background: 'var(--color-light)', padding: '90px 20px' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '50px', alignItems: 'center' }}>
           <div>
-            <span className="tag">Smart & Simple</span>
-            <h2 style={{ fontSize: '2.5em', margin: '12px 0 20px' }}>Creative ideas for smart people</h2>
+            <span className="tag">Our Promise</span>
+            <h2 style={{ fontSize: '2.5em', margin: '12px 0 20px' }}>Baking Dreams Into Reality</h2>
             <p style={{ color: 'var(--color-text)', lineHeight: 1.8, marginBottom: '20px' }}>
-              We pride ourselves on offering personalized support that helps you celebrate life's milestones. Every project is approached with dedication and attention to detail, ensuring the best possible outcome.
+              We believe every celebration deserves a cake that's as unique as the person or moment it honors. That's why we work closely with each client to understand their vision, preferences, and dietary needs to create a truly personalized masterpiece.
             </p>
             <p style={{ color: 'var(--color-text)', lineHeight: 1.8, marginBottom: '30px' }}>
-              At the core of our mission is a deep commitment to excellence and client satisfaction. Our team works tirelessly to provide thoughtful confectionery solutions, ensuring that every design reflects heartfelt celebration.
+              From the first consultation to the final delivery, we're committed to exceeding your expectations. Our attention to detail, creative designs, and unforgettable flavors have made us the trusted choice for celebrations across the region.
             </p>
-            <Link to="/contact" className="btn">Get Started</Link>
+            <Link to="/contact" className="btn">Start Your Order</Link>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <img loading="lazy" decoding="async" src="/cakes/cake-08.webp" alt="Cake Detail" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px', boxShadow: '0 6px 20px rgba(0,0,0,0.08)' }} />
-            <img loading="lazy" decoding="async" src="/cakes/cake-09.webp" alt="Cake Detail" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px', boxShadow: '0 6px 20px rgba(0,0,0,0.08)', marginTop: '30px' }} />
+            <img loading="lazy" decoding="async" src="/cakes/cake-08.jpg" alt="Cake Detail" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px', boxShadow: '0 6px 20px rgba(0,0,0,0.08)' }} />
+            <img loading="lazy" decoding="async" src="/cakes/cake-09.jpg" alt="Cake Detail" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px', boxShadow: '0 6px 20px rgba(0,0,0,0.08)', marginTop: '30px' }} />
           </div>
         </div>
       </section>
@@ -246,3 +248,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

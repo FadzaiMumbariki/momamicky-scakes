@@ -16,7 +16,7 @@ export default function ServicesPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundImage: "url('/cakes/cake-09.webp')",
+          backgroundImage: "url('/cakes/cake-09.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center 35%',
           backgroundRepeat: 'no-repeat',
@@ -73,8 +73,7 @@ export default function ServicesPage() {
 
           {/* Right Image */}
           <div style={{ position: 'relative', minHeight: '500px' }}>
-            <img
-              src="/cakes/cake-02.jpg"
+            <img loading="lazy" src="/cakes/cake-02.jpg"
               alt="Momma Micky's Premium Services"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
@@ -98,8 +97,7 @@ export default function ServicesPage() {
             {/* Service 1 */}
             <div style={{ background: '#fff', padding: '20px 16px', borderRadius: '6px', boxShadow: '0 3px 15px rgba(0,0,0,0.05)', textAlign: 'center' }}>
               <div style={{ width: '70px', height: '70px', margin: '0 auto 14px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--color-orange)' }}>
-                <img 
-                  src="/cakes/cake-02.jpg" 
+                <img loading="lazy" src="/cakes/cake-02.jpg" 
                   alt="Custom Design Consultation" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -115,8 +113,7 @@ export default function ServicesPage() {
             {/* Service 2 */}
             <div style={{ background: '#fff', padding: '20px 16px', borderRadius: '6px', boxShadow: '0 3px 15px rgba(0,0,0,0.05)', textAlign: 'center' }}>
               <div style={{ width: '70px', height: '70px', margin: '0 auto 14px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--color-orange)' }}>
-                <img 
-                  src="/cakes/cake-09.jpg" 
+                <img loading="lazy" src="/cakes/cake-09.jpg" 
                   alt="Premium Organic Ingredients" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -132,8 +129,7 @@ export default function ServicesPage() {
             {/* Service 3 */}
             <div style={{ background: '#fff', padding: '20px 16px', borderRadius: '6px', boxShadow: '0 3px 15px rgba(0,0,0,0.05)', textAlign: 'center' }}>
               <div style={{ width: '70px', height: '70px', margin: '0 auto 14px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--color-orange)' }}>
-                <img 
-                  src="/cakes/cake-06.jpg" 
+                <img loading="lazy" src="/cakes/cake-06.jpg" 
                   alt="Safe Delivery & Setup" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -149,8 +145,7 @@ export default function ServicesPage() {
             {/* Service 4 */}
             <div style={{ background: '#fff', padding: '20px 16px', borderRadius: '6px', boxShadow: '0 3px 15px rgba(0,0,0,0.05)', textAlign: 'center' }}>
               <div style={{ width: '70px', height: '70px', margin: '0 auto 14px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--color-orange)' }}>
-                <img 
-                  src="/cakes/cake-03.jpg" 
+                <img loading="lazy" src="/cakes/cake-03.jpg" 
                   alt="Edible Art & Decorations" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -166,8 +161,7 @@ export default function ServicesPage() {
             {/* Service 5 */}
             <div style={{ background: '#fff', padding: '20px 16px', borderRadius: '6px', boxShadow: '0 3px 15px rgba(0,0,0,0.05)', textAlign: 'center' }}>
               <div style={{ width: '70px', height: '70px', margin: '0 auto 14px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--color-orange)' }}>
-                <img 
-                  src="/cakes/cake-08.jpg" 
+                <img loading="lazy" src="/cakes/cake-08.jpg" 
                   alt="Event Coordination" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -183,8 +177,7 @@ export default function ServicesPage() {
             {/* Service 6 */}
             <div style={{ background: '#fff', padding: '20px 16px', borderRadius: '6px', boxShadow: '0 3px 15px rgba(0,0,0,0.05)', textAlign: 'center' }}>
               <div style={{ width: '70px', height: '70px', margin: '0 auto 14px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--color-orange)' }}>
-                <img 
-                  src="/cakes/cake-04.jpg" 
+                <img loading="lazy" src="/cakes/cake-04.jpg" 
                   alt="Allergy Accommodations" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -216,3 +209,4 @@ export default function ServicesPage() {
     </div>
   );
 }
+

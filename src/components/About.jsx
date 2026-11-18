@@ -7,8 +7,7 @@ export default function About() {
       <div className="about-inner">
         <div className="about-left">
           <div className="about-left-bg"></div>
-          <img 
-            src="https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/chef-avatar.jpg" 
+          <img loading="lazy" src="https://nicdarkthemes.com/food/food-wordpress-theme/wp-content/uploads/sites/halloween/chef-avatar.jpg" 
             alt="Chef" 
             className="about-circle-img"
           />
@@ -35,3 +34,4 @@ export default function About() {
     </section>
   );
 }
+

@@ -27,7 +27,7 @@ export default function Features() {
       <div className="features-grid">
         {features.map((feature, index) => (
           <div key={index} className="feature-card">
-            <img src={feature.icon} alt={feature.title} />
+            <img loading="lazy" src={feature.icon} alt={feature.title} />
             <h4>{feature.title}</h4>
             <p>{feature.description}</p>
           </div>
@@ -36,3 +36,4 @@ export default function Features() {
     </section>
   );
 }
+

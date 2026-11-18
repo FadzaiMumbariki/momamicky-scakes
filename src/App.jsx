@@ -14,14 +14,14 @@ import './hero-fix.css'; // must come AFTER App.css so it overrides old .hero ru
 
 // Hero content lives outside the component so it is created once
 const HERO_SLIDES = [
-  '/cakes/1000569250.webp',
-  '/cakes/cake-02.webp',
-  '/cakes/1000569113.webp',
-  '/cakes/1000569248.webp',
-  '/cakes/cake-09.webp',
-  '/cakes/1000569276.webp',
-  '/cakes/cake-06.webp',
-  '/cakes/1000569263.webp'
+  '/cakes/1000569250.jpg',
+  '/cakes/cake-02.jpg',
+  '/cakes/1000569113.jpg',
+  '/cakes/1000569248.jpg',
+  '/cakes/cake-09.jpg',
+  '/cakes/1000569276.jpg',
+  '/cakes/cake-06.jpg',
+  '/cakes/1000569263.jpg'
 ];
 const HERO_WORDS = ['Custom Cakes', 'Cupcakes', 'Artisan Treats', 'Celebration Cakes'];
 
@@ -41,16 +41,15 @@ function NavigationBar() {
   ];
 
   return (
-    <header className="site-header">
+    <header className="site-header" role="banner">
       <div className="header-main" style={{ padding: '8px 40px' }}>
-        <Link to="/" className="site-logo" style={{ display: 'flex', alignItems: 'center' }}>
-          <img
-            src="/logo.png"
+        <Link to="/" className="site-logo" style={{ display: 'flex', alignItems: 'center' }} aria-label="Momma Micky's Cakes Home">
+          <img loading="lazy" src="/logo.png"
             alt="Momma Micky's Cakes Official Logo"
             style={{ height: '90px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.35))' }}
           />
         </Link>
-        <nav className={`site-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+        <nav className={`site-nav ${mobileMenuOpen ? 'mobile-open' : ''}`} role="navigation" aria-label="Main navigation">
           <ul>
             {navLinks.map((item) => (
               <li key={item.to}>
@@ -58,6 +57,7 @@ function NavigationBar() {
                   to={item.to}
                   className={location.pathname === item.to ? 'active' : ''}
                   onClick={() => setMobileMenuOpen(false)}
+                  aria-current={location.pathname === item.to ? 'page' : undefined}
                 >
                   {item.label}
                 </Link>
@@ -95,11 +95,16 @@ function NavigationBar() {
             </svg>
             <span>${cartTotal.toFixed(2)} ({cartCount})</span>
           </button>
-          <div className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+          <button 
+            className="hamburger" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M16 132h416c8.8 0 16-7.2 16-16V76c0-8.8-7.2-16-16-16H16C7.2 60 0 67.2 0 76v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16zm0 160h416c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16z" />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
     </header>
@@ -109,12 +114,11 @@ function NavigationBar() {
 // Footer Component
 function Footer() {
   return (
-    <footer className="site-footer" id="contact">
+    <footer className="site-footer" id="contact" role="contentinfo">
       <div className="footer-grid">
         <div className="footer-about">
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '18px' }}>
-            <img
-              src="/logo.png"
+            <img loading="lazy" src="/logo.png"
               alt="Momma Micky's Cakes Logo"
               style={{ height: '62px', width: 'auto', objectFit: 'contain' }}
             />
@@ -124,13 +128,15 @@ function Footer() {
         </div>
         <div className="footer-col">
           <h5>Navigation</h5>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/packages">Packages</Link></li>
-            <li><Link to="/gallery">Gallery</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
+          <nav aria-label="Footer navigation">
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/packages">Packages</Link></li>
+              <li><Link to="/gallery">Gallery</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
+          </nav>
         </div>
         <div className="footer-col">
           <h5>Our Specialties</h5>
@@ -165,10 +171,11 @@ function Footer() {
       <div className="footer-bottom">
         <p className="footer-copy">© 2025 Momma Micky's Cakes — All Rights Reserved.</p>
         <div className="footer-social">
-          <a href="#" className="social-link" title="Facebook">fb</a>
-          <a href="#" className="social-link" title="Instagram">ig</a>
-          <a href="#" className="social-link" title="Twitter">tw</a>
-          <a href="#" className="social-link" title="YouTube">yt</a>
+          {/* TODO: Update these URLs with your actual social media links */}
+          <a href="https://facebook.com/mommamickyscakes" target="_blank" rel="noopener noreferrer" className="social-link" title="Facebook" aria-label="Visit our Facebook page">fb</a>
+          <a href="https://instagram.com/mommamickyscakes" target="_blank" rel="noopener noreferrer" className="social-link" title="Instagram" aria-label="Visit our Instagram page">ig</a>
+          <a href="https://twitter.com/mommamickyscakes" target="_blank" rel="noopener noreferrer" className="social-link" title="Twitter" aria-label="Visit our Twitter page">tw</a>
+          <a href="https://youtube.com/@mommamickyscakes" target="_blank" rel="noopener noreferrer" className="social-link" title="YouTube" aria-label="Visit our YouTube channel">yt</a>
         </div>
       </div>
     </footer>
@@ -185,12 +192,12 @@ function HomePage() {
   const [serviceIdx, setServiceIdx] = useState(0);
   const serviceSlides = [
     {
-      img: '/cakes/cake-09.webp',
+      img: '/cakes/cake-09.jpg',
       title: 'Bespoke Baking',
       desc: 'Our approach combines creativity and confectionery artistry to craft cakes that elevate every celebration.'
     },
     {
-      img: '/cakes/cake-02.webp',
+      img: '/cakes/cake-02.jpg',
       title: 'Party & Event Catering',
       desc: 'From weddings to milestone birthdays, Momma Micky\'s Cakes designs dessert tables and signature centerpieces.'
     }
@@ -202,19 +209,19 @@ function HomePage() {
       quote: "Momma Micky's Cakes made our celebration unforgettable! The custom tier cake was both breathtakingly beautiful and delicious.",
       name: "John Miller",
       city: "Seattle",
-      avatar: '/cakes/cake-03.webp'
+      avatar: '/cakes/cake-03.jpg'
     },
     {
       quote: "The details on the custom birthday cake were a massive hit with all our guests. Highly recommend Momma Micky's Cakes!",
       name: "Emily Johnson",
       city: "Miami",
-      avatar: '/cakes/cake-08.webp'
+      avatar: '/cakes/cake-08.jpg'
     },
     {
       quote: "Unmatched attention to detail and mouth-watering flavors. Momma Micky's Cakes is our family's go-to bakery for every special occasion.",
       name: "Sarah Williams",
       city: "New York",
-      avatar: '/cakes/cake-06.webp'
+      avatar: '/cakes/cake-06.jpg'
     }
   ];
   const [tIdx, setTIdx] = useState(0);
@@ -258,8 +265,27 @@ function HomePage() {
     };
   }, []);
 
-  const handleNewsletterSubmit = (e) => {
+  const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
+    
+    // TODO: Integrate with email service (e.g., Mailchimp, SendGrid, ConvertKit)
+    // Example integration:
+    // const email = e.target.elements[0].value;
+    // try {
+    //   const response = await fetch('/api/subscribe', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ email })
+    //   });
+    //   if (response.ok) {
+    //     setSubscribed(true);
+    //     setTimeout(() => setSubscribed(false), 5000);
+    //   }
+    // } catch (error) {
+    //   console.error('Newsletter subscription error:', error);
+    // }
+    
+    // Temporary placeholder - shows success message
     setSubscribed(true);
     setTimeout(() => setSubscribed(false), 5000);
   };
@@ -289,10 +315,10 @@ function HomePage() {
       <section className="about-section">
         <div className="about-inner">
           <div className="about-left">
-            <div className="about-left-bg" style={{ backgroundImage: "url('/cakes/cake-01.webp')" }}></div>
+            <div className="about-left-bg" style={{ backgroundImage: "url('/cakes/cake-01.jpg')" }}></div>
             <img
               className="about-circle-img"
-              src="/cakes/cake-01.webp"
+              src="/cakes/cake-01.jpg"
               alt="Momma Micky's Sliced Layer Cake"
             />
             <div className="about-text">
@@ -300,7 +326,7 @@ function HomePage() {
               <h5>Momma Micky's Signature Sponge & Frosting</h5>
             </div>
           </div>
-          <div className="play-btn-wrap" style={{ backgroundImage: "url('/cakes/cake-04.webp')" }}>
+          <div className="play-btn-wrap" style={{ backgroundImage: "url('/cakes/cake-04.jpg')" }}>
             <div className="play-btn" onClick={() => setIsVideoOpen(true)}>
               <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
                 <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
@@ -309,10 +335,10 @@ function HomePage() {
           </div>
         </div>
         <div className="gallery-grid">
-          <img src="/cakes/cake-02.webp" alt="Black & Gold Luxury Cake" />
-          <img src="/cakes/cake-03.webp" alt="Chic Hat Glamour Cake" />
-          <img src="/cakes/cake-06.webp" alt="Stitch & Angel Birthday Cake" />
-          <img src="/cakes/cake-07.webp" alt="Dino peppa Birthday Cake" />
+          <img loading="lazy" src="/cakes/cake-02.jpg" alt="Black & Gold Luxury Cake" />
+          <img loading="lazy" src="/cakes/cake-03.jpg" alt="Chic Hat Glamour Cake" />
+          <img loading="lazy" src="/cakes/cake-06.jpg" alt="Stitch & Angel Birthday Cake" />
+          <img loading="lazy" src="/cakes/cake-07.jpg" alt="Dino peppa Birthday Cake" />
         </div>
       </section>
 
@@ -394,7 +420,7 @@ function HomePage() {
         </div>
         <div className="growth-grid">
           <div className="growth-card">
-            <img src="/cakes/cake-02.webp" alt="Pablo Black & Gold Cake" />
+            <img loading="lazy" src="/cakes/cake-02.jpg" alt="Pablo Black & Gold Cake" />
             <div className="growth-card-info">
               <h4>Pablo Luxury Black & Gold</h4>
               <p>Stunning contrast cake with black brushstroke, gold leaf, and floating metallic spheres.</p>
@@ -405,7 +431,7 @@ function HomePage() {
                     id: 1,
                     name: 'Pablo Luxury Black & Gold',
                     price: 65.00,
-                    image: '/cakes/cake-02.webp',
+                    image: '/cakes/cake-02.jpg',
                     category: 'luxury',
                     description: 'Stunning contrast cake with black brushstroke, gold leaf, and floating metallic spheres.'
                   })}
@@ -418,7 +444,7 @@ function HomePage() {
             </div>
           </div>
           <div className="growth-card">
-            <img src="/cakes/cake-09.webp" alt="Lady Laca Floral Gold Cake" />
+            <img loading="lazy" src="/cakes/cake-09.jpg" alt="Lady Laca Floral Gold Cake" />
             <div className="growth-card-info">
               <h4>Lady Laca Sunburst Blossom</h4>
               <p>Pastel peach tier with golden fans, orange sugar dahlias, and gold butterfly accents.</p>
@@ -429,7 +455,7 @@ function HomePage() {
                     id: 2,
                     name: 'Lady Laca Sunburst Blossom',
                     price: 70.00,
-                    image: '/cakes/cake-09.webp',
+                    image: '/cakes/cake-09.jpg',
                     category: 'wedding',
                     description: 'Pastel peach tier with golden fans, orange sugar dahlias, and gold butterfly accents.'
                   })}
@@ -442,7 +468,7 @@ function HomePage() {
             </div>
           </div>
           <div className="growth-card">
-            <img src="/cakes/cake-06.webp" alt="Stitch & Angel Theme Cake" />
+            <img loading="lazy" src="/cakes/cake-06.jpg" alt="Stitch & Angel Theme Cake" />
             <div className="growth-card-info">
               <h4>Stitch & Angel Birthday Fantasy</h4>
               <p>Baby blue tier with custom Stitch & Angel edible art, ice cream cone topper & pink hearts.</p>
@@ -453,7 +479,7 @@ function HomePage() {
                     id: 3,
                     name: 'Stitch & Angel Birthday Fantasy',
                     price: 75.00,
-                    image: '/cakes/cake-06.webp',
+                    image: '/cakes/cake-06.jpg',
                     category: 'kids',
                     description: 'Baby blue tier with custom Stitch & Angel edible art, ice cream cone topper & pink hearts.'
                   })}
@@ -466,7 +492,7 @@ function HomePage() {
             </div>
           </div>
           <div className="growth-card">
-            <img src="/cakes/cake-03.webp" alt="Mzukulu Pink Glamour" />
+            <img loading="lazy" src="/cakes/cake-03.jpg" alt="Mzukulu Pink Glamour" />
             <div className="growth-card-info">
               <h4>Mzukulu Pink Glamour Hat</h4>
               <p>Blush pink finish with chic fashion topper, golden bubbles, and dual candles.</p>
@@ -477,7 +503,7 @@ function HomePage() {
                     id: 4,
                     name: 'Mzukulu Pink Glamour Hat',
                     price: 68.00,
-                    image: '/cakes/cake-03.webp',
+                    image: '/cakes/cake-03.jpg',
                     category: 'celebration',
                     description: 'Blush pink finish with chic fashion topper, golden bubbles, and dual candles.'
                   })}
@@ -490,7 +516,7 @@ function HomePage() {
             </div>
           </div>
           <div className="growth-card">
-            <img src="/cakes/1000569250.webp" alt="Monarch Marble & Gold" />
+            <img loading="lazy" src="/cakes/1000569250.jpg" alt="Monarch Marble & Gold" />
             <div className="growth-card-info">
               <h4>Monarch Marble & Gold</h4>
               <p>Hand-painted marble fondant with veined gold leaf and minimalist modern cake architecture.</p>
@@ -501,7 +527,7 @@ function HomePage() {
                     id: 27,
                     name: 'Monarch Marble & Gold',
                     price: 79.00,
-                    image: '/cakes/1000569250.webp',
+                    image: '/cakes/1000569250.jpg',
                     category: 'luxury',
                     description: 'Hand-painted marble fondant with veined gold leaf and minimalist modern cake architecture.'
                   })}
@@ -514,7 +540,7 @@ function HomePage() {
             </div>
           </div>
           <div className="growth-card">
-            <img src="/cakes/cake-10.webp" alt="Minnie Mouse Chocolate Dream" />
+            <img loading="lazy" src="/cakes/cake-10.jpg" alt="Minnie Mouse Chocolate Dream" />
             <div className="growth-card-info">
               <h4>Alma's Minnie Mouse Chocolate Cake</h4>
               <p>Rich chocolate sponge filled with vanilla buttercream, mini chocolate bars, and Minnie toppers.</p>
@@ -525,7 +551,7 @@ function HomePage() {
                     id: 6,
                     name: "Alma's Minnie Mouse Chocolate",
                     price: 60.00,
-                    image: '/cakes/cake-10.webp',
+                    image: '/cakes/cake-10.jpg',
                     category: 'kids',
                     description: 'Rich chocolate sponge filled with vanilla buttercream, mini chocolate bars, and Minnie toppers.'
                   })}
@@ -537,9 +563,81 @@ function HomePage() {
               </div>
             </div>
           </div>
+          <div className="growth-card">
+            <img loading="lazy" src="/cakes/soccer-ball-cake.jpg" alt="Champion 3D Soccer Ball Cake" />
+            <div className="growth-card-info">
+              <h4>Champion 3D Soccer Ball Cake</h4>
+              <p>Handcrafted realistic 3D soccer ball cake sculpted over lush piped buttercream grass on a custom pitch board.</p>
+              <div className="growth-card-actions">
+                <span>$75.00</span>
+                <button
+                  onClick={() => addToCart({
+                    id: 52,
+                    name: 'Champion 3D Soccer Ball Cake',
+                    price: 75.00,
+                    image: '/cakes/soccer-ball-cake.jpg',
+                    category: 'kids',
+                    description: 'Handcrafted realistic 3D soccer ball cake sculpted over lush piped buttercream grass on a custom pitch board.'
+                  })}
+                  className="btn"
+                  style={{ marginLeft: 'auto', padding: '8px 18px', cursor: 'pointer' }}
+                >
+                  Order
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="growth-card">
+            <img loading="lazy" src="/cakes/twin-minnie-rainbow-cake.jpg" alt="Twin Rainbow & Minnie Celebration Duo" />
+            <div className="growth-card-info">
+              <h4>Twin Rainbow & Minnie Celebration Duo</h4>
+              <p>Delightful twin celebration tiers in pastel pink and sky blue joined by a rainbow arch, golden ladder, and Minnie Mouse toppers.</p>
+              <div className="growth-card-actions">
+                <span>$85.00</span>
+                <button
+                  onClick={() => addToCart({
+                    id: 53,
+                    name: 'Twin Rainbow & Minnie Celebration Duo',
+                    price: 85.00,
+                    image: '/cakes/twin-minnie-rainbow-cake.jpg',
+                    category: 'kids',
+                    description: 'Delightful twin celebration tiers in pastel pink and sky blue joined by a rainbow arch, golden ladder, and Minnie Mouse toppers.'
+                  })}
+                  className="btn"
+                  style={{ marginLeft: 'auto', padding: '8px 18px', cursor: 'pointer' }}
+                >
+                  Order
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="growth-card">
+            <img loading="lazy" src="/cakes/golden-boot-soccer-cake.jpg" alt="Golden Boot Championship Soccer Cake" />
+            <div className="growth-card-info">
+              <h4>Golden Boot Championship Soccer Cake</h4>
+              <p>Vibrant grass-green celebration tier with soccer ball mosaic tiles, custom jersey topper, soccer ball, and edible golden boot trophy.</p>
+              <div className="growth-card-actions">
+                <span>$80.00</span>
+                <button
+                  onClick={() => addToCart({
+                    id: 54,
+                    name: 'Golden Boot Championship Soccer Cake',
+                    price: 80.00,
+                    image: '/cakes/golden-boot-soccer-cake.jpg',
+                    category: 'kids',
+                    description: 'Vibrant grass-green celebration tier with soccer ball mosaic tiles, custom jersey topper, soccer ball, and edible golden boot trophy.'
+                  })}
+                  className="btn"
+                  style={{ marginLeft: 'auto', padding: '8px 18px', cursor: 'pointer' }}
+                >
+                  Order
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
         <div style={{ textAlign: 'center', marginTop: '50px' }}>
-          <Link to="/gallery" className="btn">Explore All 50+ Cakes in Gallery</Link>
+          <Link to="/gallery" className="btn">Explore All Cakes in Gallery</Link>
         </div>
       </section>
 
@@ -578,8 +676,7 @@ function HomePage() {
             </button>
           </div>
           <div style={{ position: 'relative', borderRadius: '14px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.4)' }}>
-            <img
-              src="/cakes/1000569250.webp"
+            <img loading="lazy" src="/cakes/1000569250.jpg"
               alt="Momma Micky Custom Cake Studio"
               style={{ width: '100%', height: '360px', objectFit: 'cover', display: 'block' }}
             />
@@ -596,7 +693,7 @@ function HomePage() {
         </div>
         <div className="packages-grid">
           <div className="package-card">
-            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-04.webp')" }}></div>
+            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-04.jpg')" }}></div>
             <div className="package-overlay"></div>
             <div className="package-content">
               <h4>Purple Ruffle Glam</h4>
@@ -604,7 +701,7 @@ function HomePage() {
             </div>
           </div>
           <div className="package-card">
-            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-07.webp')" }}></div>
+            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-07.jpg')" }}></div>
             <div className="package-overlay"></div>
             <div className="package-content">
               <h4>Dino Explorer Birthday</h4>
@@ -612,7 +709,7 @@ function HomePage() {
             </div>
           </div>
           <div className="package-card">
-            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-05.webp')" }}></div>
+            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-05.jpg')" }}></div>
             <div className="package-overlay"></div>
             <div className="package-content">
               <h4>Traditional Fruit Cake Feast</h4>
@@ -620,7 +717,7 @@ function HomePage() {
             </div>
           </div>
           <div className="package-card">
-            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-01.webp')" }}></div>
+            <div className="package-bg" style={{ backgroundImage: "url('/cakes/cake-01.jpg')" }}></div>
             <div className="package-overlay"></div>
             <div className="package-content">
               <h4>Golden Velvet Multi-Tier</h4>
@@ -635,7 +732,7 @@ function HomePage() {
 
       {/* TESTIMONIALS */}
       <section className="testimonials-section">
-        <div className="testimonials-bg" style={{ backgroundImage: "url('/cakes/cake-02.webp')" }}></div>
+        <div className="testimonials-bg" style={{ backgroundImage: "url('/cakes/cake-02.jpg')" }}></div>
         <div className="testimonials-overlay"></div>
         <div className="testimonials-inner">
           <p className="testimonials-title">What Our Clients Say About Momma Micky's Cakes</p>
@@ -781,3 +878,4 @@ export default function App() {
     </CartProvider>
   );
 }
+

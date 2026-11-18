@@ -12,7 +12,7 @@ export default function Growth() {
       <div className="growth-grid">
         {products.map((product, index) => (
           <div key={index} className="growth-card">
-            <img src={product.image} alt={product.name} />
+            <img loading="lazy" src={product.image} alt={product.name} />
             <div className="growth-card-info">
               <h4>{product.name}</h4>
               <p>{product.description}</p>
@@ -29,3 +29,4 @@ export default function Growth() {
     </section>
   );
 }
+

@@ -33,7 +33,7 @@ export default function Team() {
           <div key={index} className="flip-box">
             <div className="flip-box-inner">
               <div className="flip-box-front">
-                <img src={member.image} alt={member.name} />
+                <img loading="lazy" src={member.image} alt={member.name} />
                 <h4>{member.name}</h4>
                 <p>{member.role}</p>
               </div>
@@ -48,3 +48,4 @@ export default function Team() {
     </section>
   );
 }
+

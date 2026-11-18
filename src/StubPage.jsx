@@ -18,7 +18,7 @@ export default function StubPage({ title, subtitle, description, highlights, bad
 
         {badgeImage && (
           <div style={{ maxWidth: '600px', margin: '0 auto 40px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-            <img src={badgeImage} alt={title} style={{ width: '100%', height: '360px', objectFit: 'cover' }} />
+            <img loading="lazy" src={badgeImage} alt={title} style={{ width: '100%', height: '360px', objectFit: 'cover' }} />
           </div>
         )}
 
@@ -41,3 +41,4 @@ export default function StubPage({ title, subtitle, description, highlights, bad
     </div>
   );
 }
+

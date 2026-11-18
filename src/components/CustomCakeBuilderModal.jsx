@@ -5,7 +5,7 @@ export default function CustomCakeBuilderModal() {
   const { customizerOpen, setCustomizerOpen, addToCart, setIsCartOpen } = useCart();
 
   const [step, setStep] = useState(1);
-  const [size, setSize] = useState({ name: 'Single Tier 8" (Serves 14-18)', price: 60, image: '/cakes/1000569250.webp' });
+  const [size, setSize] = useState({ name: 'Single Tier 8" (Serves 14-18)', price: 60, image: '/cakes/1000569250.jpg' });
   const [flavor, setFlavor] = useState('Belgian Chocolate Truffle');
   const [frosting, setFrosting] = useState('Swiss Meringue Buttercream');
   const [addons, setAddons] = useState([]);
@@ -15,10 +15,10 @@ export default function CustomCakeBuilderModal() {
   if (!customizerOpen) return null;
 
   const sizeOptions = [
-    { name: 'Single Tier 6" (Serves 8-10)', price: 45, image: '/cakes/cake-03.webp' },
-    { name: 'Single Tier 8" (Serves 14-18)', price: 60, image: '/cakes/1000569250.webp' },
-    { name: 'Double Tier 6" + 8" (Serves 30-38)', price: 115, image: '/cakes/1000569262.webp' },
-    { name: 'Triple Tier Grand Celebration (Serves 60+)', price: 195, image: '/cakes/1000569274.webp' }
+    { name: 'Single Tier 6" (Serves 8-10)', price: 45, image: '/cakes/cake-03.jpg' },
+    { name: 'Single Tier 8" (Serves 14-18)', price: 60, image: '/cakes/1000569250.jpg' },
+    { name: 'Double Tier 6" + 8" (Serves 30-38)', price: 115, image: '/cakes/1000569262.jpg' },
+    { name: 'Triple Tier Grand Celebration (Serves 60+)', price: 195, image: '/cakes/1000569274.jpg' }
   ];
 
   const flavorOptions = [
@@ -181,7 +181,7 @@ export default function CustomCakeBuilderModal() {
                       boxShadow: size.name === opt.name ? '0 4px 15px rgba(236, 90, 25, 0.15)' : 'none'
                     }}
                   >
-                    <img src={opt.image} alt={opt.name} style={{ width: '100%', height: '140px', objectFit: 'cover' }} />
+                    <img loading="lazy" src={opt.image} alt={opt.name} style={{ width: '100%', height: '140px', objectFit: 'cover' }} />
                     <div style={{ padding: '14px' }}>
                       <div style={{ fontWeight: 600, fontSize: '0.95em', color: 'var(--color-primary)', marginBottom: '4px' }}>
                         {opt.name}
@@ -358,7 +358,7 @@ export default function CustomCakeBuilderModal() {
 
               <div style={{ background: '#fafafa', border: '1px solid #eee', borderRadius: '12px', padding: '20px', marginBottom: '20px' }}>
                 <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: '16px' }}>
-                  <img src={size.image} alt={size.name} style={{ width: '100px', height: '100px', borderRadius: '8px', objectFit: 'cover' }} />
+                  <img loading="lazy" src={size.image} alt={size.name} style={{ width: '100px', height: '100px', borderRadius: '8px', objectFit: 'cover' }} />
                   <div>
                     <h4 style={{ fontFamily: 'var(--font-heading)', margin: '0 0 6px', color: 'var(--color-primary)', fontSize: '1.2em' }}>
                       {size.name}
@@ -450,3 +450,4 @@ export default function CustomCakeBuilderModal() {
     </div>
   );
 }
+
