@@ -574,7 +574,7 @@ function HomePage() {
               className="btn"
               style={{ padding: '14px 34px', fontSize: '1.1em', cursor: 'pointer' }}
             >
-              ✨ Launch Interactive Cake Builder
+              Launch Interactive Cake Builder
             </button>
           </div>
           <div style={{ position: 'relative', borderRadius: '14px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.4)' }}>
@@ -736,7 +736,7 @@ function AppContent({ showScrollTop }) {
           borderLeft: '4px solid var(--color-orange)',
           animation: 'fadeIn 0.3s ease'
         }}>
-          <span style={{ fontSize: '1.4em' }}>🎂</span>
+          <span style={{ fontSize: '1.4em' }}></span>
           <div style={{ fontWeight: 600, fontSize: '0.95em' }}>{toastMessage}</div>
         </div>
       )}
