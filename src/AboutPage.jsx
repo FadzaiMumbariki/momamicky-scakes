@@ -11,28 +11,39 @@ export default function AboutPage() {
       <section
         style={{
           position: 'relative',
-          minHeight: '100vh',
+          minHeight: '75vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 100%)',
+          backgroundImage: "url('/about-hero-baker.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 25%',
+          backgroundRepeat: 'no-repeat',
           textAlign: 'center',
-          color: 'var(--color-text)',
+          color: '#fff',
           overflow: 'hidden',
-          padding: '80px 20px'
+          padding: '100px 20px'
         }}
       >
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', margin: '0 auto' }}>
-          <span className="tag" style={{ color: 'var(--color-gold)', fontSize: '1em' }}>What we do</span>
-          <h1 style={{ fontSize: 'clamp(2.2em, 5vw, 3.5em)', margin: '12px 0 16px', color: 'var(--color-primary)', lineHeight: 1.2 }}>
-            Discover more about our work
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(180deg, rgba(23, 21, 28, 0.45) 0%, rgba(23, 21, 28, 0.65) 50%, rgba(23, 21, 28, 0.82) 100%)',
+            zIndex: 1
+          }}
+        />
+        <div style={{ position: 'relative', zIndex: 2, maxWidth: '850px', margin: '0 auto' }}>
+          <span className="tag" style={{ color: 'var(--color-orange)', fontSize: '1.05em', fontWeight: 600, letterSpacing: '1px' }}>What We Do</span>
+          <h1 style={{ fontSize: 'clamp(2.5em, 5.5vw, 4em)', margin: '14px 0 18px', color: '#fff', lineHeight: 1.15, fontFamily: 'var(--font-heading)', textShadow: '0 2px 10px rgba(0,0,0,0.6)' }}>
+            Discover More About Our Work
           </h1>
-          <p style={{ fontSize: '1em', color: 'var(--color-text)', lineHeight: 1.6, maxWidth: '650px', margin: '0 auto 24px' }}>
+          <p style={{ fontSize: '1.1em', color: 'rgba(255,255,255,0.95)', lineHeight: 1.7, maxWidth: '680px', margin: '0 auto 28px', textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
             At Momma Micky's Cakes, baking is an art form. We are dedicated to creating memorable culinary moments with handcrafted celebration cakes baked with passion, love, and the finest natural ingredients.
           </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
-            <Link to="/contact" className="btn" style={{ padding: '10px 24px', fontSize: '1em' }}>Contact Us</Link>
-            <Link to="/packages" className="btn btn-outline" style={{ color: 'var(--color-primary)', borderColor: 'var(--color-gold)', padding: '10px 24px', fontSize: '1em' }}>Explore Cakes</Link>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
+            <Link to="/contact" className="btn" style={{ padding: '12px 30px', fontSize: '1em' }}>Contact Us</Link>
+            <Link to="/packages" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff', padding: '12px 30px', fontSize: '1em' }}>Explore Cakes</Link>
           </div>
         </div>
       </section>
